@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vanessa Rafaella — Videochamadas exclusivas. Agende sua sessão privada agora.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080808">
+  <title>Vanessa Rafaella · Videochamada Privada</title>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQNH7DEMBJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQNH7DEMBJ');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css" media="print" onload="this.media='all'">
+
+  <style>
+  /* ══════════════════════════════════════════════════
+     VIDEOCALL PAGE — estilos específicos
+  ══════════════════════════════════════════════════ */
+
+  /* ── HERO CINEMATOGRÁFICO ──────────────────────── */
+  .vc-hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; text-align: center;
+    padding-top: var(--nav-h);
+    background: var(--bg);
+  }
+
+  /* Fundo com imagem + overlay gradiente */
+  .vc-hero-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background: url('./img/pics/videocall-hero-bg.jpg') center/cover no-repeat;
+    transform: scale(1.04);
+    transition: transform 8s ease;
+    filter: saturate(0.7);
+  }
+  .vc-hero:hover .vc-hero-bg { transform: scale(1.0); }
+  .vc-hero-overlay {
+    position: absolute; inset: 0; z-index: 1;
+    background:
+      linear-gradient(to bottom,
+        rgba(8,8,8,.65) 0%,
+        rgba(8,8,8,.40) 40%,
+        rgba(8,8,8,.80) 80%,
+        rgba(8,8,8,1.0) 100%),
+      linear-gradient(135deg, rgba(255,45,139,.12) 0%, transparent 60%);
+  }
+
+  .vc-hero-content {
+    position: relative; z-index: 2;
+    max-width: 820px;
+    padding-inline: var(--px);
+  }
+
+  .vc-live-badge {
+    display: inline-flex; align-items: center; gap: .5rem;
+    font-size: .62rem; font-weight: 700;
+    letter-spacing: .22em; text-transform: uppercase;
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 50px;
+    background: var(--pink);
+    margin-bottom: 1.5rem;
+    animation: badgePulse 2s ease-in-out infinite;
+  }
+  .vc-live-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #fff;
+    animation: dotBlink 1.2s ease-in-out infinite;
+  }
+  @keyframes badgePulse {
+    0%,100% { box-shadow: 0 0 0 0 var(--pink-glow); }
+    50%      { box-shadow: 0 0 0 8px transparent; }
+  }
+  @keyframes dotBlink {
+    0%,100% { opacity: 1; } 50% { opacity: .3; }
+  }
+
+  .vc-hero-title {
+    font-family: var(--display);
+    font-size: clamp(3rem, 11vw, 8rem);
+    font-weight: 900; line-height: .88;
+    text-transform: uppercase; letter-spacing: -.01em;
+    color: #fff; margin-bottom: 1.25rem;
+  }
+  .vc-hero-title .accent { color: var(--pink); }
+  .vc-hero-title .ghost {
+    -webkit-text-stroke: 1px rgba(255,255,255,.35);
+    color: transparent;
+  }
+
+  .vc-hero-sub {
+    font-size: clamp(.92rem, 2.2vw, 1.1rem);
+    color: rgba(255,255,255,.72); line-height: 1.75;
+    max-width: 560px; margin: 0 auto 2.5rem;
+  }
+
+  .vc-hero-btns {
+    display: flex; gap: .85rem; justify-content: center; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .vc-btn-hot {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 32px;
+    background: var(--pink); border-radius: 4px; color: #fff;
+    font-size: .85rem; font-weight: 800;
+    letter-spacing: .12em; text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: all var(--dur);
+    animation: ctaPulse 3s ease-in-out infinite;
+  }
+  @keyframes ctaPulse {
+    0%,100% { box-shadow: 0 0 0 0 var(--pink-glow); }
+    50%      { box-shadow: 0 0 24px var(--pink-glow); }
+  }
+  .vc-btn-hot:hover {
+    background: var(--pink-dark); transform: translateY(-3px);
+    border-color: rgba(255,255,255,.3); animation: none;
+    box-shadow: 0 12px 36px var(--pink-glow);
+  }
+  .vc-btn-ghost {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 14px 28px;
+    border: 1.5px solid rgba(255,255,255,.35); border-radius: 4px;
+    color: rgba(255,255,255,.85);
+    font-size: .85rem; font-weight: 600;
+    letter-spacing: .1em; text-transform: uppercase;
+    text-decoration: none;
+    transition: all var(--dur);
+  }
+  .vc-btn-ghost:hover {
+    border-color: var(--pink); color: var(--pink); transform: translateY(-2px);
+  }
+
+  /* Trust bar no hero */
+  .vc-trust-bar {
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(1rem, 4vw, 2.5rem); flex-wrap: wrap;
+  }
+  .vc-trust-item {
+    display: flex; align-items: center; gap: .5rem;
+    font-size: .72rem; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase;
+    color: rgba(255,255,255,.55);
+  }
+  .vc-trust-item i { color: var(--pink); font-size: .9rem; }
+
+  /* Scroll arrow */
+  .vc-scroll {
+    position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+    z-index: 2; display: flex; flex-direction: column;
+    align-items: center; gap: 6px;
+    font-size: .58rem; letter-spacing: .2em; text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    animation: bounce 2s ease-in-out infinite;
+  }
+  .vc-scroll i { font-size: .9rem; }
+
+  /* ── SECTION BASE ──────────────────────────────── */
+  .vc-section {
+    padding-block: clamp(4rem, 9vw, 7rem);
+  }
+  .vc-wrap {
+    max-width: var(--mx); margin-inline: auto;
+    padding-inline: var(--px);
+  }
+
+  /* ── SEÇÃO: EXPERIÊNCIA (texto + media) ────────── */
+  .vc-exp { background: var(--bg-mid); }
+
+  .vc-exp-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 3rem; align-items: center;
+    margin-top: 3rem;
+  }
+  @media (min-width: 860px) {
+    .vc-exp-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  .vc-media-stack {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: .75rem;
+  }
+  .vc-media-item {
+    border-radius: 12px; overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative;
+    background: var(--bg-card);
+  }
+  .vc-media-item img,
+  .vc-media-item video {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform .5s var(--eout);
+  }
+  .vc-media-item:hover img,
+  .vc-media-item:hover video { transform: scale(1.04); }
+
+  .vc-media-item.tall {
+    grid-row: span 2;
+    min-height: 340px;
+  }
+  .vc-media-item.short { min-height: 160px; }
+
+  /* Badge sobre mídia */
+  .vc-media-badge {
+    position: absolute; top: .7rem; left: .7rem;
+    padding: 3px 10px; border-radius: 4px;
+    font-size: .58rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    background: var(--pink); color: #fff; z-index: 2;
+  }
+  .vc-media-badge.live { background: #E50914; }
+
+  /* Play overlay em vídeo */
+  .vc-play-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,.35); z-index: 3;
+    opacity: 0; transition: opacity var(--dur);
+  }
+  .vc-media-item:hover .vc-play-overlay { opacity: 1; }
+  .vc-play-circle {
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,45,139,.9);
+    border: 2px solid rgba(255,255,255,.8);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; color: #fff;
+    transition: transform var(--dur);
+  }
+  .vc-media-item:hover .vc-play-circle { transform: scale(1.1); }
+
+  /* Texto da experiência */
+  .vc-exp-text { display: flex; flex-direction: column; gap: 1.5rem; }
+  .vc-exp-p {
+    font-size: clamp(.9rem, 2vw, 1rem);
+    color: var(--txt-mid); line-height: 1.85;
+  }
+  .vc-exp-p strong { color: var(--txt); }
+  .vc-exp-p .pk    { color: var(--pink); font-weight: 700; }
+
+  .vc-features {
+    display: flex; flex-direction: column; gap: .85rem;
+  }
+  .vc-feature-item {
+    display: flex; align-items: flex-start; gap: .85rem;
+  }
+  .vc-feature-icon {
+    width: 38px; height: 38px; flex-shrink: 0;
+    border-radius: 10px; border: 1px solid var(--border-hi);
+    background: var(--pink-glow2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: .9rem; color: var(--pink);
+  }
+  .vc-feature-txt h4 {
+    font-size: .88rem; font-weight: 700; color: var(--txt);
+    margin-bottom: .2rem; text-transform: uppercase; letter-spacing: .04em;
+  }
+  .vc-feature-txt p { font-size: .8rem; color: var(--txt-mid); line-height: 1.6; }
+
+  /* ── SEÇÃO: PACOTES ────────────────────────────── */
+  .vc-packages { background: var(--bg); }
+
+  .vc-pkg-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem; margin-top: 3rem;
+  }
+
+  .vc-pkg-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 20px; padding: 2rem 1.5rem;
+    display: flex; flex-direction: column; gap: 1rem;
+    position: relative; overflow: hidden;
+    transition: border-color var(--dur), transform var(--dur), box-shadow var(--dur);
+  }
+  .vc-pkg-card:hover {
+    border-color: var(--border-hi);
+    transform: translateY(-6px);
+    box-shadow: 0 18px 50px rgba(255,45,139,.12);
+  }
+  .vc-pkg-card.featured {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 1px var(--pink), 0 12px 40px rgba(255,45,139,.18);
+  }
+
+  /* Faixa "MAIS POPULAR" */
+  .vc-pkg-ribbon {
+    position: absolute; top: 16px; right: -28px;
+    background: var(--pink); color: #fff;
+    font-size: .55rem; font-weight: 800;
+    letter-spacing: .15em; text-transform: uppercase;
+    padding: 4px 36px; transform: rotate(45deg);
+    pointer-events: none;
+  }
+
+  .vc-pkg-duration {
+    font-size: .62rem; font-weight: 700;
+    letter-spacing: .2em; text-transform: uppercase;
+    color: var(--pink);
+  }
+  .vc-pkg-name {
+    font-family: var(--display);
+    font-size: 1.6rem; font-weight: 900;
+    text-transform: uppercase; color: var(--txt);
+  }
+  .vc-pkg-price {
+    display: flex; align-items: baseline; gap: .3rem;
+  }
+  .vc-pkg-currency {
+    font-size: 1rem; font-weight: 700; color: var(--txt-mid);
+  }
+  .vc-pkg-value {
+    font-family: var(--display); font-size: 3rem;
+    font-weight: 900; color: var(--pink); line-height: 1;
+  }
+  .vc-pkg-period {
+    font-size: .75rem; color: var(--txt-dim);
+  }
+
+  .vc-pkg-divider {
+    height: 1px; background: var(--border);
+  }
+
+  .vc-pkg-perks {
+    display: flex; flex-direction: column; gap: .6rem;
+    flex: 1;
+  }
+  .vc-pkg-perk {
+    display: flex; align-items: center; gap: .65rem;
+    font-size: .82rem; color: var(--txt-mid);
+  }
+  .vc-pkg-perk i {
+    color: var(--pink); font-size: .75rem; flex-shrink: 0;
+  }
+  .vc-pkg-perk.dim { color: var(--txt-dim); }
+  .vc-pkg-perk.dim i { color: var(--txt-dim); }
+
+  .vc-pkg-btn {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    padding: 12px; border-radius: 8px; margin-top: .5rem;
+    font-size: .8rem; font-weight: 800;
+    letter-spacing: .1em; text-transform: uppercase;
+    text-decoration: none; transition: all var(--dur);
+  }
+  .vc-pkg-btn.solid {
+    background: var(--pink); color: #fff; border: 2px solid transparent;
+  }
+  .vc-pkg-btn.solid:hover {
+    background: var(--pink-dark); transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--pink-glow);
+  }
+  .vc-pkg-btn.outline {
+    background: transparent; color: var(--pink);
+    border: 1.5px solid var(--border-hi);
+  }
+  .vc-pkg-btn.outline:hover {
+    border-color: var(--pink); background: var(--pink-glow2);
+    transform: translateY(-2px);
+  }
+
+  /* ── SEÇÃO: COMO FUNCIONA ──────────────────────── */
+  .vc-how { background: var(--bg-purple); position: relative; overflow: hidden; }
+  .vc-how::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 200px;
+    background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .vc-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; margin-top: 3rem;
+    position: relative; z-index: 1;
+  }
+
+  /* Linha conectora entre steps (desktop) */
+  @media (min-width: 860px) {
+    .vc-steps { position: relative; }
+    .vc-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: calc(12.5% + 1px); right: calc(12.5% + 1px);
+      height: 1px; background: var(--border-hi);
+      z-index: 0;
+    }
+  }
+
+  .vc-step {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; gap: 1rem;
+    position: relative; z-index: 1;
+  }
+  .vc-step-num {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--bg-card);
+    border: 2px solid var(--border-hi);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 1.5rem; font-weight: 900;
+    color: var(--pink);
+    transition: all var(--dur);
+  }
+  .vc-step:hover .vc-step-num {
+    background: var(--pink); color: #fff; border-color: var(--pink);
+    transform: scale(1.08);
+    box-shadow: 0 0 20px var(--pink-glow);
+  }
+  .vc-step h3 {
+    font-family: var(--display); font-size: 1.05rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .04em; color: var(--txt);
+  }
+  .vc-step p { font-size: .8rem; color: var(--txt-dim); line-height: 1.65; }
+
+  /* ── SEÇÃO: DISPONIBILIDADE ────────────────────── */
+  .vc-avail { background: var(--bg-mid); }
+
+  .vc-avail-grid {
+    display: grid; grid-template-columns: 1fr;
+    gap: 2rem; margin-top: 3rem;
+  }
+  @media (min-width: 768px) {
+    .vc-avail-grid { grid-template-columns: 1fr 1fr; align-items: start; }
+  }
+
+  /* Calendário visual */
+  .vc-calendar-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 16px; overflow: hidden;
+  }
+  .vc-cal-header {
+    padding: 1rem 1.25rem;
+    background: var(--pink);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .vc-cal-header span {
+    font-family: var(--display); font-size: 1.1rem; font-weight: 800;
+    text-transform: uppercase; color: #fff; letter-spacing: .05em;
+  }
+  .vc-cal-header i { color: rgba(255,255,255,.8); }
+
+  .vc-schedule-list {
+    padding: 1.25rem;
+    display: flex; flex-direction: column; gap: .75rem;
+  }
+  .vc-schedule-item {
+    display: flex; align-items: center; gap: .85rem;
+    padding: .85rem 1rem; border-radius: 10px;
+    background: var(--bg-raised); border: 1px solid var(--border);
+  }
+  .vc-schedule-day {
+    min-width: 90px;
+    font-size: .75rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--txt);
+  }
+  .vc-schedule-time {
+    font-size: .78rem; color: var(--txt-mid); flex: 1;
+  }
+  .vc-status-dot {
+    width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  }
+  .vc-status-dot.on  { background: var(--green); box-shadow: 0 0 6px var(--green); }
+  .vc-status-dot.ltd { background: var(--gold);  box-shadow: 0 0 6px var(--gold-glow); }
+  .vc-status-dot.off { background: var(--txt-dim); }
+
+  .vc-avail-note {
+    padding: .85rem 1.25rem;
+    border-top: 1px solid var(--border);
+    font-size: .75rem; color: var(--txt-dim);
+    display: flex; align-items: center; gap: .5rem;
+  }
+  .vc-avail-note i { color: var(--pink); }
+
+  /* Timezone selector */
+  .vc-tz-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem;
+    display: flex; flex-direction: column; gap: 1.25rem;
+  }
+  .vc-tz-card h3 {
+    font-family: var(--display); font-size: 1rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .04em; color: var(--txt);
+    display: flex; align-items: center; gap: .6rem;
+  }
+  .vc-tz-card h3 i { color: var(--pink); }
+
+  .vc-tz-list { display: flex; flex-direction: column; gap: .65rem; }
+  .vc-tz-row {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: .7rem 1rem; border-radius: 8px;
+    background: var(--bg-raised); border: 1px solid var(--border);
+    font-size: .8rem;
+  }
+  .vc-tz-label { color: var(--txt-mid); display: flex; align-items: center; gap: .5rem; }
+  .vc-tz-time  { font-weight: 700; color: var(--txt); font-family: var(--display); font-size: .95rem; }
+  .vc-tz-highlight { border-color: var(--border-hi); background: var(--pink-glow2); }
+  .vc-tz-highlight .vc-tz-time { color: var(--pink); }
+
+  /* ── SEÇÃO: PAGAMENTOS ─────────────────────────── */
+  .vc-pay { background: var(--bg-gold); position: relative; overflow: hidden; }
+  .vc-pay::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 200px;
+    background: radial-gradient(ellipse, var(--gold-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .vc-pay-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem; margin-top: 3rem;
+    position: relative; z-index: 1;
+  }
+  .vc-pay-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 14px;
+    padding: 1.4rem 1rem;
+    text-align: center;
+    display: flex; flex-direction: column;
+    align-items: center; gap: .65rem;
+    transition: border-color var(--dur), transform var(--dur);
+  }
+  .vc-pay-card:hover { border-color: var(--border-hi); transform: translateY(-4px); }
+  .vc-pay-icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+  }
+  .vc-pay-name {
+    font-size: .78rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--txt);
+  }
+  .vc-pay-desc { font-size: .7rem; color: var(--txt-dim); line-height: 1.5; }
+
+  /* Nota de segurança */
+  .vc-pay-security {
+    margin-top: 2rem; padding: 1.25rem 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid rgba(0,200,83,.25); border-radius: 12px;
+    display: flex; align-items: center; gap: 1rem;
+    position: relative; z-index: 1;
+  }
+  .vc-pay-security i { font-size: 1.4rem; color: var(--green); flex-shrink: 0; }
+  .vc-pay-security p { font-size: .82rem; color: var(--txt-mid); line-height: 1.6; }
+  .vc-pay-security strong { color: var(--txt); }
+
+  /* ── SEÇÃO: GALERIA PRÉVIA ─────────────────────── */
+  .vc-preview { background: var(--bg); }
+
+  .vc-preview-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .75rem; margin-top: 3rem;
+  }
+  @media (min-width: 600px) {
+    .vc-preview-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (min-width: 900px) {
+    .vc-preview-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  .vc-prev-item {
+    border-radius: 10px; overflow: hidden;
+    border: 1px solid var(--border);
+    position: relative; background: var(--bg-card);
+    aspect-ratio: 3/4;
+    cursor: pointer;
+  }
+  .vc-prev-item img {
+    width: 100%; height: 100%;
+    object-fit: cover; display: block;
+    transition: transform .4s var(--eout), filter .4s;
+    filter: brightness(.88) saturate(.9);
+  }
+  .vc-prev-item:hover img { transform: scale(1.06); filter: brightness(1) saturate(1.1); }
+  .vc-prev-item::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(8,8,8,.6) 0%, transparent 50%);
+  }
+  .vc-prev-lock {
+    position: absolute; inset: 0; z-index: 5;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(8,8,8,.55);
+    opacity: 0; transition: opacity var(--dur);
+  }
+  .vc-prev-item:hover .vc-prev-lock { opacity: 1; }
+  .vc-prev-lock-icon {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: var(--pink); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+  }
+
+  .vc-preview-cta {
+    margin-top: 2rem; text-align: center;
+  }
+
+  /* ── SEÇÃO: FAQ ────────────────────────────────── */
+  .vc-faq { background: var(--bg-mid); }
+
+  .vc-faq-list {
+    max-width: 720px; margin: 3rem auto 0;
+    display: flex; flex-direction: column; gap: .75rem;
+  }
+  .vc-faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border); border-radius: 12px;
+    overflow: hidden; transition: border-color var(--dur);
+  }
+  .vc-faq-item.open { border-color: var(--border-hi); }
+
+  .vc-faq-q {
+    width: 100%; padding: 1.1rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+    background: none; border: none; cursor: pointer;
+    text-align: left; color: var(--txt);
+    font-size: .9rem; font-weight: 600; font-family: var(--sans);
+    transition: color var(--dur);
+  }
+  .vc-faq-q:hover { color: var(--pink); }
+  .vc-faq-q i {
+    color: var(--pink); flex-shrink: 0; font-size: .85rem;
+    transition: transform var(--dur);
+  }
+  .vc-faq-item.open .vc-faq-q i { transform: rotate(45deg); }
+
+  .vc-faq-a {
+    max-height: 0; overflow: hidden;
+    transition: max-height .35s var(--eout), padding .3s;
+    padding: 0 1.25rem;
+    font-size: .85rem; color: var(--txt-mid); line-height: 1.75;
+  }
+  .vc-faq-item.open .vc-faq-a {
+    max-height: 300px; padding-bottom: 1.25rem;
+  }
+
+  /* ── CTA FINAL ─────────────────────────────────── */
+  .vc-final {
+    background: var(--bg-cyan); position: relative; overflow: hidden;
+    text-align: center;
+  }
+  .vc-final::before {
+    content: '';
+    position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 250px;
+    background: radial-gradient(ellipse, var(--cyan-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .vc-final-content { position: relative; z-index: 1; max-width: 640px; margin: 0 auto; }
+  .vc-final-emoji {
+    font-size: 3rem; display: block; margin-bottom: 1rem;
+    animation: floatEl 3s ease-in-out infinite;
+  }
+  .vc-final h2 {
+    font-family: var(--display); font-size: clamp(2.2rem, 7vw, 4.5rem);
+    font-weight: 900; text-transform: uppercase; line-height: .92;
+    color: var(--txt); margin-bottom: 1rem;
+  }
+  .vc-final h2 .accent { color: var(--pink); }
+  .vc-final p {
+    font-size: clamp(.9rem, 2vw, 1rem);
+    color: var(--txt-mid); line-height: 1.75; margin-bottom: 2.5rem;
+  }
+  .vc-final-btns { display: flex; gap: .85rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER (reutilizado do gallery/contact) ───── */
+  .gal-footer { background: var(--bg-mid); border-top: 1px solid var(--border); }
+  .gal-footer-top {
+    padding: 3rem var(--px) 2rem; text-align: center;
+    border-bottom: 1px solid var(--border);
+    max-width: var(--mx); margin-inline: auto;
+  }
+  .gal-footer-name {
+    font-family: var(--display); font-size: clamp(1.4rem, 4vw, 2rem);
+    font-weight: 900; text-transform: uppercase; letter-spacing: .06em;
+    color: var(--txt); margin-bottom: .5rem;
+  }
+  .gal-footer-name .accent { color: var(--pink); }
+  .gal-footer-tagline { font-size: .85rem; color: var(--txt-dim); font-style: italic; }
+  .gal-footer-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem; max-width: var(--mx); margin-inline: auto;
+    padding: 2.5rem var(--px);
+  }
+  .gal-footer-col h3 {
+    font-family: var(--display); font-size: 1rem; font-weight: 800;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--pink);
+    margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem;
+  }
+  .gal-footer-col p  { font-size: .88rem; color: var(--txt-mid); line-height: 1.7; margin-bottom: .75rem; }
+  .gal-footer-col ul { list-style: none; padding: 0; }
+  .gal-footer-col li { margin-bottom: .55rem; }
+  .gal-footer-col a {
+    display: flex; align-items: center; gap: .65rem;
+    font-size: .88rem; color: var(--txt-mid); text-decoration: none;
+    transition: color var(--dur), padding-left var(--dur); padding: .2rem 0;
+  }
+  .gal-footer-col a i { width: 18px; text-align: center; color: var(--pink); }
+  .gal-footer-col a:hover { color: var(--pink); padding-left: 4px; }
+  .gal-footer-notice { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .gal-footer-notice h4 {
+    font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: .75rem;
+  }
+  .gal-notice-item {
+    display: flex; align-items: center; gap: .65rem;
+    font-size: .82rem; color: var(--txt-dim); margin-bottom: .5rem;
+  }
+  .gal-notice-item i { color: var(--pink); width: 16px; }
+  .gal-footer-bottom {
+    border-top: 1px solid var(--border); padding: 1.5rem var(--px);
+    max-width: var(--mx); margin-inline: auto;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .gal-footer-copy { font-size: .8rem; color: var(--txt-dim); }
+  .gal-footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .gal-footer-links a {
+    font-size: .75rem; color: var(--txt-dim); text-decoration: none;
+    text-transform: uppercase; letter-spacing: .05em; transition: color var(--dur);
+  }
+  .gal-footer-links a:hover { color: var(--pink); }
+  @media (max-width: 560px) {
+    .gal-footer-bottom { flex-direction: column; text-align: center; }
+    .gal-footer-links  { justify-content: center; }
+  }
+
+  /* Botão flutuante WA */
+  .wa-float {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 900;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--wa-green); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; text-decoration: none;
+    box-shadow: 0 4px 18px rgba(37,211,102,.4);
+    transition: transform var(--dur), box-shadow var(--dur);
+    animation: waPulse 2.5s ease-in-out infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); animation: none; }
+  @keyframes waPulse {
+    0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,.4); }
+    50%      { box-shadow: 0 4px 28px rgba(37,211,102,.65), 0 0 0 6px rgba(37,211,102,.07); }
+  }
+  </style>
+</head>
+
+<body>
+
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+  <!-- ═══════════════ HEADER ═══════════════════════ -->
+  <header>
+    <nav class="nav" id="mainNav" role="navigation" aria-label="Navegação principal">
+      <div class="nav-inner">
+        <a class="nav-logo" href="./index.html" aria-label="Vanessa Rafaella — início">
+          <div class="nav-logo-photo" aria-hidden="true">
+            <img src="./img/pics/vanessa-rafaella-logo-nav-primary.svg"
+                 alt="Vanessa Rafaella" width="42" height="42" loading="eager"
+                 onerror="this.src='https://placehold.co/42x42/FF2D8B/fff?text=VR'">
+            <div class="verified-badge"><i class="fas fa-check"></i></div>
+          </div>
+          <div class="nav-logo-text" aria-hidden="true">
+            <span class="nav-logo-name">VANESSA&nbsp;<span class="accent">RAFAELLA</span></span>
+            <span class="nav-logo-sub" data-pt="Site Oficial" data-en="Official Website" data-es="Sitio Oficial">Site Oficial</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" aria-label="Menu principal">
+          <li><a href="./index.html"          data-pt="Início"        data-en="Home"           data-es="Inicio">Início</a></li>
+          <li><a href="./gallery.html"         data-pt="Galeria"       data-en="Gallery"        data-es="Galería">Galeria</a></li>
+          <li><a href="#packages"              data-pt="Pacotes"       data-en="Packages"       data-es="Paquetes" aria-current="page">Pacotes</a></li>
+          <li><a href="./getintouch.html"      data-pt="Contato"       data-en="Contact"        data-es="Contacto">Contato</a></li>
+        </ul>
+
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+          <div class="lang-sel" id="langSel">
+            <button class="lang-btn" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma">
+              <span id="langFlag">🇧🇷</span><span id="langCode">PT</span>
+              <span class="lang-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+            </button>
+            <div class="lang-drop" id="langDrop" role="listbox">
+              <p>Idioma</p>
+              <button class="lang-opt" data-lang="pt" data-flag="🇧🇷" aria-selected="true"><span>🇧🇷</span><span>Português</span></button>
+              <button class="lang-opt" data-lang="en" data-flag="🇺🇸" aria-selected="false"><span>🇺🇸</span><span>English</span></button>
+              <button class="lang-opt" data-lang="es" data-flag="🇪🇸" aria-selected="false"><span>🇪🇸</span><span>Español</span></button>
+            </div>
+          </div>
+          <button class="btn-menu-desktop" id="btnMenuDesktop" aria-label="Menu" aria-expanded="false" aria-controls="mobMenu">MENU</button>
+          <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mob-overlay" id="mobOverlay" aria-hidden="true"></div>
+  <nav class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+    <div class="mob-menu-hdr">
+      <span class="mob-menu-brand">VANESSA <span class="accent">RAFAELLA</span></span>
+      <button class="mob-close" id="mobClose" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    </div>
+    <nav class="mob-nav">
+      <a href="./index.html"><i class="fas fa-home"></i><span data-pt="Início" data-en="Home" data-es="Inicio">Início</span></a>
+      <a href="./gallery.html"><i class="fas fa-images"></i><span data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</span></a>
+      <a href="#packages"><i class="fas fa-video"></i><span data-pt="Pacotes" data-en="Packages" data-es="Paquetes">Pacotes</span></a>
+      <a href="./getintouch.html"><i class="fas fa-envelope"></i><span data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</span></a>
+      <div class="mob-divider"></div>
+    </nav>
+    <div class="mob-label">Plataformas</div>
+    <div class="mob-plats">
+      <a href="#" class="mob-plat" target="_blank" rel="noopener"><div class="mob-plat-icon"><img src="./assets/images/privacy-full-icon.png" alt="Privacy" onerror="this.parentNode.innerHTML='🔒'"></div><span>Privacy</span></a>
+      <a href="#" class="mob-plat" target="_blank" rel="noopener"><div class="mob-plat-icon"><img src="./assets/images/of-blue-icon.png" alt="OnlyFans" onerror="this.parentNode.innerHTML='🔥'"></div><span>OnlyFans</span></a>
+      <a href="#" class="mob-plat" target="_blank" rel="noopener"><div class="mob-plat-icon"><img src="./assets/images/fotos-icon.png" alt="Fotos" onerror="this.parentNode.innerHTML='📸'"></div><span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span></a>
+      <a href="#" class="mob-plat" target="_blank" rel="noopener"><div class="mob-plat-icon"><img src="./assets/images/video-icon.png" alt="Vídeos" onerror="this.parentNode.innerHTML='🎬'"></div><span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span></a>
+      <a href="#" class="mob-plat" target="_blank" rel="noopener" id="mobWa"><div class="mob-plat-icon"><img src="./assets/images/new-wpp-icon.png" alt="WhatsApp" onerror="this.parentNode.innerHTML='💬'"></div><span>WhatsApp</span></a>
+    </div>
+    <div class="mob-menu-footer">
+      <div class="mob-socials">
+        <a href="#" class="mob-soc-btn onlyfans"><i class="fas fa-fire"></i></a>
+        <a href="#" class="mob-soc-btn twitter"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="mob-soc-btn instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5581995469947" class="mob-soc-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <button class="mob-theme-btn" id="mobThemeBtn">
+        <span><i class="fas fa-adjust"></i>&nbsp;<span data-pt="Alterar Tema" data-en="Toggle Theme" data-es="Cambiar Tema">Alterar Tema</span></span>
+        <span id="mobThemeLbl">Escuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════ MAIN ══════════════════════════ -->
+  <main id="main-content">
+
+    <!-- 1. HERO ────────────────────────────────────── -->
+    <section class="vc-hero" aria-label="Hero videochamada">
+      <div class="vc-hero-bg" role="presentation"
+           style="background-image:url('./img/pics/videocall-hero-bg.jpg')"></div>
+      <div class="vc-hero-overlay"></div>
+
+      <div class="vc-hero-content">
+        <div class="vc-live-badge">
+          <span class="vc-live-dot"></span>
+          <span data-pt="Disponível agora" data-en="Available now" data-es="Disponible ahora">Disponível agora</span>
+        </div>
+
+        <h1 class="vc-hero-title">
+          <span data-pt="SESSÃO" data-en="PRIVATE" data-es="SESIÓN">SESSÃO</span>
+          <span class="accent" data-pt="PRIVADA" data-en="SESSION" data-es="PRIVADA">PRIVADA</span><br>
+          <span class="ghost" data-pt="AO VIVO" data-en="LIVE" data-es="EN VIVO">AO VIVO</span>
+        </h1>
+
+        <p class="vc-hero-sub"
+           data-pt="Uma experiência íntima e exclusiva, face a face. Só eu e você — ao vivo, sem filtros, do jeito que você imaginou."
+           data-en="An intimate and exclusive experience, face to face. Just you and me — live, unfiltered, exactly as you imagined."
+           data-es="Una experiencia íntima y exclusiva, cara a cara. Solo tú y yo — en vivo, sin filtros, exactamente como lo imaginaste.">
+          Uma experiência íntima e exclusiva, face a face. Só eu e você — ao vivo, sem filtros, do jeito que você imaginou.
+        </p>
+
+        <div class="vc-hero-btns">
+          <a href="#packages" class="vc-btn-hot">
+            <i class="fas fa-video"></i>
+            <span data-pt="Ver Pacotes" data-en="See Packages" data-es="Ver Paquetes">Ver Pacotes</span>
+          </a>
+          <a href="https://wa.me/5581995469947" class="vc-btn-ghost" target="_blank" rel="noopener" id="heroWa">
+            <i class="fab fa-whatsapp"></i>
+            <span data-pt="Agendar agora" data-en="Book now" data-es="Reservar ahora">Agendar agora</span>
+          </a>
+        </div>
+
+        <div class="vc-trust-bar">
+          <span class="vc-trust-item"><i class="fas fa-shield-alt"></i> <span data-pt="100% Privado" data-en="100% Private" data-es="100% Privado">100% Privado</span></span>
+          <span class="vc-trust-item"><i class="fas fa-lock"></i> <span data-pt="Pagamento seguro" data-en="Secure payment" data-es="Pago seguro">Pagamento seguro</span></span>
+          <span class="vc-trust-item"><i class="fas fa-star"></i> <span data-pt="10K+ fãs satisfeitos" data-en="10K+ satisfied fans" data-es="10K+ fans satisfechos">10K+ fãs satisfeitos</span></span>
+          <span class="vc-trust-item"><i class="fas fa-bolt"></i> <span data-pt="Resposta rápida" data-en="Fast response" data-es="Respuesta rápida">Resposta rápida</span></span>
+        </div>
+      </div>
+
+      <div class="vc-scroll" aria-hidden="true">
+        <span data-pt="Explorar" data-en="Explore" data-es="Explorar">Explorar</span>
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </section>
+
+    <!-- 2. EXPERIÊNCIA ──────────────────────────────── -->
+    <section class="vc-section vc-exp" aria-labelledby="expTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="✦ A Experiência" data-en="✦ The Experience" data-es="✦ La Experiencia">✦ A Experiência</span>
+          <h2 class="section-title" id="expTitle" data-reveal>
+            <span data-pt="MAIS QUE" data-en="MORE THAN" data-es="MÁS QUE">MAIS QUE</span>
+            <span class="accent" data-pt=" UMA CHAMADA" data-en=" A CALL" data-es=" UNA LLAMADA"> UMA CHAMADA</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Uma conexão real, ao vivo, do jeito que você merece"
+             data-en="A real connection, live, the way you deserve"
+             data-es="Una conexión real, en vivo, como lo mereces">
+            Uma conexão real, ao vivo, do jeito que você merece
+          </p>
+        </div>
+
+        <div class="vc-exp-grid">
+          <!-- Media stack -->
+          <div class="vc-media-stack" data-reveal>
+            <div class="vc-media-item tall">
+              <img src="./img/pics/11.png" alt="Vanessa Rafaella — videochamada" loading="lazy">
+              <span class="vc-media-badge">Exclusivo</span>
+            </div>
+            <div class="vc-media-item short">
+              <img src="./img/pics/12.png" alt="Preview" loading="lazy">
+              <div class="vc-play-overlay"><div class="vc-play-circle"><i class="fas fa-play"></i></div></div>
+              <span class="vc-media-badge live">Ao vivo</span>
+            </div>
+            <div class="vc-media-item short">
+              <img src="./img/pics/22.png" alt="Preview" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Texto -->
+          <div class="vc-exp-text" data-reveal>
+            <p class="vc-exp-p"
+               data-pt="Na nossa videochamada, você tem <strong>atenção total</strong> — é uma sessão <span class='pk'>íntima e personalizada</span>, feita só para você. Sem gravação, sem compartilhamento. Só a gente."
+               data-en="In our video call, you get <strong>full attention</strong> — it's an <span class='pk'>intimate and personalized</span> session, made just for you. No recording, no sharing. Just us."
+               data-es="En nuestra videollamada, tienes <strong>atención total</strong> — es una sesión <span class='pk'>íntima y personalizada</span>, hecha solo para ti. Sin grabación, sin compartir. Solo nosotros.">
+              Na nossa videochamada, você tem <strong>atenção total</strong> — é uma sessão <span class="pk">íntima e personalizada</span>, feita só para você. Sem gravação, sem compartilhamento. Só a gente.
+            </p>
+
+            <div class="vc-features">
+              <div class="vc-feature-item">
+                <div class="vc-feature-icon"><i class="fas fa-user-shield"></i></div>
+                <div class="vc-feature-txt">
+                  <h4 data-pt="Privacidade total" data-en="Total privacy" data-es="Privacidad total">Privacidade total</h4>
+                  <p data-pt="Nenhuma chamada é gravada. Sua privacidade é sagrada." data-en="No calls are recorded. Your privacy is sacred." data-es="Ninguna llamada es grabada. Tu privacidad es sagrada.">Nenhuma chamada é gravada. Sua privacidade é sagrada.</p>
+                </div>
+              </div>
+              <div class="vc-feature-item">
+                <div class="vc-feature-icon"><i class="fas fa-sliders-h"></i></div>
+                <div class="vc-feature-txt">
+                  <h4 data-pt="Personalizado pra você" data-en="Personalized for you" data-es="Personalizado para ti">Personalizado pra você</h4>
+                  <p data-pt="Diga o que quer ver e eu faço acontecer." data-en="Tell me what you want to see and I'll make it happen." data-es="Dime qué quieres ver y lo haré realidad.">Diga o que quer ver e eu faço acontecer.</p>
+                </div>
+              </div>
+              <div class="vc-feature-item">
+                <div class="vc-feature-icon"><i class="fas fa-bolt"></i></div>
+                <div class="vc-feature-txt">
+                  <h4 data-pt="Conexão de alta qualidade" data-en="High quality connection" data-es="Conexión de alta calidad">Conexão de alta qualidade</h4>
+                  <p data-pt="Via WhatsApp, Telegram, Facetime ou Skype." data-en="Via WhatsApp, Telegram, Facetime or Skype." data-es="Vía WhatsApp, Telegram, Facetime o Skype.">Via WhatsApp, Telegram, Facetime ou Skype.</p>
+                </div>
+              </div>
+              <div class="vc-feature-item">
+                <div class="vc-feature-icon"><i class="fas fa-clock"></i></div>
+                <div class="vc-feature-txt">
+                  <h4 data-pt="No seu horário" data-en="On your schedule" data-es="En tu horario">No seu horário</h4>
+                  <p data-pt="Agende com antecedência ou solicite horários disponíveis." data-en="Schedule in advance or request available times." data-es="Agenda con anticipación o solicita horarios disponibles.">Agende com antecedência ou solicite horários disponíveis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PACOTES ─────────────────────────────────── -->
+    <section id="packages" class="vc-section vc-packages" aria-labelledby="pkgTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="💎 Escolha seu pacote" data-en="💎 Choose your package" data-es="💎 Elige tu paquete">💎 Escolha seu pacote</span>
+          <h2 class="section-title" id="pkgTitle" data-reveal>
+            <span data-pt="PACOTES" data-en="PACKAGES" data-es="PAQUETES">PACOTES</span>
+            <span class="accent"> VIP</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Do aquecimento ao premium — escolha sua sessão"
+             data-en="From warm-up to premium — choose your session"
+             data-es="Del calentamiento al premium — elige tu sesión">
+            Do aquecimento ao premium — escolha sua sessão
+          </p>
+        </div>
+
+        <div class="vc-pkg-grid">
+
+          <!-- Starter -->
+          <div class="vc-pkg-card" data-reveal>
+            <div class="vc-pkg-duration" data-pt="10 minutos" data-en="10 minutes" data-es="10 minutos">10 minutos</div>
+            <div class="vc-pkg-name" data-pt="Aquecimento" data-en="Warm-Up" data-es="Calentamiento">Aquecimento</div>
+            <div class="vc-pkg-price">
+              <span class="vc-pkg-currency">R$</span>
+              <span class="vc-pkg-value">80</span>
+              <span class="vc-pkg-period" data-pt="/ sessão" data-en="/ session" data-es="/ sesión">/ sessão</span>
+            </div>
+            <div class="vc-pkg-divider"></div>
+            <ul class="vc-pkg-perks">
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="10 min ao vivo" data-en="10 min live" data-es="10 min en vivo">10 min ao vivo</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Conteúdo personalizado" data-en="Personalized content" data-es="Contenido personalizado">Conteúdo personalizado</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="WhatsApp · Telegram" data-en="WhatsApp · Telegram" data-es="WhatsApp · Telegram">WhatsApp · Telegram</span></li>
+              <li class="vc-pkg-perk dim"><i class="fas fa-times"></i><span data-pt="Extensão de tempo" data-en="Time extension" data-es="Extensión de tiempo">Extensão de tempo</span></li>
+              <li class="vc-pkg-perk dim"><i class="fas fa-times"></i><span data-pt="Foto exclusiva" data-en="Exclusive photo" data-es="Foto exclusiva">Foto exclusiva</span></li>
+            </ul>
+            <a href="https://wa.me/5581995469947?text=Ol%C3%A1%20Vanessa!%20Quero%20agendar%20o%20pacote%20Aquecimento%20(10min)." 
+               class="vc-pkg-btn outline" target="_blank" rel="noopener" id="pkgWa1"
+               data-pt="Agendar" data-en="Book now" data-es="Reservar">Agendar</a>
+          </div>
+
+          <!-- Padrão — FEATURED -->
+          <div class="vc-pkg-card featured" data-reveal>
+            <div class="vc-pkg-ribbon" data-pt="Mais popular" data-en="Most popular" data-es="Más popular">Mais popular</div>
+            <div class="vc-pkg-duration" data-pt="30 minutos" data-en="30 minutes" data-es="30 minutos">30 minutos</div>
+            <div class="vc-pkg-name" data-pt="Sessão Quente" data-en="Hot Session" data-es="Sesión Caliente">Sessão Quente</div>
+            <div class="vc-pkg-price">
+              <span class="vc-pkg-currency">R$</span>
+              <span class="vc-pkg-value">200</span>
+              <span class="vc-pkg-period" data-pt="/ sessão" data-en="/ session" data-es="/ sesión">/ sessão</span>
+            </div>
+            <div class="vc-pkg-divider"></div>
+            <ul class="vc-pkg-perks">
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="30 min ao vivo" data-en="30 min live" data-es="30 min en vivo">30 min ao vivo</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Conteúdo personalizado" data-en="Personalized content" data-es="Contenido personalizado">Conteúdo personalizado</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="WhatsApp · Telegram · FaceTime" data-en="WhatsApp · Telegram · FaceTime" data-es="WhatsApp · Telegram · FaceTime">WhatsApp · Telegram · FaceTime</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="1 foto exclusiva após a sessão" data-en="1 exclusive photo after session" data-es="1 foto exclusiva después">1 foto exclusiva após a sessão</span></li>
+              <li class="vc-pkg-perk dim"><i class="fas fa-times"></i><span data-pt="Extensão de tempo" data-en="Time extension" data-es="Extensión de tiempo">Extensão de tempo</span></li>
+            </ul>
+            <a href="https://wa.me/5581995469947?text=Ol%C3%A1%20Vanessa!%20Quero%20agendar%20o%20pacote%20Sess%C3%A3o%20Quente%20(30min)."
+               class="vc-pkg-btn solid" target="_blank" rel="noopener" id="pkgWa2"
+               data-pt="Agendar agora" data-en="Book now" data-es="Reservar ahora">Agendar agora</a>
+          </div>
+
+          <!-- Premium -->
+          <div class="vc-pkg-card" data-reveal>
+            <div class="vc-pkg-duration" data-pt="1 hora" data-en="1 hour" data-es="1 hora">1 hora</div>
+            <div class="vc-pkg-name" data-pt="Sessão Premium" data-en="Premium Session" data-es="Sesión Premium">Sessão Premium</div>
+            <div class="vc-pkg-price">
+              <span class="vc-pkg-currency">R$</span>
+              <span class="vc-pkg-value">350</span>
+              <span class="vc-pkg-period" data-pt="/ sessão" data-en="/ session" data-es="/ sesión">/ sessão</span>
+            </div>
+            <div class="vc-pkg-divider"></div>
+            <ul class="vc-pkg-perks">
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="60 min ao vivo" data-en="60 min live" data-es="60 min en vivo">60 min ao vivo</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Conteúdo totalmente personalizado" data-en="Fully personalized content" data-es="Contenido totalmente personalizado">Conteúdo totalmente personalizado</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Qualquer plataforma" data-en="Any platform" data-es="Cualquier plataforma">Qualquer plataforma</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="3 fotos exclusivas" data-en="3 exclusive photos" data-es="3 fotos exclusivas">3 fotos exclusivas</span></li>
+              <li class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Extensão disponível (+R$5/min)" data-en="Extension available (+R$5/min)" data-es="Extensión disponible (+R$5/min)">Extensão disponível (+R$5/min)</span></li>
+            </ul>
+            <a href="https://wa.me/5581995469947?text=Ol%C3%A1%20Vanessa!%20Quero%20agendar%20o%20pacote%20Premium%20(1h)."
+               class="vc-pkg-btn outline" target="_blank" rel="noopener" id="pkgWa3"
+               data-pt="Agendar" data-en="Book now" data-es="Reservar">Agendar</a>
+          </div>
+
+        </div><!-- /pkg-grid -->
+
+        <!-- Nota customizado -->
+        <p style="text-align:center;margin-top:2rem;font-size:.82rem;color:var(--txt-dim);"
+           data-pt="💬 Quer algo diferente? Me manda mensagem e a gente monta um pacote personalizado pra você."
+           data-en="💬 Want something different? Send me a message and we'll put together a custom package for you."
+           data-es="💬 ¿Quieres algo diferente? Envíame un mensaje y armamos un paquete personalizado para ti.">
+          💬 Quer algo diferente? Me manda mensagem e a gente monta um pacote personalizado pra você.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- 4. COMO FUNCIONA ────────────────────────────── -->
+    <section class="vc-section vc-how" aria-labelledby="howTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="📋 Passo a passo" data-en="📋 Step by step" data-es="📋 Paso a paso">📋 Passo a passo</span>
+          <h2 class="section-title" id="howTitle" data-reveal>
+            <span data-pt="COMO" data-en="HOW" data-es="CÓMO">COMO</span>
+            <span class="accent" data-pt=" FUNCIONA" data-en=" IT WORKS" data-es=" FUNCIONA"> FUNCIONA</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="4 passos simples para a sua experiência exclusiva"
+             data-en="4 simple steps to your exclusive experience"
+             data-es="4 sencillos pasos para tu experiencia exclusiva">
+            4 passos simples para a sua experiência exclusiva
+          </p>
+        </div>
+
+        <div class="vc-steps">
+          <div class="vc-step" data-reveal>
+            <div class="vc-step-num">1</div>
+            <h3 data-pt="Escolha o pacote" data-en="Choose the package" data-es="Elige el paquete">Escolha o pacote</h3>
+            <p data-pt="Selecione o pacote ideal para você — 10 min, 30 min ou 1 hora." data-en="Select the ideal package — 10 min, 30 min or 1 hour." data-es="Selecciona el paquete ideal — 10 min, 30 min o 1 hora.">Selecione o pacote ideal para você — 10 min, 30 min ou 1 hora.</p>
+          </div>
+          <div class="vc-step" data-reveal>
+            <div class="vc-step-num">2</div>
+            <h3 data-pt="Envie uma mensagem" data-en="Send a message" data-es="Envía un mensaje">Envie uma mensagem</h3>
+            <p data-pt="Me chame no WhatsApp com o pacote escolhido e o horário que prefere." data-en="Message me on WhatsApp with the package and preferred time." data-es="Escríbeme en WhatsApp con el paquete y el horario preferido.">Me chame no WhatsApp com o pacote escolhido e o horário que prefere.</p>
+          </div>
+          <div class="vc-step" data-reveal>
+            <div class="vc-step-num">3</div>
+            <h3 data-pt="Confirme e pague" data-en="Confirm and pay" data-es="Confirma y paga">Confirme e pague</h3>
+            <p data-pt="Confirmamos o horário e você realiza o pagamento com segurança." data-en="We confirm the time and you make the payment securely." data-es="Confirmamos el horario y realizas el pago de forma segura.">Confirmamos o horário e você realiza o pagamento com segurança.</p>
+          </div>
+          <div class="vc-step" data-reveal>
+            <div class="vc-step-num">4</div>
+            <h3 data-pt="Curtamos juntos" data-en="Let's enjoy together" data-es="Disfrutemos juntos">Curtamos juntos</h3>
+            <p data-pt="No horário combinado, iniciamos a sessão privada exclusiva para você." data-en="At the scheduled time, we start your exclusive private session." data-es="A la hora acordada, comenzamos tu sesión privada exclusiva.">No horário combinado, iniciamos a sessão privada exclusiva para você.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. DISPONIBILIDADE ──────────────────────────── -->
+    <section class="vc-section vc-avail" aria-labelledby="availTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="🕐 Disponibilidade" data-en="🕐 Availability" data-es="🕐 Disponibilidad">🕐 Disponibilidade</span>
+          <h2 class="section-title" id="availTitle" data-reveal>
+            <span data-pt="QUANDO" data-en="WHEN" data-es="CUÁNDO">QUANDO</span>
+            <span class="accent" data-pt=" ESTOU DISPONÍVEL" data-en=" I'M AVAILABLE" data-es=" ESTOY DISPONIBLE"> ESTOU DISPONÍVEL</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Horários indicativos — confirme disponibilidade pelo WhatsApp"
+             data-en="Indicative hours — confirm availability via WhatsApp"
+             data-es="Horarios indicativos — confirma disponibilidad por WhatsApp">
+            Horários indicativos — confirme disponibilidade pelo WhatsApp
+          </p>
+        </div>
+
+        <div class="vc-avail-grid">
+
+          <!-- Calendário -->
+          <div class="vc-calendar-card" data-reveal>
+            <div class="vc-cal-header">
+              <span data-pt="Agenda Semanal" data-en="Weekly Schedule" data-es="Agenda Semanal">Agenda Semanal</span>
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <div class="vc-schedule-list">
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Segunda" data-en="Monday" data-es="Lunes">Segunda</span>
+                <span class="vc-schedule-time">18h — 23h</span>
+                <span class="vc-status-dot on"></span>
+              </div>
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Terça" data-en="Tuesday" data-es="Martes">Terça</span>
+                <span class="vc-schedule-time">18h — 23h</span>
+                <span class="vc-status-dot on"></span>
+              </div>
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Quarta" data-en="Wednesday" data-es="Miércoles">Quarta</span>
+                <span class="vc-schedule-time">20h — 23h</span>
+                <span class="vc-status-dot ltd"></span>
+              </div>
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Quinta" data-en="Thursday" data-es="Jueves">Quinta</span>
+                <span class="vc-schedule-time">18h — 23h</span>
+                <span class="vc-status-dot on"></span>
+              </div>
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Sexta" data-en="Friday" data-es="Viernes">Sexta</span>
+                <span class="vc-schedule-time">19h — 00h</span>
+                <span class="vc-status-dot on"></span>
+              </div>
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Sábado" data-en="Saturday" data-es="Sábado">Sábado</span>
+                <span class="vc-schedule-time">14h — 00h</span>
+                <span class="vc-status-dot on"></span>
+              </div>
+              <div class="vc-schedule-item">
+                <span class="vc-schedule-day" data-pt="Domingo" data-en="Sunday" data-es="Domingo">Domingo</span>
+                <span class="vc-schedule-time" data-pt="Sob consulta" data-en="On request" data-es="Previa consulta">Sob consulta</span>
+                <span class="vc-status-dot ltd"></span>
+              </div>
+            </div>
+            <div class="vc-avail-note">
+              <i class="fas fa-info-circle"></i>
+              <span data-pt="Verde = disponível · Amarelo = consultar · Horário de Brasília (BRT)" data-en="Green = available · Yellow = check · Brasília Time (BRT)" data-es="Verde = disponible · Amarillo = consultar · Hora Brasília (BRT)">
+                Verde = disponível · Amarelo = consultar · Hora de Brasília (BRT)
+              </span>
+            </div>
+          </div>
+
+          <!-- Timezones + regras -->
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div class="vc-tz-card" data-reveal>
+              <h3><i class="fas fa-globe-americas"></i> <span data-pt="Fuso Horário" data-en="Time Zone" data-es="Zona Horaria">Fuso Horário</span></h3>
+              <div class="vc-tz-list">
+                <div class="vc-tz-row vc-tz-highlight">
+                  <span class="vc-tz-label">🇧🇷 <span data-pt="Brasília (BRT)" data-en="Brasília (BRT)" data-es="Brasília (BRT)">Brasília (BRT)</span></span>
+                  <span class="vc-tz-time" id="tzBRT">—</span>
+                </div>
+                <div class="vc-tz-row">
+                  <span class="vc-tz-label">🇺🇸 <span>New York (EST)</span></span>
+                  <span class="vc-tz-time" id="tzEST">—</span>
+                </div>
+                <div class="vc-tz-row">
+                  <span class="vc-tz-label">🇬🇧 <span>London (GMT)</span></span>
+                  <span class="vc-tz-time" id="tzGMT">—</span>
+                </div>
+                <div class="vc-tz-row">
+                  <span class="vc-tz-label">🇪🇸 <span>Madrid (CET)</span></span>
+                  <span class="vc-tz-time" id="tzCET">—</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Regras rápidas -->
+            <div class="vc-tz-card" data-reveal>
+              <h3><i class="fas fa-clipboard-list"></i> <span data-pt="Regras da Sessão" data-en="Session Rules" data-es="Reglas de Sesión">Regras da Sessão</span></h3>
+              <div style="display:flex;flex-direction:column;gap:.6rem;">
+                <div class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Agende com min. 2h de antecedência" data-en="Book at least 2h in advance" data-es="Reserva con min. 2h de anticipación">Agende com min. 2h de antecedência</span></div>
+                <div class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Pagamento confirmado antes do início" data-en="Payment confirmed before start" data-es="Pago confirmado antes de iniciar">Pagamento confirmado antes do início</span></div>
+                <div class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Reagendamento com 1h de aviso" data-en="Rescheduling with 1h notice" data-es="Reprogramación con 1h de aviso">Reagendamento com 1h de aviso</span></div>
+                <div class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Sessão privada — sem terceiros" data-en="Private session — no third parties" data-es="Sesión privada — sin terceros">Sessão privada — sem terceiros</span></div>
+                <div class="vc-pkg-perk"><i class="fas fa-check"></i><span data-pt="Proibido gravar sem autorização" data-en="Recording without permission is forbidden" data-es="Prohibido grabar sin autorización">Proibido gravar sem autorização</span></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PAGAMENTOS ───────────────────────────────── -->
+    <section class="vc-section vc-pay" aria-labelledby="payTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="💳 Formas de pagamento" data-en="💳 Payment methods" data-es="💳 Métodos de pago">💳 Formas de pagamento</span>
+          <h2 class="section-title" id="payTitle" data-reveal>
+            <span data-pt="PAGUE" data-en="PAY" data-es="PAGA">PAGUE</span>
+            <span class="accent" data-pt=" DO SEU JEITO" data-en=" YOUR WAY" data-es=" A TU MANERA"> DO SEU JEITO</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Aceitamos as principais formas de pagamento com total segurança"
+             data-en="We accept all major payment methods with complete security"
+             data-es="Aceptamos todos los principales métodos de pago con total seguridad">
+            Aceitamos as principais formas de pagamento com total segurança
+          </p>
+        </div>
+
+        <div class="vc-pay-grid">
+          <div class="vc-pay-card" data-reveal>
+            <div class="vc-pay-icon" style="background:rgba(0,157,102,.12)">💚</div>
+            <div class="vc-pay-name">PIX</div>
+            <div class="vc-pay-desc" data-pt="Instantâneo · 24h · Sem taxa" data-en="Instant · 24h · No fee" data-es="Instantáneo · 24h · Sin cargo">Instantâneo · 24h · Sem taxa</div>
+          </div>
+          <div class="vc-pay-card" data-reveal>
+            <div class="vc-pay-icon" style="background:rgba(0,175,240,.12)">💳</div>
+            <div class="vc-pay-name" data-pt="Cartão de Crédito" data-en="Credit Card" data-es="Tarjeta de Crédito">Cartão de Crédito</div>
+            <div class="vc-pay-desc" data-pt="Visa · Master · Elo · Amex" data-en="Visa · Master · Elo · Amex" data-es="Visa · Master · Elo · Amex">Visa · Master · Elo · Amex</div>
+          </div>
+          <div class="vc-pay-card" data-reveal>
+            <div class="vc-pay-icon" style="background:rgba(240,192,64,.12)">₿</div>
+            <div class="vc-pay-name">Crypto</div>
+            <div class="vc-pay-desc" data-pt="BTC · ETH · USDT · SOL" data-en="BTC · ETH · USDT · SOL" data-es="BTC · ETH · USDT · SOL">BTC · ETH · USDT · SOL</div>
+          </div>
+          <div class="vc-pay-card" data-reveal>
+            <div class="vc-pay-icon" style="background:rgba(37,211,102,.12)">💸</div>
+            <div class="vc-pay-name" data-pt="Transferência" data-en="Wire Transfer" data-es="Transferencia">Transferência</div>
+            <div class="vc-pay-desc" data-pt="TED · DOC · Internacional" data-en="TED · DOC · International" data-es="TED · DOC · Internacional">TED · DOC · Internacional</div>
+          </div>
+          <div class="vc-pay-card" data-reveal>
+            <div class="vc-pay-icon" style="background:rgba(0,136,204,.12)">🅿️</div>
+            <div class="vc-pay-name">PayPal</div>
+            <div class="vc-pay-desc" data-pt="Aceito em qualquer país" data-en="Accepted in any country" data-es="Aceptado en cualquier país">Aceito em qualquer país</div>
+          </div>
+          <div class="vc-pay-card" data-reveal>
+            <div class="vc-pay-icon" style="background:rgba(255,45,139,.12)">🎁</div>
+            <div class="vc-pay-name" data-pt="Gift Cards" data-en="Gift Cards" data-es="Gift Cards">Gift Cards</div>
+            <div class="vc-pay-desc" data-pt="Amazon · iTunes · Google Pay" data-en="Amazon · iTunes · Google Pay" data-es="Amazon · iTunes · Google Pay">Amazon · iTunes · Google Pay</div>
+          </div>
+        </div>
+
+        <div class="vc-pay-security" data-reveal>
+          <i class="fas fa-lock"></i>
+          <p data-pt="<strong>Pagamento 100% seguro e discreto.</strong> Nenhum dado bancário é armazenado. Processamos via plataformas certificadas. Em caso de dúvidas, me chame no WhatsApp antes de pagar."
+             data-en="<strong>100% secure and discreet payment.</strong> No banking data is stored. We process via certified platforms. If in doubt, message me on WhatsApp before paying."
+             data-es="<strong>Pago 100% seguro y discreto.</strong> No se almacenan datos bancarios. Procesamos vía plataformas certificadas. Si tienes dudas, escríbeme en WhatsApp antes de pagar.">
+            <strong>Pagamento 100% seguro e discreto.</strong> Nenhum dado bancário é armazenado. Processamos via plataformas certificadas. Em caso de dúvidas, me chame no WhatsApp antes de pagar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. GALERIA PRÉVIA ───────────────────────────── -->
+    <section class="vc-section vc-preview" aria-labelledby="prevTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="📸 Uma amostra" data-en="📸 A preview" data-es="📸 Una muestra">📸 Uma amostra</span>
+          <h2 class="section-title" id="prevTitle" data-reveal>
+            <span data-pt="PRÉVIA" data-en="PREVIEW" data-es="MUESTRA">PRÉVIA</span>
+            <span class="accent"> EXCLUSIVA</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Só uma parte do que você pode experimentar ao vivo comigo"
+             data-en="Just a taste of what you can experience live with me"
+             data-es="Solo una muestra de lo que puedes experimentar en vivo conmigo">
+            Só uma parte do que você pode experimentar ao vivo comigo
+          </p>
+        </div>
+
+        <div class="vc-preview-grid">
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/11.png" alt="Preview 1" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/12.png" alt="Preview 2" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/22.png" alt="Preview 3" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/bunda-grande.png" alt="Preview 4" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/linda-trans-em-recife.png" alt="Preview 5" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/top-trans-brasil.png" alt="Preview 6" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/ts-recife.png" alt="Preview 7" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+          <div class="vc-prev-item" data-reveal>
+            <img src="./img/pics/shemales-br.png" alt="Preview 8" loading="lazy">
+            <div class="vc-prev-lock"><div class="vc-prev-lock-icon"><i class="fas fa-lock"></i></div></div>
+          </div>
+        </div>
+
+        <div class="vc-preview-cta" data-reveal>
+          <a href="https://wa.me/5581995469947" class="vc-btn-hot" target="_blank" rel="noopener" id="prevWa">
+            <i class="fas fa-video"></i>
+            <span data-pt="Quero minha sessão privada" data-en="I want my private session" data-es="Quiero mi sesión privada">Quero minha sessão privada</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. FAQ ──────────────────────────────────────── -->
+    <section class="vc-section vc-faq" aria-labelledby="faqTitle">
+      <div class="vc-wrap">
+        <div class="section-header">
+          <span class="section-tag" data-pt="❓ Dúvidas frequentes" data-en="❓ FAQ" data-es="❓ Preguntas frecuentes">❓ Dúvidas frequentes</span>
+          <h2 class="section-title" id="faqTitle" data-reveal>
+            <span data-pt="PERGUNTAS" data-en="FREQUENTLY" data-es="PREGUNTAS">PERGUNTAS</span>
+            <span class="accent" data-pt=" FREQUENTES" data-en=" ASKED" data-es=" FRECUENTES"> FREQUENTES</span>
+          </h2>
+        </div>
+
+        <div class="vc-faq-list">
+          <div class="vc-faq-item">
+            <button class="vc-faq-q">
+              <span data-pt="A sessão é realmente privada?" data-en="Is the session really private?" data-es="¿La sesión es realmente privada?">A sessão é realmente privada?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="vc-faq-a" data-pt="Sim, 100%. Nenhuma chamada é gravada ou compartilhada. A sessão existe só entre você e eu. Levo a privacidade muito a sério." data-en="Yes, 100%. No call is recorded or shared. The session only exists between you and me. I take privacy very seriously." data-es="Sí, 100%. Ninguna llamada se graba ni se comparte. La sesión solo existe entre tú y yo. Me tomo la privacidad muy en serio.">
+              Sim, 100%. Nenhuma chamada é gravada ou compartilhada. A sessão existe só entre você e eu. Levo a privacidade muito a sério.
+            </div>
+          </div>
+          <div class="vc-faq-item">
+            <button class="vc-faq-q">
+              <span data-pt="Por qual plataforma fazemos a chamada?" data-en="Which platform do we use for the call?" data-es="¿Por qué plataforma hacemos la llamada?">Por qual plataforma fazemos a chamada?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="vc-faq-a" data-pt="WhatsApp, Telegram, FaceTime ou Skype — você escolhe o que for mais fácil pra você." data-en="WhatsApp, Telegram, FaceTime or Skype — you choose what works best for you." data-es="WhatsApp, Telegram, FaceTime o Skype — tú eliges lo que sea más fácil para ti.">
+              WhatsApp, Telegram, FaceTime ou Skype — você escolhe o que for mais fácil pra você.
+            </div>
+          </div>
+          <div class="vc-faq-item">
+            <button class="vc-faq-q">
+              <span data-pt="Com quanto tempo antes preciso agendar?" data-en="How far in advance do I need to book?" data-es="¿Con cuánta anticipación necesito reservar?">Com quanto tempo antes preciso agendar?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="vc-faq-a" data-pt="O ideal é agendar com no mínimo 2 horas de antecedência. Para horários de última hora, me manda uma mensagem e vejo o que consigo encaixar." data-en="The ideal is to book at least 2 hours in advance. For last-minute slots, send me a message and I'll see what I can fit in." data-es="Lo ideal es reservar con al menos 2 horas de anticipación. Para horarios de último momento, escríbeme y veo qué puedo acomodar.">
+              O ideal é agendar com no mínimo 2 horas de antecedência. Para horários de última hora, me manda uma mensagem e vejo o que consigo encaixar.
+            </div>
+          </div>
+          <div class="vc-faq-item">
+            <button class="vc-faq-q">
+              <span data-pt="Posso cancelar ou reagendar?" data-en="Can I cancel or reschedule?" data-es="¿Puedo cancelar o reagendar?">Posso cancelar ou reagendar?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="vc-faq-a" data-pt="Sim. Me avise com pelo menos 1 hora de antecedência e reagendamos sem problemas. Cancelamentos com menos de 1h não têm reembolso." data-en="Yes. Let me know at least 1 hour in advance and we'll reschedule without any issues. Cancellations with less than 1h notice are non-refundable." data-es="Sí. Avísame con al menos 1 hora de anticipación y reagendamos sin problemas. Cancelaciones con menos de 1h no tienen reembolso.">
+              Sim. Me avise com pelo menos 1 hora de antecedência e reagendamos sem problemas. Cancelamentos com menos de 1h não têm reembolso.
+            </div>
+          </div>
+          <div class="vc-faq-item">
+            <button class="vc-faq-q">
+              <span data-pt="Posso fazer pedidos personalizados?" data-en="Can I make custom requests?" data-es="¿Puedo hacer solicitudes personalizadas?">Posso fazer pedidos personalizados?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="vc-faq-a" data-pt="Sim! Adoro atender pedidos especiais dentro do que me deixa confortável. Me conta o que você tem em mente antes de agendar para eu confirmar." data-en="Yes! I love taking special requests within what I'm comfortable with. Tell me what you have in mind before booking so I can confirm." data-es="¡Sí! Me encanta atender pedidos especiales dentro de lo que me hace sentir cómoda. Cuéntame qué tienes en mente antes de reservar para que pueda confirmar.">
+              Sim! Adoro atender pedidos especiais dentro do que me deixa confortável. Me conta o que você tem em mente antes de agendar para eu confirmar.
+            </div>
+          </div>
+          <div class="vc-faq-item">
+            <button class="vc-faq-q">
+              <span data-pt="O pagamento é feito antes ou depois?" data-en="Is payment made before or after?" data-es="¿El pago se hace antes o después?">O pagamento é feito antes ou depois?</span>
+              <i class="fas fa-plus"></i>
+            </button>
+            <div class="vc-faq-a" data-pt="Sempre antes. O pagamento confirma o horário e garante que tudo fique reservado para você." data-en="Always before. Payment confirms the slot and ensures everything is reserved for you." data-es="Siempre antes. El pago confirma el horario y garantiza que todo quede reservado para ti.">
+              Sempre antes. O pagamento confirma o horário e garante que tudo fique reservado para você.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. CTA FINAL ─────────────────────────────────── -->
+    <section class="vc-section vc-final" aria-label="Chamada final para ação">
+      <div class="vc-wrap">
+        <div class="vc-final-content">
+          <span class="vc-final-emoji" aria-hidden="true">🔥</span>
+          <h2 data-reveal>
+            <span data-pt="PRONTO PARA" data-en="READY FOR" data-es="LISTO PARA">PRONTO PARA</span><br>
+            <span class="accent" data-pt="SUA SESSÃO?" data-en="YOUR SESSION?" data-es="¿TU SESIÓN?">SUA SESSÃO?</span>
+          </h2>
+          <p data-reveal
+             data-pt="Me manda uma mensagem agora e a gente agenda. Cada minuto comigo é único — não deixe passar."
+             data-en="Send me a message now and let's schedule. Every minute with me is unique — don't miss it."
+             data-es="Escríbeme ahora y lo agendamos. Cada minuto conmigo es único — no lo dejes pasar.">
+            Me manda uma mensagem agora e a gente agenda. Cada minuto comigo é único — não deixe passar.
+          </p>
+          <div class="vc-final-btns" data-reveal>
+            <a href="https://wa.me/5581995469947?text=Ol%C3%A1%20Vanessa!%20Quero%20agendar%20uma%20videochamada%20privada." 
+               class="vc-btn-hot" target="_blank" rel="noopener" id="finalWa">
+              <i class="fab fa-whatsapp"></i>
+              <span data-pt="Agendar pelo WhatsApp" data-en="Book via WhatsApp" data-es="Reservar por WhatsApp">Agendar pelo WhatsApp</span>
+            </a>
+            <a href="#packages" class="vc-btn-ghost">
+              <i class="fas fa-arrow-up"></i>
+              <span data-pt="Ver pacotes" data-en="See packages" data-es="Ver paquetes">Ver pacotes</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════ FOOTER ═══════════════════════ -->
+  <footer class="gal-footer" role="contentinfo">
+    <div class="gal-footer-top">
+      <div class="gal-footer-name">VANESSA <span class="accent">RAFAELLA</span></div>
+      <p class="gal-footer-tagline">Criadora de conteúdo digital autêntica e verificada — Recife, PE · Brasil</p>
+    </div>
+    <div class="gal-footer-grid">
+      <div class="gal-footer-col">
+        <h3>💎 <span data-pt="Sobre Mim" data-en="About Me" data-es="Sobre Mí">Sobre Mim</span></h3>
+        <p data-pt="Criadora de conteúdo de Recife, PE. Verificada em todas as plataformas." data-en="Content creator from Recife, PE. Verified on all platforms." data-es="Creadora de contenido de Recife. Verificada en todas las plataformas.">Criadora de conteúdo de Recife, PE. Verificada em todas as plataformas.</p>
+        <ul>
+          <li><a href="./index.html"><i class="fas fa-home"></i><span data-pt="Início" data-en="Home" data-es="Inicio">Início</span></a></li>
+          <li><a href="./gallery.html"><i class="fas fa-images"></i><span data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</span></a></li>
+          <li><a href="./getintouch.html"><i class="fas fa-envelope"></i><span data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</span></a></li>
+        </ul>
+      </div>
+      <div class="gal-footer-col">
+        <h3>📱 <span data-pt="Redes Sociais" data-en="Social Media" data-es="Redes Sociales">Redes Sociais</span></h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-fire"></i>OnlyFans</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-lock"></i>Privacy</a></li>
+          <li><a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener"><i class="fas fa-play-circle"></i>Xvideos</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i>Twitter / X</a></li>
+          <li><a href="https://wa.me/5581995469947" target="_blank" rel="noopener" id="footerWa"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+        </ul>
+      </div>
+      <div class="gal-footer-col">
+        <h3>⚖️ Legal</h3>
+        <ul>
+          <li><a href="./legal/privacy-policy.html"><i class="fas fa-shield-alt"></i><span data-pt="Política de Privacidade" data-en="Privacy Policy" data-es="Política de Privacidad">Política de Privacidade</span></a></li>
+          <li><a href="./legal/terms-of-service.html"><i class="fas fa-file-contract"></i><span data-pt="Termos de Uso" data-en="Terms of Service" data-es="Términos de Uso">Termos de Uso</span></a></li>
+          <li><a href="./legal/dmca.html"><i class="fas fa-copyright"></i>DMCA</a></li>
+        </ul>
+        <div class="gal-footer-notice">
+          <h4>🔞 <span data-pt="Aviso" data-en="Notice" data-es="Aviso">Aviso</span></h4>
+          <div class="gal-notice-item"><i class="fas fa-exclamation-triangle"></i><span data-pt="Conteúdo apenas para maiores de 18 anos" data-en="Content for adults 18+ only" data-es="Solo para mayores de 18 años">Conteúdo apenas para maiores de 18 anos</span></div>
+          <div class="gal-notice-item"><i class="fas fa-lock"></i><span data-pt="Conteúdo protegido por direitos autorais" data-en="All content is copyright protected" data-es="Contenido protegido">Conteúdo protegido por direitos autorais</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="gal-footer-bottom">
+      <span class="gal-footer-copy">© 2025 Vanessa Rafaella · Recife, PE · <span data-pt="Todos os direitos reservados" data-en="All rights reserved" data-es="Todos los derechos reservados">Todos os direitos reservados</span></span>
+      <div class="gal-footer-links">
+        <a href="./legal/terms-of-service.html" data-pt="Termos" data-en="Terms" data-es="Términos">Termos</a>
+        <a href="./legal/privacy-policy.html" data-pt="Privacidade" data-en="Privacy" data-es="Privacidad">Privacidade</a>
+        <a href="./legal/dmca.html">DMCA</a>
+        <a href="./index.html" data-pt="Início" data-en="Home" data-es="Inicio">Início</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WA Flutuante -->
+  <a href="https://wa.me/5581995469947" class="wa-float" target="_blank" rel="noopener" aria-label="WhatsApp" id="waFloat">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══════════════ SCRIPTS ═══════════════════════ -->
+  <script src="./js/script.js" defer></script>
+
+  <script>
+  /* ── FAQ accordion ─────────────────────────── */
+  document.querySelectorAll('.vc-faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.vc-faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.vc-faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* ── Scroll reveal ──────────────────────────── */
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('[data-reveal]').forEach(el => revObs.observe(el));
+
+  /* ── Relógio em tempo real (fusos) ─────────── */
+  function updateClocks() {
+    const now = new Date();
+    const fmt = tz => new Intl.DateTimeFormat('pt-BR', {
+      hour: '2-digit', minute: '2-digit', timeZone: tz
+    }).format(now);
+
+    const brt = document.getElementById('tzBRT');
+    const est = document.getElementById('tzEST');
+    const gmt = document.getElementById('tzGMT');
+    const cet = document.getElementById('tzCET');
+
+    if (brt) brt.textContent = fmt('America/Sao_Paulo');
+    if (est) est.textContent = fmt('America/New_York');
+    if (gmt) gmt.textContent = fmt('Europe/London');
+    if (cet) cet.textContent = fmt('Europe/Madrid');
+  }
+  updateClocks();
+  setInterval(updateClocks, 10000);
+  </script>
+
+</body>
+</html>

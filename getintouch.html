@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vanessa Rafaella — Entre em contato. Mensagens, parcerias e conteúdo exclusivo.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080808">
+  <title>Vanessa Rafaella · Contato</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-FQNH7DEMBJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-FQNH7DEMBJ');
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css" media="print" onload="this.media='all'">
+
+  <style>
+  /* ═══════════════════════════════════════════════════
+     GETINTOUCH — estilos específicos desta página
+     Herda todas as variáveis de style.css
+  ═══════════════════════════════════════════════════ */
+
+  /* ── HERO ─────────────────────────────────────────── */
+  .ct-hero {
+    position: relative;
+    min-height: 42svh;
+    display: flex; align-items: flex-end; justify-content: center;
+    padding-top: var(--nav-h);
+    padding-bottom: 3rem;
+    padding-inline: var(--px);
+    text-align: center;
+    background: var(--bg);
+    overflow: hidden;
+  }
+  .ct-hero::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 400px;
+    background: radial-gradient(ellipse, rgba(255,45,139,.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .ct-hero-content { position: relative; z-index: 1; max-width: 680px; }
+  .ct-hero-tag {
+    display: inline-block;
+    font-size: .58rem; font-weight: 700;
+    letter-spacing: .28em; text-transform: uppercase;
+    color: var(--pink); padding: 5px 14px;
+    border: 1px solid var(--border-hi); border-radius: 50px;
+    background: var(--pink-glow2); margin-bottom: 1rem;
+  }
+  .ct-hero-title {
+    font-family: var(--display);
+    font-size: clamp(2.8rem, 9vw, 5.5rem);
+    font-weight: 900; line-height: .92;
+    text-transform: uppercase; color: var(--txt);
+    margin-bottom: .75rem;
+  }
+  .ct-hero-title .accent { color: var(--pink); }
+  .ct-hero-sub {
+    font-size: clamp(.88rem, 2vw, 1rem);
+    color: var(--txt-mid); line-height: 1.7;
+  }
+
+  /* ── CONTACT SECTION ──────────────────────────────── */
+  .ct-section {
+    background: var(--bg-mid);
+    padding-block: clamp(3.5rem, 8vw, 5.5rem);
+    position: relative;
+  }
+  .ct-section::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 200px;
+    background: radial-gradient(ellipse, var(--purple-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .ct-wrap {
+    max-width: var(--mx);
+    margin-inline: auto;
+    padding-inline: var(--px);
+    position: relative; z-index: 1;
+  }
+
+  /* Grid principal: cards + form */
+  .ct-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+  @media (min-width: 900px) {
+    .ct-grid { grid-template-columns: 1fr 1.4fr; align-items: start; }
+  }
+
+  /* ── CARDS DE CONTATO ─────────────────────────────── */
+  .ct-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  @media (max-width: 480px) {
+    .ct-cards { grid-template-columns: 1fr; }
+  }
+
+  .ct-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 1.5rem;
+    text-align: center;
+    text-decoration: none; color: var(--txt);
+    transition: border-color var(--dur), transform var(--dur), box-shadow var(--dur);
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column;
+    align-items: center; gap: .75rem;
+  }
+  .ct-card::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, transparent, rgba(255,45,139,.05), transparent);
+    transform: translateX(-101%);
+    transition: transform .5s var(--eout);
+  }
+  .ct-card:hover::before { transform: translateX(0); }
+  .ct-card:hover {
+    border-color: var(--border-hi);
+    transform: translateY(-5px);
+    box-shadow: 0 14px 40px rgba(255,45,139,.12);
+  }
+
+  .ct-card-icon {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--pink-glow2);
+    border: 1px solid var(--border-hi);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: var(--pink);
+    transition: transform var(--dur);
+  }
+  .ct-card:hover .ct-card-icon { transform: scale(1.1) rotate(10deg); }
+
+  /* Cores específicas por card */
+  .ct-card[data-type="whatsapp"] .ct-card-icon { background: rgba(37,211,102,.1); border-color: rgba(37,211,102,.3); color: var(--wa-green); }
+  .ct-card[data-type="telegram"] .ct-card-icon { background: rgba(0,136,204,.1);  border-color: rgba(0,136,204,.3);  color: var(--tg-blue); }
+  .ct-card[data-type="email"]    .ct-card-icon { background: rgba(29,161,242,.1); border-color: rgba(29,161,242,.3); color: var(--of-blue); }
+  .ct-card[data-type="location"] .ct-card-icon { background: var(--pink-glow2);   border-color: var(--border-hi);    color: var(--pink); }
+
+  .ct-card h3 {
+    font-family: var(--display);
+    font-size: 1rem; font-weight: 800;
+    text-transform: uppercase; letter-spacing: .05em;
+    color: var(--txt);
+  }
+  .ct-card p {
+    font-size: .8rem; color: var(--txt-dim); line-height: 1.5;
+  }
+  .ct-card-link {
+    font-size: .82rem; font-weight: 600;
+    color: var(--pink); transition: color var(--dur);
+  }
+  .ct-card:hover .ct-card-link { color: var(--pink-light); }
+  .ct-card[data-type="whatsapp"] .ct-card-link { color: var(--wa-green); }
+  .ct-card[data-type="telegram"] .ct-card-link { color: var(--tg-blue); }
+  .ct-card[data-type="email"]    .ct-card-link { color: var(--of-blue); }
+
+  /* ── FORMULÁRIO ───────────────────────────────────── */
+  .ct-form-wrap {
+    background: var(--bg);
+    border: 2px solid var(--border-hi);
+    border-radius: 20px;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    position: relative; overflow: hidden;
+    margin-bottom: 2rem;
+  }
+  /* Brilho animado na borda */
+  .ct-form-wrap::before {
+    content: '';
+    position: absolute; inset: -1px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, var(--pink), transparent, var(--pink));
+    opacity: .12;
+    animation: formGlow 4s ease-in-out infinite;
+    z-index: 0;
+    pointer-events: none;
+  }
+  @keyframes formGlow {
+    0%, 100% { opacity: .10; }
+    50%       { opacity: .22; }
+  }
+
+  .ct-form-hdr {
+    text-align: center; margin-bottom: 2rem;
+    position: relative; z-index: 1;
+  }
+  .ct-form-hdr h3 {
+    font-family: var(--display);
+    font-size: 1.6rem; font-weight: 900;
+    text-transform: uppercase; letter-spacing: .04em;
+    color: var(--pink); margin-bottom: .35rem;
+  }
+  .ct-form-hdr p { font-size: .85rem; color: var(--txt-dim); }
+
+  .ct-form {
+    display: flex; flex-direction: column; gap: 1.25rem;
+    position: relative; z-index: 1;
+  }
+  .ct-form-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;
+  }
+  @media (max-width: 560px) {
+    .ct-form-row { grid-template-columns: 1fr; }
+  }
+
+  .ct-form-group { display: flex; flex-direction: column; gap: .4rem; }
+  .ct-form-group label {
+    font-size: .72rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    color: var(--txt-mid);
+  }
+  .ct-form-group input,
+  .ct-form-group select,
+  .ct-form-group textarea {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .85rem 1rem;
+    color: var(--txt);
+    font-family: var(--sans); font-size: .92rem;
+    transition: border-color var(--dur), box-shadow var(--dur), background var(--dur);
+    width: 100%;
+  }
+  .ct-form-group select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23FF2D8B'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 16px;
+    padding-right: 2.5rem;
+  }
+  .ct-form-group select option {
+    background: var(--bg-raised); color: var(--txt);
+  }
+  .ct-form-group input:focus,
+  .ct-form-group select:focus,
+  .ct-form-group textarea:focus {
+    outline: none;
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px var(--pink-glow2);
+    background: var(--bg-mid);
+  }
+  .ct-form-group input::placeholder,
+  .ct-form-group textarea::placeholder { color: var(--txt-dim); }
+  .ct-form-group textarea { resize: vertical; min-height: 120px; }
+
+  /* Checkbox de privacidade */
+  .ct-privacy {
+    display: flex; align-items: flex-start; gap: .75rem;
+    font-size: .82rem; color: var(--txt-mid); line-height: 1.5;
+  }
+  .ct-privacy-label {
+    display: flex; align-items: flex-start; gap: .65rem; cursor: pointer;
+    position: relative;
+  }
+  .ct-privacy-label input[type="checkbox"] {
+    position: absolute; opacity: 0; cursor: pointer;
+  }
+  .ct-checkmark {
+    width: 18px; height: 18px; flex-shrink: 0; margin-top: 2px;
+    background: var(--bg-raised);
+    border: 1px solid var(--border-hi); border-radius: 4px;
+    transition: all var(--dur);
+    position: relative; display: block;
+  }
+  .ct-privacy-label input:checked ~ .ct-checkmark {
+    background: var(--pink); border-color: var(--pink);
+  }
+  .ct-checkmark::after {
+    content: '';
+    position: absolute; display: none;
+    left: 5px; top: 1px;
+    width: 5px; height: 9px;
+    border: solid #fff; border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  .ct-privacy-label input:checked ~ .ct-checkmark::after { display: block; }
+  .ct-privacy a { color: var(--pink); text-decoration: none; }
+  .ct-privacy a:hover { text-decoration: underline; }
+
+  /* Botão de envio */
+  .ct-submit-btn {
+    display: flex; align-items: center; justify-content: center; gap: .6rem;
+    width: 100%; padding: 1rem;
+    background: var(--pink); border-radius: 8px;
+    color: #fff; border: 2px solid transparent;
+    font-family: var(--sans); font-size: .9rem; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    cursor: pointer;
+    transition: background var(--dur), transform var(--dur),
+                box-shadow var(--dur), border-color var(--dur);
+    position: relative; overflow: hidden;
+  }
+  .ct-submit-btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+    transform: translateX(-101%);
+    transition: transform .5s ease;
+  }
+  .ct-submit-btn:hover::before { transform: translateX(101%); }
+  .ct-submit-btn:hover {
+    background: var(--pink-dark); transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--pink-glow); border-color: rgba(255,255,255,.2);
+  }
+  .ct-submit-btn:disabled { opacity: .65; cursor: not-allowed; transform: none; }
+
+  /* Mensagem de sucesso */
+  .ct-success {
+    background: rgba(0,200,83,.1);
+    border: 1px solid rgba(0,200,83,.35);
+    border-radius: 10px; padding: 1.5rem;
+    text-align: center; color: #00C853;
+    display: none;
+    animation: successSlide .45s var(--eout);
+  }
+  @keyframes successSlide {
+    from { opacity: 0; transform: translateY(-16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .ct-success.show { display: block; }
+  .ct-success i { font-size: 1.8rem; display: block; margin-bottom: .6rem; }
+  .ct-success h4 {
+    font-family: var(--display); font-size: 1.2rem;
+    font-weight: 800; margin-bottom: .35rem; color: #00C853;
+  }
+  .ct-success p { font-size: .85rem; color: var(--txt-mid); }
+
+  /* Mensagem de erro */
+  .ct-error {
+    background: rgba(229,9,20,.1);
+    border: 1px solid rgba(229,9,20,.35);
+    border-radius: 10px; padding: 1rem 1.25rem;
+    text-align: center; color: #ff6b6b;
+    font-size: .85rem; display: none;
+  }
+  .ct-error.show { display: block; }
+
+  /* ── QUICK CONTACT STRIP ──────────────────────────── */
+  .ct-quick {
+    background: var(--bg);
+    border-top: 1px solid var(--border);
+    padding-block: 3rem;
+  }
+  .ct-quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+  .ct-quick-btn {
+    display: flex; align-items: center; justify-content: center; gap: .65rem;
+    padding: 1rem 1.25rem;
+    border-radius: 10px; border: 1px solid var(--border);
+    background: var(--bg-card);
+    font-size: .82rem; font-weight: 700;
+    letter-spacing: .06em; text-transform: uppercase;
+    color: var(--txt); text-decoration: none;
+    transition: all var(--dur);
+  }
+  .ct-quick-btn i { font-size: 1.1rem; }
+  .ct-quick-btn:hover { transform: translateY(-3px); }
+
+  .ct-quick-btn.wa    { border-color: rgba(37,211,102,.3); }
+  .ct-quick-btn.wa:hover    { background: rgba(37,211,102,.1); color: var(--wa-green); border-color: rgba(37,211,102,.5); }
+  .ct-quick-btn.wa i { color: var(--wa-green); }
+
+  .ct-quick-btn.tg    { border-color: rgba(0,136,204,.3); }
+  .ct-quick-btn.tg:hover    { background: rgba(0,136,204,.1); color: var(--tg-blue); border-color: rgba(0,136,204,.5); }
+  .ct-quick-btn.tg i { color: var(--tg-blue); }
+
+  .ct-quick-btn.of    { border-color: rgba(0,175,240,.3); }
+  .ct-quick-btn.of:hover    { background: rgba(0,175,240,.1); color: var(--of-blue); border-color: rgba(0,175,240,.5); }
+  .ct-quick-btn.of i { color: var(--of-blue); }
+
+  .ct-quick-btn.pk    { border-color: rgba(240,114,6,.3); }
+  .ct-quick-btn.pk:hover    { background: rgba(240,114,6,.1); color: var(--priv-orange); border-color: rgba(240,114,6,.5); }
+  .ct-quick-btn.pk i { color: var(--priv-orange); }
+
+  /* ── FOOTER ───────────────────────────────────────── */
+  .gal-footer { background: var(--bg-mid); }
+  .gal-footer-top {
+    padding: 3rem var(--px) 2rem;
+    text-align: center; border-bottom: 1px solid var(--border);
+    max-width: var(--mx); margin-inline: auto;
+  }
+  .gal-footer-name {
+    font-family: var(--display);
+    font-size: clamp(1.4rem, 4vw, 2rem); font-weight: 900;
+    text-transform: uppercase; letter-spacing: .06em; color: var(--txt);
+    margin-bottom: .5rem;
+  }
+  .gal-footer-name .accent { color: var(--pink); }
+  .gal-footer-tagline { font-size: .85rem; color: var(--txt-dim); font-style: italic; }
+
+  .gal-footer-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2.5rem; max-width: var(--mx); margin-inline: auto;
+    padding: 2.5rem var(--px);
+  }
+  .gal-footer-col h3 {
+    font-family: var(--display); font-size: 1rem; font-weight: 800;
+    letter-spacing: .06em; text-transform: uppercase; color: var(--pink);
+    margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem;
+  }
+  .gal-footer-col p { font-size: .88rem; color: var(--txt-mid); line-height: 1.7; margin-bottom: .75rem; }
+  .gal-footer-col ul { list-style: none; padding: 0; }
+  .gal-footer-col li { margin-bottom: .55rem; }
+  .gal-footer-col a {
+    display: flex; align-items: center; gap: .65rem;
+    font-size: .88rem; color: var(--txt-mid); text-decoration: none;
+    transition: color var(--dur), padding-left var(--dur); padding: .2rem 0;
+  }
+  .gal-footer-col a i { width: 18px; text-align: center; color: var(--pink); font-size: .88rem; }
+  .gal-footer-col a:hover { color: var(--pink); padding-left: 4px; }
+
+  .gal-footer-notice { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--border); }
+  .gal-footer-notice h4 {
+    font-size: .78rem; font-weight: 700; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--pink); margin-bottom: .75rem;
+  }
+  .gal-notice-item {
+    display: flex; align-items: center; gap: .65rem;
+    font-size: .82rem; color: var(--txt-dim); margin-bottom: .5rem;
+  }
+  .gal-notice-item i { color: var(--pink); width: 16px; }
+
+  .gal-footer-bottom {
+    border-top: 1px solid var(--border); padding: 1.5rem var(--px);
+    max-width: var(--mx); margin-inline: auto;
+    display: flex; justify-content: space-between;
+    align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .gal-footer-copy { font-size: .8rem; color: var(--txt-dim); }
+  .gal-footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .gal-footer-links a {
+    font-size: .75rem; color: var(--txt-dim); text-decoration: none;
+    text-transform: uppercase; letter-spacing: .05em;
+    transition: color var(--dur);
+  }
+  .gal-footer-links a:hover { color: var(--pink); }
+
+  @media (max-width: 560px) {
+    .gal-footer-bottom { flex-direction: column; text-align: center; }
+    .gal-footer-links  { justify-content: center; }
+  }
+
+  /* Botão flutuante WhatsApp */
+  .wa-float {
+    position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 900;
+    width: 52px; height: 52px; border-radius: 50%;
+    background: var(--wa-green);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem; color: #fff;
+    box-shadow: 0 4px 18px rgba(37,211,102,.4);
+    text-decoration: none;
+    transition: transform var(--dur), box-shadow var(--dur);
+    animation: waPulse 2.5s ease-in-out infinite;
+  }
+  .wa-float:hover { transform: scale(1.1); box-shadow: 0 6px 24px rgba(37,211,102,.6); }
+  @keyframes waPulse {
+    0%,100% { box-shadow: 0 4px 18px rgba(37,211,102,.4); }
+    50%      { box-shadow: 0 4px 28px rgba(37,211,102,.7), 0 0 0 6px rgba(37,211,102,.08); }
+  }
+  </style>
+</head>
+
+<body>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER — idêntico ao index.html
+  ═══════════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" id="mainNav" role="navigation" aria-label="Navegação principal">
+      <div class="nav-inner">
+
+        <a class="nav-logo" href="./index.html" aria-label="Vanessa Rafaella — página inicial">
+          <div class="nav-logo-photo" aria-hidden="true">
+            <img src="./img/pics/vanessa-rafaella-logo-nav-primary.svg"
+                 alt="Vanessa Rafaella" width="42" height="42" loading="eager"
+                 onerror="this.src='https://placehold.co/42x42/FF2D8B/fff?text=VR'">
+            <div class="verified-badge"><i class="fas fa-check"></i></div>
+          </div>
+          <div class="nav-logo-text" aria-hidden="true">
+            <span class="nav-logo-name">VANESSA&nbsp;<span class="accent">RAFAELLA</span></span>
+            <span class="nav-logo-sub" data-pt="Site Oficial" data-en="Official Website" data-es="Sitio Oficial">Site Oficial</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" aria-label="Links do menu principal">
+          <li><a href="./index.html" data-pt="Início" data-en="Home" data-es="Inicio">Início</a></li>
+          <li><a href="./index.html#links" data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</a></li>
+          <li><a href="./gallery.html" data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</a></li>
+          <li><a href="#contact" data-pt="Contato" data-en="Contact" data-es="Contacto" aria-current="page">Contato</a></li>
+        </ul>
+
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+          <div class="lang-sel" id="langSel">
+            <button class="lang-btn" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma">
+              <span id="langFlag">🇧🇷</span>
+              <span id="langCode">PT</span>
+              <span class="lang-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+            </button>
+            <div class="lang-drop" id="langDrop" role="listbox">
+              <p>Idioma</p>
+              <button class="lang-opt" data-lang="pt" data-flag="🇧🇷" aria-selected="true"><span>🇧🇷</span><span>Português</span></button>
+              <button class="lang-opt" data-lang="en" data-flag="🇺🇸" aria-selected="false"><span>🇺🇸</span><span>English</span></button>
+              <button class="lang-opt" data-lang="es" data-flag="🇪🇸" aria-selected="false"><span>🇪🇸</span><span>Español</span></button>
+            </div>
+          </div>
+          <button class="btn-menu-desktop" id="btnMenuDesktop" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobMenu">MENU</button>
+          <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="mob-overlay" id="mobOverlay" aria-hidden="true"></div>
+
+  <!-- MENU MOBILE -->
+  <nav class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação" hidden>
+    <div class="mob-menu-hdr">
+      <span class="mob-menu-brand" aria-hidden="true">VANESSA <span class="accent">RAFAELLA</span></span>
+      <button class="mob-close" id="mobClose" aria-label="Fechar menu">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+    <nav class="mob-nav" aria-label="Links de navegação mobile">
+      <a href="./index.html"><i class="fas fa-home" aria-hidden="true"></i><span data-pt="Início" data-en="Home" data-es="Inicio">Início</span></a>
+      <a href="./index.html#links"><i class="fas fa-link" aria-hidden="true"></i><span data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</span></a>
+      <a href="./gallery.html"><i class="fas fa-images" aria-hidden="true"></i><span data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</span></a>
+      <a href="#contact"><i class="fas fa-envelope" aria-hidden="true"></i><span data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</span></a>
+      <div class="mob-divider"></div>
+    </nav>
+    <div class="mob-label" data-pt="Plataformas" data-en="Platforms" data-es="Plataformas">Plataformas</div>
+    <div class="mob-plats">
+      <a href="#" class="mob-plat" aria-label="Privacy" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/privacy-full-icon.png" alt="Privacy" onerror="this.parentNode.innerHTML='🔒'"></div>
+        <span>Privacy</span>
+      </a>
+      <a href="https://onlyfans.com/vanessarafaellavip" class="mob-plat" aria-label="OnlyFans" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/of-blue-icon.png" alt="OnlyFans" onerror="this.parentNode.innerHTML='🔥'"></div>
+        <span>OnlyFans</span>
+      </a>
+      <a href="fotos-trans-recife.html" class="mob-plat" aria-label="Fotos" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/fotos-icon.png" alt="Fotos" onerror="this.parentNode.innerHTML='📸'"></div>
+        <span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span>
+      </a>
+      <a href="videos.html" class="mob-plat" aria-label="Vídeos" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/video-icon.png" alt="Vídeos" onerror="this.parentNode.innerHTML='🎬'"></div>
+        <span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span>
+      </a>
+      <a href="https://wa.me/5581995469947" class="mob-plat" aria-label="WhatsApp" target="_blank" rel="noopener" id="mobWa">
+        <div class="mob-plat-icon"><img src="./assets/images/new-wpp-icon.png" alt="WhatsApp" onerror="this.parentNode.innerHTML='💬'"></div>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+    <div class="mob-menu-footer">
+      <div class="mob-socials" aria-label="Redes sociais">
+        <a href="#" class="mob-soc-btn onlyfans" aria-label="OnlyFans"><i class="fas fa-fire" aria-hidden="true"></i></a>
+        <a href="#" class="mob-soc-btn twitter"  aria-label="Twitter / X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="#" class="mob-soc-btn instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/5581995469947" class="mob-soc-btn whatsapp" aria-label="WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+      <button class="mob-theme-btn" id="mobThemeBtn" aria-label="Alternar tema">
+        <span><i class="fas fa-adjust" aria-hidden="true"></i>&nbsp;<span data-pt="Alterar Tema" data-en="Toggle Theme" data-es="Cambiar Tema">Alterar Tema</span></span>
+        <span id="mobThemeLbl" aria-live="polite">Escuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ═══════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section class="ct-hero">
+      <div class="ct-hero-content">
+        <span class="ct-hero-tag"
+              data-pt="💬 Entre em Contato"
+              data-en="💬 Get in Touch"
+              data-es="💬 Contáctame">
+          💬 Entre em Contato
+        </span>
+        <h1 class="ct-hero-title">
+          FALE <span class="accent"
+                     data-pt="COMIGO"
+                     data-en="WITH ME"
+                     data-es="CONMIGO">COMIGO</span>
+        </h1>
+        <p class="ct-hero-sub"
+           data-pt="Respondo em até 24 horas. Para mensagens rápidas, use o WhatsApp."
+           data-en="I reply within 24 hours. For quick messages, use WhatsApp."
+           data-es="Respondo en 24 horas. Para mensajes rápidos, usa WhatsApp.">
+          Respondo em até 24 horas. Para mensagens rápidas, use o WhatsApp.
+        </p>
+      </div>
+    </section>
+
+     <!-- FORMULÁRIO -->
+      <div class="container" id="contact">
+          <div class="ct-form-wrap" id="contact-form">
+            <div class="ct-form-hdr">
+              <h3 data-pt="Enviar Mensagem" data-en="Send a Message" data-es="Enviar Mensaje">Enviar Mensagem</h3>
+              <p data-pt="Responderei em até 24 horas"
+                 data-en="I'll reply within 24 hours"
+                 data-es="Responderé en menos de 24 horas">
+                Responderei em até 24 horas
+              </p>
+            </div>
+
+            <form id="contactForm" class="ct-form" novalidate>
+
+              <div class="ct-form-row">
+                <div class="ct-form-group">
+                  <label for="contactName" data-pt="Seu Nome *" data-en="Your Name *" data-es="Tu Nombre *">Seu Nome *</label>
+                  <input type="text" id="contactName" name="contactName"
+                         placeholder="Ex: João Silva" required maxlength="80">
+                </div>
+                <div class="ct-form-group">
+                  <label for="contactEmail" data-pt="E-mail *" data-en="Email *" data-es="Correo *">E-mail *</label>
+                  <input type="email" id="contactEmail" name="contactEmail"
+                         placeholder="seu@email.com" required>
+                </div>
+              </div>
+
+              <div class="ct-form-row">
+                <div class="ct-form-group">
+                  <label for="contactPhone" data-pt="WhatsApp" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</label>
+                  <input type="tel" id="contactPhone" name="contactPhone"
+                         placeholder="+55 81 99999-9999">
+                </div>
+                <div class="ct-form-group">
+                  <label for="contactSubject" data-pt="Assunto *" data-en="Subject *" data-es="Asunto *">Assunto *</label>
+                  <select id="contactSubject" name="contactSubject" required>
+                    <option value="" data-pt="Selecione..." data-en="Select..." data-es="Seleccionar...">Selecione...</option>
+                    <option value="Mensagem geral"        data-pt="Mensagem geral"        data-en="General message"        data-es="Mensaje general">Mensagem geral</option>
+                    <option value="Conteúdo exclusivo"    data-pt="Conteúdo exclusivo"    data-en="Exclusive content"      data-es="Contenido exclusivo">Conteúdo exclusivo</option>
+                    <option value="Chamada de vídeo"      data-pt="Chamada de vídeo"      data-en="Video call"             data-es="Videollamada">Chamada de vídeo</option>
+                    <option value="Parceria / Collab"     data-pt="Parceria / Collab"     data-en="Partnership / Collab"   data-es="Colaboración">Parceria / Collab</option>
+                    <option value="Acesso Premium"        data-pt="Acesso Premium"        data-en="Premium access"         data-es="Acceso Premium">Acesso Premium</option>
+                    <option value="Outro"                 data-pt="Outro"                 data-en="Other"                  data-es="Otro">Outro</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="ct-form-group">
+                <label for="contactMessage" data-pt="Mensagem *" data-en="Message *" data-es="Mensaje *">Mensagem *</label>
+                <textarea id="contactMessage" name="contactMessage" rows="5"
+                          data-pt="Como posso te ajudar?"
+                          data-en="How can I help you?"
+                          data-es="¿Cómo puedo ayudarte?"
+                          placeholder="Como posso te ajudar?" required maxlength="1000"></textarea>
+              </div>
+
+              <div class="ct-privacy">
+                <label class="ct-privacy-label">
+                  <input type="checkbox" id="contactPrivacy" name="contactPrivacy" required>
+                  <span class="ct-checkmark"></span>
+                  <span data-pt="Concordo com a" data-en="I agree to the" data-es="Acepto la">Concordo com a</span>&nbsp;<a href="./legal/privacy-policy.html" data-pt="Política de Privacidade" data-en="Privacy Policy" data-es="Política de Privacidad">Política de Privacidade</a>
+                </label>
+              </div>
+
+              <button type="submit" class="ct-submit-btn">
+                <span class="btn-text" data-pt="Enviar Mensagem" data-en="Send Message" data-es="Enviar Mensaje">Enviar Mensagem</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+
+              <!-- Feedback -->
+              <div id="contactSuccessMessage" class="ct-success" role="status" aria-live="polite">
+                <i class="fas fa-check-circle"></i>
+                <h4 data-pt="Mensagem enviada! 💖" data-en="Message sent! 💖" data-es="¡Mensaje enviado! 💖">Mensagem enviada! 💖</h4>
+                <p data-pt="Obrigada pelo contato. Responderei em até 24 horas."
+                   data-en="Thank you for reaching out. I'll reply within 24 hours."
+                   data-es="Gracias por contactarme. Responderé en menos de 24 horas.">
+                  Obrigada pelo contato. Responderei em até 24 horas.
+                </p>
+              </div>
+
+              <div id="contactErrorMessage" class="ct-error" role="alert" aria-live="assertive">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span data-pt="Ops! Algo deu errado. Tente pelo WhatsApp."
+                      data-en="Oops! Something went wrong. Try via WhatsApp."
+                      data-es="¡Ups! Algo salió mal. Prueba por WhatsApp.">
+                  Ops! Algo deu errado. Tente pelo WhatsApp.
+                </span>
+              </div>
+
+            </form>
+          </div><!-- /ct-form-wrap -->
+
+        </div><!-- /ct-grid -->
+      </div><!-- /ct-wrap -->
+    </section>
+
+    <!-- ATALHOS RÁPIDOS -->
+    <section class="ct-quick" aria-label="Contato rápido">
+      <div class="ct-wrap">
+        <div class="ct-quick-grid">
+
+          <a href="https://wa.me/5581995469947" class="ct-quick-btn wa" target="_blank" rel="noopener" id="quickWa">
+            <i class="fab fa-whatsapp"></i>
+            <span data-pt="Mensagem WhatsApp" data-en="WhatsApp Message" data-es="Mensaje WhatsApp">Mensagem WhatsApp</span>
+          </a>
+
+          <a href="https://t.me/+WQ-rTW3zKWc1N2U0" class="ct-quick-btn tg" target="_blank" rel="noopener">
+            <i class="fab fa-telegram"></i>
+            <span data-pt="Grupo Telegram" data-en="Telegram Group" data-es="Grupo Telegram">Grupo Telegram</span>
+          </a>
+
+          <a href="#" class="ct-quick-btn of" target="_blank" rel="noopener">
+            <i class="fas fa-fire"></i>
+            <span>OnlyFans VIP</span>
+          </a>
+
+          <a href="#" class="ct-quick-btn pk" target="_blank" rel="noopener">
+            <i class="fas fa-lock"></i>
+            <span>Privacy</span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO PRINCIPAL: CARDS + FORM -->
+    <section id="contact" class="ct-section" aria-labelledby="ctTitle">
+      <div class="ct-wrap">
+
+        <div class="section-header">
+          <span class="section-tag"
+                data-pt="📩 Envie uma mensagem"
+                data-en="📩 Send a message"
+                data-es="📩 Envía un mensaje">
+            📩 Envie uma mensagem
+          </span>
+          <h2 class="section-title" id="ctTitle" data-reveal>
+            CONTATO <span class="accent"
+                          data-pt="DIRETO"
+                          data-en="DIRECT"
+                          data-es="DIRECTO">DIRETO</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Todas as formas de me alcançar em um só lugar"
+             data-en="All the ways to reach me in one place"
+             data-es="Todas las formas de contactarme en un solo lugar">
+            Todas as formas de me alcançar em um só lugar
+          </p>
+        </div>
+
+        <div class="ct-grid">
+
+          <!-- CARDS -->
+          <div class="ct-cards">
+
+            <a href="https://wa.me/5581995469947" class="ct-card" data-type="whatsapp" target="_blank" rel="noopener" id="cardWa">
+              <div class="ct-card-icon"><i class="fab fa-whatsapp"></i></div>
+              <h3 data-pt="WhatsApp" data-en="WhatsApp" data-es="WhatsApp">WhatsApp</h3>
+              <p data-pt="Mensagens rápidas e resposta imediata"
+                 data-en="Quick messages and instant reply"
+                 data-es="Mensajes rápidos y respuesta inmediata">
+                Mensagens rápidas e resposta imediata
+              </p>
+              <span class="ct-card-link">+55 81 99546-9947</span>
+            </a>
+
+            <a href="https://t.me/+WQ-rTW3zKWc1N2U0" class="ct-card" data-type="telegram" target="_blank" rel="noopener">
+              <div class="ct-card-icon"><i class="fab fa-telegram"></i></div>
+              <h3 data-pt="Telegram VIP" data-en="VIP Telegram" data-es="Telegram VIP">Telegram VIP</h3>
+              <p data-pt="Grupo exclusivo com conteúdo gratuito"
+                 data-en="Exclusive group with free content"
+                 data-es="Grupo exclusivo con contenido gratuito">
+                Grupo exclusivo com conteúdo gratuito
+              </p>
+              <span class="ct-card-link" data-pt="Entrar no grupo" data-en="Join group" data-es="Unirse al grupo">Entrar no grupo</span>
+            </a>
+
+            <a href="mailto:contact@vanessarafaella.com" class="ct-card" data-type="email">
+              <div class="ct-card-icon"><i class="fas fa-envelope"></i></div>
+              <h3 data-pt="E-mail" data-en="Email" data-es="Correo">E-mail</h3>
+              <p data-pt="Parcerias e negócios profissionais"
+                 data-en="Partnerships and professional business"
+                 data-es="Colaboraciones y negocios profesionales">
+                Parcerias e negócios profissionais
+              </p>
+              <span class="ct-card-link">contact@vanessarafaella.com</span>
+            </a>
+
+            <div class="ct-card" data-type="location">
+              <div class="ct-card-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <h3 data-pt="Localização" data-en="Location" data-es="Ubicación">Localização</h3>
+              <p data-pt="Base: Recife, Pernambuco · Brasil"
+                 data-en="Based in Recife, Pernambuco · Brazil"
+                 data-es="Con base en Recife, Pernambuco · Brasil">
+                Base: Recife, Pernambuco · Brasil
+              </p>
+              <span class="ct-card-link">Recife · PE</span>
+            </div>
+
+          </div>
+
+         
+
+  </main>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer class="gal-footer" role="contentinfo">
+    <div class="gal-footer-top">
+      <div class="gal-footer-name">VANESSA <span class="accent">RAFAELLA</span></div>
+      <p class="gal-footer-tagline">Criadora de conteúdo digital autêntica e verificada — Recife, PE · Brasil</p>
+    </div>
+
+    <div class="gal-footer-grid">
+      <div class="gal-footer-col">
+        <h3>💎 <span data-pt="Sobre Mim" data-en="About Me" data-es="Sobre Mí">Sobre Mim</span></h3>
+        <p data-pt="Criadora de conteúdo digital de Recife, PE. Verificada em todas as principais plataformas."
+           data-en="Digital content creator from Recife, PE. Verified on all major platforms."
+           data-es="Creadora de contenido de Recife, PE. Verificada en todas las plataformas.">
+          Criadora de conteúdo digital de Recife, PE. Verificada em todas as principais plataformas.
+        </p>
+        <ul>
+          <li><a href="./index.html"><i class="fas fa-home"></i><span data-pt="Página Inicial" data-en="Homepage" data-es="Inicio">Página Inicial</span></a></li>
+          <li><a href="./gallery.html"><i class="fas fa-images"></i><span data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</span></a></li>
+          <li><a href="#contact"><i class="fas fa-envelope"></i><span data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</span></a></li>
+        </ul>
+      </div>
+
+      <div class="gal-footer-col">
+        <h3>📱 <span data-pt="Redes Sociais" data-en="Social Media" data-es="Redes Sociales">Redes Sociais</span></h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-fire"></i>OnlyFans</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-lock"></i>Privacy</a></li>
+          <li><a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener"><i class="fas fa-play-circle"></i>Xvideos</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i>Twitter / X</a></li>
+          <li><a href="https://wa.me/5581995469947" target="_blank" rel="noopener" id="footerWa"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <div class="gal-footer-col">
+        <h3>⚖️ Legal</h3>
+        <ul>
+          <li><a href="./legal/privacy-policy.html"><i class="fas fa-shield-alt"></i><span data-pt="Política de Privacidade" data-en="Privacy Policy" data-es="Política de Privacidad">Política de Privacidade</span></a></li>
+          <li><a href="./legal/terms-of-service.html"><i class="fas fa-file-contract"></i><span data-pt="Termos de Uso" data-en="Terms of Service" data-es="Términos de Uso">Termos de Uso</span></a></li>
+          <li><a href="./legal/dmca.html"><i class="fas fa-copyright"></i>DMCA</a></li>
+        </ul>
+        <div class="gal-footer-notice">
+          <h4>🔞 <span data-pt="Aviso" data-en="Notice" data-es="Aviso">Aviso</span></h4>
+          <div class="gal-notice-item"><i class="fas fa-exclamation-triangle"></i><span data-pt="Conteúdo apenas para maiores de 18 anos" data-en="Content for adults 18+ only" data-es="Solo para mayores de 18 años">Conteúdo apenas para maiores de 18 anos</span></div>
+          <div class="gal-notice-item"><i class="fas fa-lock"></i><span data-pt="Conteúdo protegido por direitos autorais" data-en="All content is copyright protected" data-es="Contenido protegido por derechos de autor">Conteúdo protegido por direitos autorais</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gal-footer-bottom">
+      <span class="gal-footer-copy">© 2025 Vanessa Rafaella · Recife, PE · <span data-pt="Todos os direitos reservados" data-en="All rights reserved" data-es="Todos los derechos reservados">Todos os direitos reservados</span></span>
+      <div class="gal-footer-links">
+        <a href="./legal/terms-of-service.html" data-pt="Termos" data-en="Terms" data-es="Términos">Termos</a>
+        <a href="./legal/privacy-policy.html" data-pt="Privacidade" data-en="Privacy" data-es="Privacidad">Privacidade</a>
+        <a href="./legal/dmca.html">DMCA</a>
+        <a href="./index.html" data-pt="Início" data-en="Home" data-es="Inicio">Início</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botão flutuante WhatsApp -->
+  <a href="https://wa.me/5581995469947" class="wa-float" target="_blank" rel="noopener"
+     aria-label="WhatsApp" id="waFloat">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ═══════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+  <script src="./js/script.js" defer></script>
+
+  <script>
+  /* ════════════════════════════════════════════
+     FORMULÁRIO DE CONTATO
+     → Google Sheets + Telegram (preservado)
+  ════════════════════════════════════════════ */
+
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbygDq7WANgnVWgiUE_mZY9ymhA-u__12s3Kgl-xChqK5umi9VFUvjRi5_CT8Hgtyj5n/exec';
+  const TG_BOT_TOKEN      = '7338085693:AAGwl40OzLEi37UTVoYKHN_cXGLeb7hP5AU';
+  const TG_CHAT_ID        = '-1002776674318';
+
+  document.addEventListener('DOMContentLoaded', setupContactForm);
+
+  function setupContactForm() {
+    const form    = document.getElementById('contactForm');
+    const success = document.getElementById('contactSuccessMessage');
+    const error   = document.getElementById('contactErrorMessage');
+    if (!form) return;
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const data = {
+        name:      document.getElementById('contactName').value.trim(),
+        email:     document.getElementById('contactEmail').value.trim(),
+        phone:     document.getElementById('contactPhone').value.trim() || 'Não informado',
+        subject:   document.getElementById('contactSubject').value,
+        message:   document.getElementById('contactMessage').value.trim(),
+        timestamp: new Date().toLocaleString('pt-BR'),
+        source:    'contact_form'
+      };
+
+      const btn = form.querySelector('.ct-submit-btn');
+      const originalHTML = btn.innerHTML;
+
+      /* Estado de carregamento */
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>&nbsp;Enviando...';
+      btn.disabled  = true;
+      error.classList.remove('show');
+      success.classList.remove('show');
+
+      try {
+        /* 1. Envia para Google Sheets */
+        const gd = new FormData();
+        gd.append('name',      data.name);
+        gd.append('email',     data.email);
+        gd.append('phone',     data.phone);
+        gd.append('age',       'Contact Form');
+        gd.append('timestamp', data.timestamp);
+        gd.append('source',    data.source);
+        gd.append('subject',   data.subject);
+        gd.append('message',   data.message);
+
+        const resp = await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: gd });
+        if (!resp.ok) throw new Error('Google Sheets error');
+
+        /* 2. Envia para Telegram */
+        await sendToTelegram(data);
+
+        /* 3. Feedback de sucesso */
+        success.classList.add('show');
+        success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        form.reset();
+        setTimeout(() => success.classList.remove('show'), 6000);
+
+      } catch (err) {
+        console.error('Form error:', err);
+        error.classList.add('show');
+        setTimeout(() => error.classList.remove('show'), 5000);
+      } finally {
+        btn.innerHTML = originalHTML;
+        btn.disabled  = false;
+      }
+    });
+  }
+
+  async function sendToTelegram(d) {
+    const msg =
+`💌 <b>NOVO CONTATO — Site Vanessa Rafaella</b>
+
+👤 <b>Nome:</b> ${d.name}
+📧 <b>E-mail:</b> ${d.email}
+📱 <b>WhatsApp:</b> ${d.phone}
+📋 <b>Assunto:</b> ${d.subject}
+💬 <b>Mensagem:</b> ${d.message}
+⏰ <b>Data:</b> ${d.timestamp}
+📍 <b>Origem:</b> Formulário de Contato
+
+#Contato #VanessaRafaella`;
+
+    await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
+      method:  'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TG_CHAT_ID, text: msg, parse_mode: 'HTML' })
+    });
+  }
+
+  /* Scroll reveal simples para esta página */
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); revObs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('[data-reveal]').forEach(el => revObs.observe(el));
+  </script>
+
+</body>
+</html>

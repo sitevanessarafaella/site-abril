@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vanessa Rafaella — Galeria de fotos e vídeos exclusivos. Conteúdo premium oficial.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080808">
+  <title>Vanessa Rafaella · Galeria</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css" media="print" onload="this.media='all'">
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       GALLERY PAGE — estilos específicos
+       Herda todas as variáveis de style.css
+    ═══════════════════════════════════════════════════ */
+
+    /* Loading screen */
+    .gl-loading {
+      position: fixed; inset: 0;
+      background: var(--bg);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    .gl-loading.hide { opacity: 0; visibility: hidden; pointer-events: none; }
+    .gl-spinner {
+      width: 44px; height: 44px;
+      border: 3px solid var(--border);
+      border-top-color: var(--pink);
+      border-radius: 50%;
+      animation: spin 0.9s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── HERO DA GALERIA ─────────────────────────────── */
+    .gal-hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+      text-align: center;
+      padding-top: var(--nav-h);
+    }
+    .gal-hero-video {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.25;
+      z-index: 0;
+    }
+    .gal-hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(8,8,8,.4) 0%, rgba(8,8,8,.85) 100%);
+      z-index: 1;
+    }
+    .gal-hero-content {
+      position: relative; z-index: 2;
+      max-width: 700px;
+      padding-inline: var(--px);
+    }
+    .gal-hero-tag {
+      display: inline-block;
+      font-size: 0.58rem; font-weight: 700;
+      letter-spacing: .28em; text-transform: uppercase;
+      color: var(--pink);
+      padding: 5px 14px;
+      border: 1px solid var(--border-hi);
+      border-radius: 50px;
+      background: var(--pink-glow2);
+      margin-bottom: 1.2rem;
+    }
+    .gal-hero-title {
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 9vw, 6rem);
+      font-weight: 900; line-height: .92;
+      text-transform: uppercase;
+      color: var(--pink-complementar);
+      margin-bottom: 1rem;
+    }
+    .gal-hero-title .accent { color: var(--pink); }
+    .gal-hero-sub {
+      font-size: clamp(.88rem, 2vw, 1rem);
+      color: var(--txt-mid); line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .gal-hero-btns {
+      display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap;
+    }
+    .gal-btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 24px;
+      background: var(--pink); border-radius: 4px; color: #fff;
+      font-size: .8rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      transition: background var(--dur), transform var(--dur);
+      text-decoration: none;
+      border: 2px solid transparent;
+    }
+    .gal-btn-primary:hover { 
+      
+      border: 2px solid var(--txt);
+       transform: translateY(-2px); 
+      }
+    .gal-btn-outline {
+      display: inline-flex; 
+      align-items: center;
+       gap: 8px;
+      padding: 12px 24px;
+      border: 1.5px solid var(--border-hi); border-radius: 4px;
+      color: var(--txt-mid);
+      font-size: .8rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      transition: all var(--dur);
+      text-decoration: none;
+    }
+    .gal-btn-outline:hover { border-color: var(--pink); color: var(--pink); transform: translateY(-2px); }
+
+    /* ── GALLERY SECTION ─────────────────────────────── */
+    .gal-section {
+      background: var(--bg);
+      padding-block: clamp(3.5rem, 8vw, 5.5rem);
+    }
+    .gal-wrap {
+      max-width: var(--mx);
+      margin-inline: auto;
+      padding-inline: var(--px);
+    }
+
+    /* Filtros */
+    .gal-filters {
+      display: flex; justify-content: center; gap: .6rem;
+      flex-wrap: wrap; margin-bottom: 2.5rem;
+    }
+    .gal-filter-btn {
+      padding: 8px 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--txt-mid);
+      transition: all var(--dur);
+      position: relative; overflow: hidden;
+    }
+    .gal-filter-btn::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: var(--pink);
+      transform: translateX(-101%);
+      transition: transform .3s var(--eout);
+      z-index: 0;
+    }
+    .gal-filter-btn span { position: relative; z-index: 1; }
+    .gal-filter-btn:hover::before,
+    .gal-filter-btn.active::before { transform: translateX(0); }
+    .gal-filter-btn:hover,
+    .gal-filter-btn.active { color: #fff; border-color: var(--pink); }
+
+    /* Grid */
+    .gal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Card */
+    .gal-item {
+      position: relative;
+      background: var(--bg-card);
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border);
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .5s var(--eout), transform .5s var(--eout),
+                  border-color var(--dur), box-shadow var(--dur);
+      cursor: pointer;
+    }
+    .gal-item.show { opacity: 1; transform: translateY(0); }
+    .gal-item:hover {
+      border-color: var(--border-hi);
+      box-shadow: 0 12px 40px rgba(255,45,139,.15);
+      transform: translateY(-6px);
+    }
+    .gal-item img,
+    .gal-item video {
+      width: 100%; height: 260px;
+      object-fit: cover;
+      display: block;
+      transition: transform .4s var(--eout);
+    }
+    .gal-item:hover img,
+    .gal-item:hover video { transform: scale(1.05); }
+
+    /* Overlay com info */
+    .gal-item-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 40%, rgba(8,8,8,.92) 100%);
+      display: flex; align-items: flex-end;
+      padding: 1.25rem;
+      opacity: 0;
+      transition: opacity var(--dur);
+    }
+    .gal-item:hover .gal-item-overlay { opacity: 1; }
+    .gal-item-info h3 {
+      font-family: var(--display);
+      font-size: 1.1rem; font-weight: 800;
+      text-transform: uppercase; color: var(--txt);
+      margin-bottom: .25rem;
+    }
+    .gal-item-info p { font-size: .8rem; color: var(--txt-mid); line-height: 1.5; }
+
+    /* Badge tipo/categoria */
+    .gal-badge {
+      position: absolute; top: .85rem; right: .85rem;
+      padding: 3px 10px;
+      font-size: .6rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      border-radius: 4px; border: 1px solid;
+    }
+    .gal-badge.photo {
+      background: rgba(255,45,139,.15);
+      color: var(--pink); border-color: var(--border-hi);
+    }
+    .gal-badge.video {
+      background: rgba(229,9,20,.15);
+      color: #ff6b6b; border-color: rgba(229,9,20,.35);
+    }
+
+    /* Botão de play em vídeos */
+    .gal-play {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60px; height: 60px; border-radius: 50%;
+      background: rgba(255,45,139,.85);
+      border: 2px solid rgba(255,255,255,.8);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem; color: #fff;
+      transition: transform .3s var(--eout), background var(--dur);
+    }
+    .gal-item:hover .gal-play {
+      transform: translate(-50%, -50%) scale(1.15);
+      background: var(--pink);
+    }
+
+    /* ── MODAL ───────────────────────────────────────── */
+    .gal-modal {
+      display: none;
+      position: fixed; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,.93);
+      backdrop-filter: blur(6px);
+    }
+    .gal-modal-content {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 92vw; max-height: 88vh;
+      border-radius: 12px; overflow: hidden;
+      border: 1px solid var(--border-hi);
+    }
+    .gal-modal-content img,
+    .gal-modal-content video {
+      width: 100%; max-height: 88vh;
+      object-fit: contain; display: block;
+    }
+    .gal-modal-close {
+      position: absolute; top: 1.25rem; right: 1.25rem; z-index: 10;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(8,8,8,.85);
+      border: 1px solid var(--border);
+      color: var(--txt-mid); font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background var(--dur), color var(--dur), transform var(--dur);
+    }
+    .gal-modal-close:hover {
+      background: var(--pink); color: #fff; border-color: var(--pink);
+      transform: rotate(90deg);
+    }
+    .gal-modal-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,45,139,.85);
+      border: none; color: #fff; font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      transition: background var(--dur), transform var(--dur);
+    }
+    .gal-modal-nav:hover { background: var(--pink); transform: translateY(-50%) scale(1.1); }
+    .gal-modal-prev { left: 1.25rem; }
+    .gal-modal-next { right: 1.25rem; }
+
+    /* ── CTA — PLATAFORMAS ───────────────────────────── */
+.gal-cta {
+  position: relative;
+  background-image: url('./img/pics/bg-gray.png');
+  background-size: cover;       /* cobre toda a section */
+  background-position: center;  /* centraliza a imagem */
+  background-attachment: fixed; /* efeito parallax sutil — remova se não quiser */
+  background-repeat: no-repeat;
+  padding-block: clamp(3.5rem, 8vw, 6rem);
+    }
+
+    /* Overlay escuro por cima da imagem para o texto ficar legível */
+.gal-cta::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(8, 8, 8, 0.65); /* 0.75 = opacidade do escurecimento */
+  z-index: 0;
+}
+
+/* Garante que o conteúdo fica acima do overlay */
+.gal-cta .gal-wrap {
+  position: relative;
+  z-index: 1;
+}
+    .gal-plats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+    .gal-plat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--txt);
+      transition: border-color var(--dur), transform var(--dur), box-shadow var(--dur);
+      position: relative; overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; gap: .85rem;
+    }
+    .gal-plat-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, transparent, rgba(255,45,139,.06), transparent);
+      transform: translateX(-101%);
+      transition: transform .6s var(--eout);
+    }
+    .gal-plat-card:hover::before { transform: translateX(0); }
+    .gal-plat-card:hover {
+      border-color: var(--border-hi);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(255,45,139,.12);
+    }
+    .gal-plat-icon {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: var(--pink-glow2);
+      border: 1px solid var(--border-hi);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.8rem; color: var(--pink);
+      transition: transform var(--dur);
+    }
+    .gal-plat-card:hover .gal-plat-icon { transform: scale(1.1); }
+    .gal-plat-card h3 {
+      font-family: var(--display);
+      font-size: 1.3rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .04em;
+      color: var(--txt);
+    }
+    .gal-plat-card p {
+      font-size: .88rem; color: var(--txt-mid);
+      line-height: 1.6;
+    }
+    .gal-plat-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 10px 22px;
+      background: var(--pink); border-radius: 4px; color: #fff;
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      text-decoration: none;
+      transition: background var(--dur), transform var(--dur);
+    }
+    .gal-plat-btn:hover { background: var(--pink-dark); transform: translateY(-2px); }
+
+    /* Cores individuais por plataforma */
+    .gal-plat-card[data-plat="onlyfans"] .gal-plat-icon  { background: rgba(0,175,240,.1); border-color: rgba(0,175,240,.3); color: #00AFF0; }
+    .gal-plat-card[data-plat="onlyfans"] .gal-plat-btn   { background: #00AFF0; }
+    .gal-plat-card[data-plat="onlyfans"] .gal-plat-btn:hover { background: #0088CC; }
+    .gal-plat-card[data-plat="privacy"]  .gal-plat-icon  { background: rgba(240,114,6,.1);  border-color: rgba(240,114,6,.3);  color: #F07206; }
+    .gal-plat-card[data-plat="privacy"]  .gal-plat-btn   { background: #F07206; }
+    .gal-plat-card[data-plat="privacy"]  .gal-plat-btn:hover { background: #c45800; }
+    .gal-plat-card[data-plat="xvideos"] .gal-plat-icon   { background: rgba(229,9,20,.1);   border-color: rgba(229,9,20,.3);   color: #E50914; }
+    .gal-plat-card[data-plat="xvideos"] .gal-plat-btn    { background: #E50914; }
+    .gal-plat-card[data-plat="xvideos"] .gal-plat-btn:hover { background: #b0070f; }
+
+    /* Stats da CTA */
+    .gal-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+    }
+    .gal-stat { text-align: center; }
+    .gal-stat-n {
+      font-family: var(--display);
+      font-size: 2.2rem; font-weight: 900;
+      color: var(--pink); line-height: 1;
+      display: block; margin-bottom: .35rem;
+      border: 2px solid transparent;
+    }
+    .gal-stat-n:hover {
+      color: var(--green);
+      border: 2px solid transparent;
+       transform: translateY(-4px);
+       transition: color var(--dur), transform var(--dur);
+    }
+    .gal-stat-l {
+      font-size: .68rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      color: var(--txt-dim);
+    }
+   
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    .gal-footer { background: var(--bg); }
+
+    .gal-footer-top {
+      padding: 3.5rem var(--px) 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      max-width: var(--mx); margin-inline: auto;
+    }
+    .gal-footer-name {
+      font-family: var(--display);
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 900; text-transform: uppercase; letter-spacing: .06em;
+      color: var(--txt); margin-bottom: .5rem;
+    }
+    .gal-footer-name .accent { color: var(--pink); }
+    .gal-footer-tagline {
+      font-size: .85rem; color: var(--txt-dim); font-style: italic;
+      max-width: 540px; margin: 0 auto;
+    }
+
+    .gal-footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2.5rem;
+      max-width: var(--mx); margin-inline: auto;
+      padding: 3rem var(--px);
+    }
+    .gal-footer-col h3 {
+      font-family: var(--display);
+      font-size: 1rem; font-weight: 800;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: var(--pink);
+      margin-bottom: 1.25rem;
+      display: flex; align-items: center; gap: .5rem;
+    }
+    .gal-footer-col p {
+      font-size: .88rem; color: var(--txt-mid);
+      line-height: 1.7; margin-bottom: .75rem;
+    }
+    .gal-footer-col ul { list-style: none; padding: 0; }
+    .gal-footer-col li { margin-bottom: .6rem; }
+    .gal-footer-col a {
+      display: flex; align-items: center; gap: .65rem;
+      font-size: .88rem; color: var(--txt-mid); text-decoration: none;
+      transition: color var(--dur), padding-left var(--dur);
+      padding: .25rem 0;
+    }
+    .gal-footer-col a i { width: 18px; text-align: center; color: var(--pink); font-size: .88rem; }
+    .gal-footer-col a:hover { color: var(--pink); padding-left: 4px; }
+
+    .gal-footer-notice {
+      margin-top: 1.5rem; padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .gal-footer-notice h4 {
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .08em; text-transform: uppercase;
+      color: var(--pink); margin-bottom: .75rem;
+    }
+    .gal-notice-item {
+      display: flex; align-items: center; gap: .65rem;
+      font-size: .82rem; color: var(--txt-dim);
+      margin-bottom: .5rem;
+    }
+    .gal-notice-item i { color: var(--pink); width: 16px; }
+
+    .gal-footer-bottom {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem var(--px);
+      max-width: var(--mx); margin-inline: auto;
+      display: flex; justify-content: space-between;
+      align-items: center; flex-wrap: wrap; gap: 1rem;
+    }
+    .gal-footer-copy {
+      font-size: .8rem; color: var(--txt-dim);
+    }
+    .gal-footer-links {
+      display: flex; gap: 1.25rem; flex-wrap: wrap;
+    }
+    .gal-footer-links a {
+      font-size: .75rem; color: var(--txt-dim); text-decoration: none;
+      text-transform: uppercase; letter-spacing: .05em;
+      transition: color var(--dur);
+    }
+    .gal-footer-links a:hover { color: var(--pink); }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      .gal-grid { grid-template-columns: 1fr; }
+      .gal-filters { flex-direction: column; align-items: center; }
+      .gal-filter-btn { width: 100%; max-width: 280px; }
+      .gal-modal-nav { width: 38px; height: 38px; font-size: .95rem; }
+      .gal-footer-bottom { flex-direction: column; text-align: center; }
+      .gal-footer-links { justify-content: center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- LOADING -->
+  <div class="gl-loading" id="glLoading">
+    <div class="gl-spinner"></div>
+  </div>
+
+  <!-- CURSOR (script.js já cria o canvas de partículas) -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- SKIP LINK -->
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+  <!-- ═══════════════════════════════════════════
+       HEADER — idêntico ao index.html
+  ═══════════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" id="mainNav" role="navigation" aria-label="Navegação principal">
+      <div class="nav-inner">
+
+        <a class="nav-logo" href="./index.html" aria-label="Vanessa Rafaella — página inicial">
+          <div class="nav-logo-photo" aria-hidden="true">
+            <img src="./img/pics/vanessa-rafaella-logo-nav-primary.svg"
+                 alt="Foto de perfil de Vanessa Rafaella"
+                 width="42" height="42" loading="eager"
+                 onerror="this.src='https://placehold.co/42x42/FF2D8B/fff?text=VR'">
+            <div class="verified-badge"><i class="fas fa-check"></i></div>
+          </div>
+          <div class="nav-logo-text" aria-hidden="true">
+            <span class="nav-logo-name">VANESSA&nbsp;<span class="accent">RAFAELLA</span></span>
+            <span class="nav-logo-sub" data-pt="Site Oficial" data-en="Official Website" data-es="Sitio Oficial">Site Oficial</span>
+          </div>
+        </a>
+
+        <ul class="nav-links" aria-label="Links do menu principal">
+          <li><a href="./index.html#links"   data-pt="Links Oficiais" data-en="Official Links"  data-es="Links Oficiales">Links Oficiais</a></li>
+          <li><a href="./index.html#about"   data-pt="Sobre Mim"      data-en="About Me"        data-es="Sobre Mí">Sobre Mim</a></li>
+          <li><a href="#gallery"             data-pt="Galeria"        data-en="Gallery"          data-es="Galería">Galeria</a></li>
+          <li><a href="./index.html#contact" data-pt="Contato"        data-en="Contact"          data-es="Contacto">Contato</a></li>
+        </ul>
+
+        <div class="nav-controls">
+          <button class="icon-btn" id="themeToggle" aria-label="Alternar tema">
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+
+          <div class="lang-sel" id="langSel">
+            <button class="lang-btn" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma">
+              <span id="langFlag">🇧🇷</span>
+              <span id="langCode">PT</span>
+              <span class="lang-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+            </button>
+            <div class="lang-drop" id="langDrop" role="listbox">
+              <p>Idioma</p>
+              <button class="lang-opt" data-lang="pt" data-flag="🇧🇷" aria-selected="true"><span>🇧🇷</span><span>Português</span></button>
+              <button class="lang-opt" data-lang="en" data-flag="🇺🇸" aria-selected="false"><span>🇺🇸</span><span>English</span></button>
+              <button class="lang-opt" data-lang="es" data-flag="🇪🇸" aria-selected="false"><span>🇪🇸</span><span>Español</span></button>
+            </div>
+          </div>
+
+          <button class="btn-menu-desktop" id="btnMenuDesktop" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobMenu">MENU</button>
+          <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- OVERLAY MOBILE -->
+  <div class="mob-overlay" id="mobOverlay" aria-hidden="true"></div>
+
+  <!-- MENU MOBILE — idêntico ao index.html -->
+  <nav class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Menu de navegação" hidden>
+    <div class="mob-menu-hdr">
+      <span class="mob-menu-brand" aria-hidden="true">VANESSA <span class="accent">RAFAELLA</span></span>
+      <button class="mob-close" id="mobClose" aria-label="Fechar menu">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+    <nav class="mob-nav" aria-label="Links de navegação mobile">
+      <a href="./index.html#links"><i class="fas fa-link" aria-hidden="true"></i><span data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</span></a>
+      <a href="./index.html#about"><i class="fas fa-user" aria-hidden="true"></i><span data-pt="Sobre Mim" data-en="About Me" data-es="Sobre Mí">Sobre Mim</span></a>
+      <a href="#gallery"><i class="fas fa-images" aria-hidden="true"></i><span data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</span></a>
+      <a href="./index.html#contact"><i class="fas fa-envelope" aria-hidden="true"></i><span data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</span></a>
+      <div class="mob-divider"></div>
+    </nav>
+    <div class="mob-label" data-pt="Plataformas" data-en="Platforms" data-es="Plataformas">Plataformas</div>
+    <div class="mob-plats">
+      <a href="#" class="mob-plat" aria-label="Privacy" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/privacy-full-icon.png" alt="Privacy" onerror="this.parentNode.innerHTML='🔒'"></div>
+        <span>Privacy</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="OnlyFans" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/of-blue-icon.png" alt="OnlyFans" onerror="this.parentNode.innerHTML='🔥'"></div>
+        <span>OnlyFans</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="Fotos" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/fotos-icon.png" alt="Fotos" onerror="this.parentNode.innerHTML='📸'"></div>
+        <span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="Vídeos" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/video-icon.png" alt="Vídeos" onerror="this.parentNode.innerHTML='🎬'"></div>
+        <span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <div class="mob-plat-icon"><img src="./assets/images/new-wpp-icon.png" alt="WhatsApp" onerror="this.parentNode.innerHTML='💬'"></div>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+    <div class="mob-menu-footer">
+      <div class="mob-socials" aria-label="Redes sociais">
+        <a href="#" class="mob-soc-btn onlyfans" aria-label="OnlyFans"><i class="fas fa-fire" aria-hidden="true"></i></a>
+        <a href="#" class="mob-soc-btn twitter"  aria-label="Twitter / X"><i class="fab fa-x-twitter" aria-hidden="true"></i></a>
+        <a href="#" class="mob-soc-btn instagram" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+        <a href="https://wa.me/5581995469947" class="mob-soc-btn whatsapp" aria-label="WhatsApp" id="mobWa"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+      </div>
+      <button class="mob-theme-btn" id="mobThemeBtn" aria-label="Alternar tema">
+        <span><i class="fas fa-adjust" aria-hidden="true"></i>&nbsp;<span data-pt="Alterar Tema" data-en="Toggle Theme" data-es="Cambiar Tema">Alterar Tema</span></span>
+        <span id="mobThemeLbl" aria-live="polite">Escuro</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════
+       CONTEÚDO PRINCIPAL
+  ═══════════════════════════════════════ -->
+  <main id="main-content">
+
+    <!-- HERO DA GALERIA -->
+    <section class="gal-hero">
+      <video class="gal-hero-video" autoplay muted loop playsinline>
+        <source src="./video/id04-video-sexflix.mp4" type="video/mp4">
+      </video>
+      <div class="gal-hero-overlay"></div>
+      <div class="gal-hero-content">
+        <span class="gal-hero-tag" data-pt="✦ Conteúdo Exclusivo" data-en="✦ Exclusive Content" data-es="✦ Contenido Exclusivo">✦ Conteúdo Exclusivo</span>
+        <h1 class="gal-hero-title">
+          GALERIA <span class="accent" data-pt="EXCLUSIVA" data-en="EXCLUSIVE" data-es="EXCLUSIVA">EXCLUSIVA</span>
+        </h1>
+        <p class="gal-hero-sub"
+           data-pt="Fotos e vídeos premium — conteúdo original e verificado"
+           data-en="Premium photos and videos — original verified content"
+           data-es="Fotos y videos premium — contenido original verificado">
+          Fotos e vídeos premium — conteúdo original e verificado
+        </p>
+        <div class="gal-hero-btns">
+          <a href="#gallery" class="gal-btn-primary">
+            <i class="fas fa-images"></i>
+            <span data-pt="Ver Galeria" data-en="View Gallery" data-es="Ver Galería">Ver Galeria</span>
+          </a>
+          <a href="#cta" class="gal-btn-outline">
+            <span data-pt="Minhas Plataformas" data-en="My Platforms" data-es="Mis Plataformas">Minhas Plataformas</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ GALERIA ═══ -->
+    <section id="gallery" class="gal-section" aria-labelledby="galTitle">
+      <div class="gal-wrap">
+
+        <!-- Cabeçalho -->
+        <div class="section-header" style="margin-bottom:2.5rem;">
+          <span class="section-tag" data-pt="📸 Galeria de Fotos" data-en="📸 Photo Gallery" data-es="📸 Galería de Fotos">📸 Galeria de Fotos</span>
+          <h2 class="section-title" id="galTitle" data-reveal>
+            FOTOS <span class="accent">&amp; VÍDEOS</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Conteúdo exclusivo e verificado"
+             data-en="Exclusive verified content"
+             data-es="Contenido exclusivo y verificado">
+            Conteúdo exclusivo e verificado
+          </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="gal-filters" role="group" aria-label="Filtros de conteúdo">
+          <button class="gal-filter-btn active" data-filter="all"><span data-pt="Tudo" data-en="All" data-es="Todo">Tudo</span></button>
+          <button class="gal-filter-btn" data-filter="photos"><span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span></button>
+          <button class="gal-filter-btn" data-filter="videos"><span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span></button>
+          <button class="gal-filter-btn" data-filter="premium"><span>Premium</span></button>
+          <button class="gal-filter-btn" data-filter="exclusive"><span data-pt="Exclusivo" data-en="Exclusive" data-es="Exclusivo">Exclusivo</span></button>
+        </div>
+
+        <!-- Grid -->
+        <div class="gal-grid" id="galGrid" role="list"></div>
+
+      </div>
+    </section>
+
+    <!-- ═══ MODAL ═══ -->
+    <div class="gal-modal" id="galModal" role="dialog" aria-modal="true" aria-label="Visualizar mídia">
+      <button class="gal-modal-close" id="galModalClose" aria-label="Fechar">
+        <i class="fas fa-times"></i>
+      </button>
+      <button class="gal-modal-nav gal-modal-prev" id="galModalPrev" aria-label="Anterior">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+      <button class="gal-modal-nav gal-modal-next" id="galModalNext" aria-label="Próximo">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+      <div class="gal-modal-content" id="galModalContent"></div>
+    </div>
+
+    <!-- ═══ CTA — PLATAFORMAS ═══ -->
+    <section id="cta" class="gal-cta" aria-labelledby="ctaTitle">
+      <div class="gal-wrap">
+
+        <div class="section-header" style="margin-bottom:0;">
+          <span class="section-tag" data-pt="🔥 Acesse Agora" data-en="🔥 Access Now" data-es="🔥 Accede Ahora">🔥 Acesse Agora</span>
+          <h2 class="section-title" id="ctaTitle" data-reveal>
+            QUER VER <span class="accent" data-pt="MAIS?" data-en="MORE?" data-es="¿MÁS?">MAIS?</span>
+          </h2>
+          <p class="section-sub" data-reveal
+             data-pt="Acesse minhas plataformas para conteúdo completo"
+             data-en="Access my platforms for full content"
+             data-es="Accede a mis plataformas para contenido completo">
+            Acesse minhas plataformas para conteúdo completo
+          </p>
+        </div>
+
+        <!-- Cards de plataforma -->
+        <div class="gal-plats-grid">
+
+          <a href="#" class="gal-plat-card" data-plat="onlyfans" target="_blank" rel="noopener" data-reveal>
+            <div class="gal-plat-icon"><i class="fas fa-fire"></i></div>
+            <h3>OnlyFans</h3>
+            <p data-pt="Conteúdo exclusivo, vídeos personalizados e mensagens diretas."
+               data-en="Exclusive content, custom videos and direct messages."
+               data-es="Contenido exclusivo, videos personalizados y mensajes directos.">
+              Conteúdo exclusivo, vídeos personalizados e mensagens diretas.
+            </p>
+            <span class="gal-plat-btn">
+              <span data-pt="Acessar VIP" data-en="Join VIP" data-es="Unirse VIP">Acessar VIP</span>
+              <i class="fas fa-external-link-alt"></i>
+            </span>
+          </a>
+
+          <a href="#" class="gal-plat-card" data-plat="privacy" target="_blank" rel="noopener" data-reveal>
+            <div class="gal-plat-icon"><i class="fas fa-lock"></i></div>
+            <h3>Privacy</h3>
+            <p data-pt="Conteúdo premium disponível agora mesmo!"
+               data-en="Premium content available right now!"
+               data-es="¡Contenido premium disponible ahora mismo!">
+              Conteúdo premium disponível agora mesmo!
+            </p>
+            <span class="gal-plat-btn">
+              <span data-pt="Acessar Privacy" data-en="Access Privacy" data-es="Acceder Privacy">Acessar Privacy</span>
+              <i class="fas fa-lock"></i>
+            </span>
+          </a>
+
+          <a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" class="gal-plat-card" data-plat="xvideos" target="_blank" rel="noopener" data-reveal>
+            <div class="gal-plat-icon">🎬</div>
+            <h3>Xvideos</h3>
+            <p data-pt="Canal oficial — Top #66 do Brasil. Cada view conta!"
+               data-en="Official channel — Top #66 in Brazil. Every view counts!"
+               data-es="Canal oficial — Top #66 de Brasil. ¡Cada view cuenta!">
+              Canal oficial — Top #66 do Brasil. Cada view conta!
+            </p>
+            <span class="gal-plat-btn">
+              <span data-pt="Ver Canal" data-en="View Channel" data-es="Ver Canal">Ver Canal</span>
+              <i class="fas fa-play"></i>
+            </span>
+          </a>
+
+        </div>
+
+        <!-- Stats -->
+        <div class="gal-stats" role="list">
+          <div class="gal-stat" role="listitem">
+            <span class="gal-stat-n">75M+</span>
+            <span class="gal-stat-l" data-pt="Views Xvideos" data-en="Xvideos Views" data-es="Views Xvideos">Views Xvideos</span>
+          </div>
+          <div class="gal-stat" role="listitem">
+            <span class="gal-stat-n">86K+</span>
+            <span class="gal-stat-l" data-pt="Seguidores" data-en="Followers" data-es="Seguidores">Seguidores</span>
+          </div>
+          <div class="gal-stat" role="listitem">
+            <span class="gal-stat-n">155+</span>
+            <span class="gal-stat-l" data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span>
+          </div>
+          <div class="gal-stat" role="listitem">
+            <span class="gal-stat-n">100%</span>
+            <span class="gal-stat-l" data-pt="Verificada" data-en="Verified" data-es="Verificada">Verificada</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+  <footer id="contact" class="gal-footer" role="contentinfo">
+
+    <!-- Topo com nome -->
+    <div class="gal-footer-top">
+      <div class="gal-footer-name">VANESSA <span class="accent">RAFAELLA</span></div>
+      <p class="gal-footer-tagline">
+        Criadora de conteúdo digital autêntica e verificada — Recife, PE · Brasil
+      </p>
+    </div>
+
+    <!-- Colunas -->
+    <div class="gal-footer-grid">
+
+      <!-- Sobre -->
+      <div class="gal-footer-col">
+        <h3>💎 <span data-pt="Sobre Mim" data-en="About Me" data-es="Sobre Mí">Sobre Mim</span></h3>
+        <p data-pt="Criadora de conteúdo digital de Recife, PE. Verificada em todas as principais plataformas."
+           data-en="Digital content creator from Recife, PE. Verified on all major platforms."
+           data-es="Creadora de contenido digital de Recife, PE. Verificada en todas las plataformas.">
+          Criadora de conteúdo digital de Recife, PE. Verificada em todas as principais plataformas.
+        </p>
+        <ul>
+          <li><a href="./index.html"><i class="fas fa-home"></i><span data-pt="Página Inicial" data-en="Homepage" data-es="Inicio">Página Inicial</span></a></li>
+          <li><a href="#gallery"><i class="fas fa-images"></i><span data-pt="Galeria" data-en="Gallery" data-es="Galería">Galeria</span></a></li>
+          <li><a href="#cta"><i class="fas fa-fire"></i><span data-pt="Plataformas" data-en="Platforms" data-es="Plataformas">Plataformas</span></a></li>
+        </ul>
+      </div>
+
+      <!-- Redes sociais -->
+      <div class="gal-footer-col">
+        <h3>📱 <span data-pt="Redes Sociais" data-en="Social Media" data-es="Redes Sociales">Redes Sociais</span></h3>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-fire"></i>OnlyFans</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-lock"></i>Privacy</a></li>
+          <li><a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener"><i class="fas fa-play-circle"></i>Xvideos</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-instagram"></i>Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i>Twitter / X</a></li>
+          <li><a href="https://wa.me/5581995469947" target="_blank" rel="noopener" id="footerWa"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div class="gal-footer-col">
+        <h3>⚖️ <span data-pt="Legal" data-en="Legal" data-es="Legal">Legal</span></h3>
+        <ul>
+          <li><a href="./legal/privacy-policy.html"><i class="fas fa-shield-alt"></i><span data-pt="Política de Privacidade" data-en="Privacy Policy" data-es="Política de Privacidad">Política de Privacidade</span></a></li>
+          <li><a href="./legal/terms-of-service.html"><i class="fas fa-file-contract"></i><span data-pt="Termos de Uso" data-en="Terms of Service" data-es="Términos de Uso">Termos de Uso</span></a></li>
+          <li><a href="./legal/dmca.html"><i class="fas fa-copyright"></i>DMCA</a></li>
+        </ul>
+        <div class="gal-footer-notice">
+          <h4>🔞 <span data-pt="Aviso Importante" data-en="Important Notice" data-es="Aviso Importante">Aviso Importante</span></h4>
+          <div class="gal-notice-item"><i class="fas fa-exclamation-triangle"></i><span data-pt="Conteúdo apenas para maiores de 18 anos" data-en="Content for adults 18+ only" data-es="Contenido solo para mayores de 18 años">Conteúdo apenas para maiores de 18 anos</span></div>
+          <div class="gal-notice-item"><i class="fas fa-lock"></i><span data-pt="Todo conteúdo é protegido por direitos autorais" data-en="All content is copyright protected" data-es="Todo el contenido está protegido">Todo conteúdo é protegido por direitos autorais</span></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="gal-footer-bottom">
+      <span class="gal-footer-copy">© 2025 Vanessa Rafaella · Recife, PE · <span data-pt="Todos os direitos reservados" data-en="All rights reserved" data-es="Todos los derechos reservados">Todos os direitos reservados</span></span>
+      <div class="gal-footer-links">
+        <a href="./legal/terms-of-service.html" data-pt="Termos" data-en="Terms" data-es="Términos">Termos</a>
+        <a href="./legal/privacy-policy.html" data-pt="Privacidade" data-en="Privacy" data-es="Privacidad">Privacidade</a>
+        <a href="./legal/dmca.html">DMCA</a>
+        <a href="./index.html" data-pt="Início" data-en="Home" data-es="Inicio">Início</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- ═══════════════════════════════════
+       SCRIPTS
+  ═══════════════════════════════════════ -->
+
+  <!-- Script principal do site (tema, idioma, menu, cursor) -->
+  <script src="./js/script.js" defer></script>
+
+  <!-- Gallery Script — independente do script.js -->
+  <script>
+    /* ────────────────────────────────────────────
+       DADOS DA GALERIA
+       Adicione/remova itens aqui conforme necessário
+    ──────────────────────────────────────────── */
+    const galleryData = [
+      { type:'photo', category:'premium',   src:'./img/pics/11.png',         thumb:'./img/pics/11.png',         title:'Foto Premium',       description:'Conteúdo exclusivo' },
+      { type:'photo', category:'premium',   src:'./img/pics/12.png',         thumb:'./img/pics/12.png',         title:'Foto Premium',       description:'Conteúdo exclusivo' },
+      { type:'photo', category:'exclusive', src:'./img/pics/22.png',         thumb:'./img/pics/22.png',         title:'Foto Exclusiva',     description:'Original e verificada' },
+      { type:'photo', category:'exclusive', src:'./img/pics/bunda-grande.png',        thumb:'./img/pics/bunda-grande.png',        title:'Foto Exclusiva',     description:'Original e verificada' },
+      { type:'photo', category:'premium',   src:'./img/pics/linda-trans-em-recife.png',       thumb:'./img/pics/linda-trans-em-recife.png',       title:'Recife',             description:'Fotos originais' },
+      { type:'photo', category:'premium',   src:'./img/pics/top-trans-brasil.png',      thumb:'./img/pics/top-trans-brasil.png',      title:'Top Brasil',         description:'Top #66 Brasil' },
+      { type:'photo', category:'exclusive', src:'./img/pics/ts-recife.png',   thumb:'./img/pics/ts-recife.png',   title:'TS Recife',          description:'Conteúdo verificado' },
+      { type:'photo', category:'exclusive', src:'./img/pics/shemales-br.png', thumb:'./img/pics/shemales-br.png', title:'Brasil',             description:'100% original' },
+      { type:'video', category:'exclusive', src:'./video/id04-video-sexflix.mp4', poster:'./assets/thumbnail/thumbnail-sexy.png', thumb:'./assets/thumbnail/thumbnail-sexy.png', title:'Vídeo Exclusivo', description:'Conteúdo premium' },
+    ];
+
+    /* ────────────────────────────────────────────
+       ESTADO GLOBAL
+    ──────────────────────────────────────────── */
+    let currentFilter   = 'all';
+    let currentModalIdx = 0;
+    let filteredData    = [];
+
+    /* ────────────────────────────────────────────
+       INIT
+    ──────────────────────────────────────────── */
+    document.addEventListener('DOMContentLoaded', () => {
+      renderGallery();
+      setupFilters();
+      setupModal();
+      setupScrollReveal();
+
+      /* Esconde loading */
+      setTimeout(() => {
+        document.getElementById('glLoading').classList.add('hide');
+      }, 800);
+    });
+
+    /* ────────────────────────────────────────────
+       RENDER GALLERY
+    ──────────────────────────────────────────── */
+    function renderGallery() {
+      const grid = document.getElementById('galGrid');
+
+      filteredData = currentFilter === 'all'
+        ? galleryData
+        : galleryData.filter(item =>
+            item.category === currentFilter ||
+            (currentFilter === 'photos' && item.type === 'photo') ||
+            (currentFilter === 'videos' && item.type === 'video')
+          );
+
+      grid.innerHTML = '';
+
+      filteredData.forEach((item, i) => {
+        const card = createCard(item, i);
+        grid.appendChild(card);
+        /* Anima entrada com delay escalonado */
+        setTimeout(() => card.classList.add('show'), i * 80);
+      });
+    }
+
+    function createCard(item, index) {
+      const div = document.createElement('div');
+      div.className = 'gal-item';
+      div.setAttribute('role', 'listitem');
+      div.setAttribute('tabindex', '0');
+      div.setAttribute('aria-label', item.title);
+
+      const media = item.type === 'video'
+        ? `<video poster="${item.poster || ''}" preload="none" aria-hidden="true">
+             <source src="${item.src}" type="video/mp4">
+           </video>
+           <div class="gal-play" aria-hidden="true"><i class="fas fa-play"></i></div>`
+        : `<img src="${item.thumb}" alt="${item.title}" loading="lazy">`;
+
+      div.innerHTML = `
+        ${media}
+        <span class="gal-badge ${item.type}" aria-hidden="true">${item.type === 'video' ? 'Vídeo' : 'Foto'}</span>
+        <div class="gal-item-overlay" aria-hidden="true">
+          <div class="gal-item-info">
+            <h3>${item.title}</h3>
+            <p>${item.description}</p>
+          </div>
+        </div>
+      `;
+
+      div.addEventListener('click', () => openModal(index));
+      div.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(index); }
+      });
+
+      return div;
+    }
+
+    /* ────────────────────────────────────────────
+       FILTROS
+    ──────────────────────────────────────────── */
+    function setupFilters() {
+      document.querySelectorAll('.gal-filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.gal-filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentFilter = btn.dataset.filter;
+          renderGallery();
+        });
+      });
+    }
+
+    /* ────────────────────────────────────────────
+       MODAL
+    ──────────────────────────────────────────── */
+    function setupModal() {
+      document.getElementById('galModalClose').addEventListener('click', closeModal);
+      document.getElementById('galModalPrev').addEventListener('click', () => navigateModal(-1));
+      document.getElementById('galModalNext').addEventListener('click', () => navigateModal(1));
+
+      document.getElementById('galModal').addEventListener('click', e => {
+        if (e.target === document.getElementById('galModal')) closeModal();
+      });
+
+      document.addEventListener('keydown', e => {
+        const modal = document.getElementById('galModal');
+        if (modal.style.display !== 'block') return;
+        if (e.key === 'Escape')     closeModal();
+        if (e.key === 'ArrowLeft')  navigateModal(-1);
+        if (e.key === 'ArrowRight') navigateModal(1);
+      });
+    }
+
+    function openModal(index) {
+      currentModalIdx = index;
+      const item    = filteredData[index];
+      const content = document.getElementById('galModalContent');
+      const modal   = document.getElementById('galModal');
+
+      content.innerHTML = item.type === 'video'
+        ? `<video controls autoplay preload="metadata" aria-label="${item.title}">
+             <source src="${item.src}" type="video/mp4">
+           </video>`
+        : `<img src="${item.src}" alt="${item.title}">`;
+
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+      content.focus();
+    }
+
+    function closeModal() {
+      const modal   = document.getElementById('galModal');
+      const content = document.getElementById('galModalContent');
+      const video   = content.querySelector('video');
+      if (video) { video.pause(); video.currentTime = 0; }
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    function navigateModal(dir) {
+      currentModalIdx = (currentModalIdx + dir + filteredData.length) % filteredData.length;
+      openModal(currentModalIdx);
+    }
+
+    /* ────────────────────────────────────────────
+       SCROLL REVEAL (para os data-reveal da CTA)
+    ──────────────────────────────────────────── */
+    function setupScrollReveal() {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('[data-reveal]').forEach(el => obs.observe(el));
+    }
+  </script>
+
+</body>
+</html>
