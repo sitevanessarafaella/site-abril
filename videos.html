@@ -1,0 +1,2065 @@
+<!DOCTYPE html>
+<!--
+╔══════════════════════════════════════════════════════════════════╗
+║          VANESSA RAFAELLA · VideoHub Oficial · videos.html       ║
+║                                                                  ║
+║  📌 ONDE EDITAR ESTE ARQUIVO:                                    ║
+║  ► Número WhatsApp  → Ctrl+F: 5581995469947  (troque todos)     ║
+║  ► Links plataformas → Ctrl+F: onlyfans.com/vanessarafaellavip  ║
+║  ► Adicionar vídeo  → Seção "COMO ADICIONAR VÍDEOS" (~linha 820)║
+║  ► Textos da barra  → Ctrl+F: auth-item                         ║
+║  ► Stats do topo    → Ctrl+F: data-target                       ║
+╚══════════════════════════════════════════════════════════════════╝
+-->
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Vanessa Rafaella — 75M+ views. Canal oficial de vídeos exclusivos.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#080808">
+<title>Vanessa Rafaella · VideoHub Oficial</title>
+
+<!-- ══ FONTES — mesmas do site principal ══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ══════════════════════════════════════════════════════
+   DESIGN TOKENS — idênticos ao site principal
+   ══════════════════════════════════════════════════════ */
+:root {
+  /* ─── Cores principais ─── */
+  --pink:         #FF2D8B;
+  --pink-dark:    #be185d;
+  --pink-light:   #FF6BB8;
+  --pink-glow:    rgba(255,45,139,0.30);
+  --pink-glow-sm: rgba(255,45,139,0.12);
+  --xv-red:       #E50914;
+  --xv-red-glow:  rgba(229,9,20,0.25);
+  --gold:         #F0C040;
+  --green:        #00C853;
+  --wa-green:     #25D366;
+  --of-blue:      #1A9FD4;
+  --tg-blue:      #0088CC;
+  --priv-orange:  #F07206;
+
+  /* ─── Tipografia ─── */
+  --display: 'Barlow Condensed', Impact, sans-serif;
+  --sans:    'Inter', system-ui, sans-serif;
+
+  /* ─── Layout ─── */
+  --nav-h:  68px;
+  --foot-h: 64px;   /* altura do footer mobile */
+  --mx:     1400px;
+  --px:     clamp(1rem, 4vw, 2rem);
+
+  /* ─── Animação ─── */
+  --dur:  0.25s;
+  --eout: cubic-bezier(.2,1,.3,1);
+  --ease: cubic-bezier(.65,0,.35,1);
+  --t:    0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+/* ─── TEMA DARK (padrão) ─── */
+[data-theme="dark"] {
+  --bg:        #080808;
+  --bg-mid:    #111111;
+  --bg-card:   #161616;
+  --bg-raised: #1e1e1e;
+  --border:    rgba(255,255,255,0.07);
+  --border-hi: rgba(255,255,255,0.13);
+  --txt:       #eceaea;
+  --txt-mid:   rgba(255,255,255,0.72);
+  --txt-dim:   rgba(255,255,255,0.38);
+}
+
+/* ─── TEMA LIGHT ─── */
+[data-theme="light"] {
+  --bg:        #f4f4f4;
+  --bg-mid:    #ffffff;
+  --bg-card:   #f0f0f0;
+  --bg-raised: #ffffff;
+  --border:    rgba(0,0,0,0.08);
+  --border-hi: rgba(0,0,0,0.15);
+  --txt:       #111111;
+  --txt-mid:   rgba(0,0,0,0.72);
+  --txt-dim:   rgba(0,0,0,0.42);
+}
+
+/* ══════════════════════════════════════════════════════
+   RESET
+   ══════════════════════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{
+  font-family:var(--sans);
+  background:var(--bg);
+  color:var(--txt);
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  transition:background var(--dur),color var(--dur);
+  /* espaço para footer fixo no mobile */
+  padding-bottom:0;
+}
+a{text-decoration:none;color:inherit;}
+button{font-family:inherit;border:none;cursor:pointer;background:none;}
+img,video{max-width:100%;display:block;}
+ul{list-style:none;}
+
+/* Grain sutil */
+body::after{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9990;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:5px;height:4px;}
+::-webkit-scrollbar-track{background:var(--bg);}
+::-webkit-scrollbar-thumb{background:var(--pink-dark);border-radius:3px;}
+::-webkit-scrollbar-thumb:hover{background:var(--pink);}
+
+/* ══════════════════════════════════════════════════════
+   SKIP LINK — Acessibilidade
+   ══════════════════════════════════════════════════════ */
+.skip-link{
+  position:absolute;top:-100%;left:1rem;
+  background:var(--pink);color:#fff;
+  padding:.5rem 1rem;border-radius:0 0 8px 8px;
+  font-weight:700;z-index:9999;transition:top .2s;
+}
+.skip-link:focus{top:0;}
+
+/* ══════════════════════════════════════════════════════
+   OVERLAY (menu mobile)
+   ══════════════════════════════════════════════════════ */
+.mob-overlay{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.72);
+  z-index:1400;
+  opacity:0;visibility:hidden;
+  transition:opacity var(--dur),visibility var(--dur);
+  backdrop-filter:blur(4px);
+}
+.mob-overlay.active{opacity:1;visibility:visible;}
+
+/* ══════════════════════════════════════════════════════
+   NAVBAR — design do site principal
+   ══════════════════════════════════════════════════════ */
+.nav{
+  position:sticky;top:0;
+  height:var(--nav-h);
+  z-index:1000;
+  background:var(--bg-mid);
+  border-bottom:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  transition:box-shadow var(--dur),background var(--dur);
+}
+.nav.scrolled{box-shadow:0 4px 40px rgba(0,0,0,.5);}
+
+.nav-inner{
+  height:100%;
+  display:flex;align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding-inline:var(--px);
+  max-width:var(--mx);
+  margin-inline:auto;
+}
+
+/* ─── LOGO ─── */
+.nav-logo{display:flex;align-items:center;gap:.6rem;flex-shrink:0;}
+.nav-logo-photo{position:relative;width:42px;height:42px;flex-shrink:0;}
+.nav-logo-photo img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid var(--pink);}
+.nav-logo-photo::before{
+  content:'';position:absolute;inset:-4px;border-radius:50%;
+  border:1px solid var(--pink-glow);
+  animation:ringPulse 2.5s ease-in-out infinite;
+}
+@keyframes ringPulse{0%,100%{opacity:.4;transform:scale(1);}50%{opacity:1;transform:scale(1.06);}}
+.verified-badge{
+  position:absolute;bottom:-1px;right:-2px;
+  width:14px;height:14px;background:#1DA1F2;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:2px solid var(--bg-mid);
+}
+.verified-badge i{color:#fff;font-size:.45rem;}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.15;}
+.nav-logo-name{
+  font-family:var(--display);font-size:clamp(.95rem,2vw,1.1rem);
+  font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+}
+.nav-logo-name .accent{color:var(--pink);}
+.nav-logo-sub{
+  font-size:.52rem;font-weight:400;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--txt-dim);
+}
+
+/* ─── LINKS DESKTOP ─── */
+.nav-links{display:none;align-items:center;gap:1.5rem;}
+.nav-links a{
+  font-size:.82rem;font-weight:500;letter-spacing:.04em;
+  color:var(--txt-mid);position:relative;transition:color var(--dur);
+}
+.nav-links a::after{
+  content:'';position:absolute;bottom:-4px;left:0;
+  width:0;height:2px;background:var(--pink);
+  transition:width var(--dur) var(--eout);
+}
+.nav-links a:hover,
+.nav-links a.active-link{color:var(--pink);}
+.nav-links a:hover::after,
+.nav-links a.active-link::after{width:100%;}
+
+/* ─── BARRA DE BUSCA desktop ─── */
+.nav-search{
+  flex:1;max-width:400px;
+  display:none;/* aparece em ≥768px via media query */
+}
+.search-box{
+  display:flex;
+  background:var(--bg-card);
+  border:1px solid var(--border-hi);
+  border-radius:8px;overflow:hidden;
+  transition:border-color var(--dur);
+}
+.search-box:focus-within{border-color:var(--pink);}
+.search-box input{
+  flex:1;padding:8px 14px;
+  background:transparent;border:none;
+  color:var(--txt);font-size:.84rem;font-family:var(--sans);outline:none;
+}
+.search-box input::placeholder{color:var(--txt-dim);}
+.search-box button{
+  padding:8px 13px;background:transparent;
+  color:var(--txt-dim);transition:color var(--dur);
+}
+.search-box button:hover{color:var(--pink);}
+
+/* ─── CONTROLES NAV ─── */
+.nav-controls{display:flex;align-items:center;gap:.5rem;}
+
+/* botão ícone genérico */
+.icon-btn{
+  width:36px;height:36px;
+  display:flex;align-items:center;justify-content:center;
+  border-radius:8px;border:1px solid var(--border);
+  color:var(--txt-mid);font-size:.85rem;
+  transition:all var(--dur);flex-shrink:0;
+}
+.icon-btn:hover{border-color:var(--pink);color:var(--pink);}
+
+/* Seletor de idioma */
+.lang-sel{position:relative;}
+.lang-trigger{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:4px 9px;height:36px;
+  border:1px solid var(--border);border-radius:8px;
+  color:var(--txt-mid);font-size:.78rem;font-weight:600;
+  transition:all var(--dur);
+}
+.lang-trigger:hover{border-color:var(--pink);color:var(--pink);}
+.lang-flag{font-size:1rem;line-height:1;}
+.lang-code{text-transform:uppercase;letter-spacing:.04em;}
+.lang-arrow svg{width:11px;height:11px;stroke:currentColor;transition:transform var(--dur);}
+.lang-sel.open .lang-arrow svg{transform:rotate(180deg);}
+.lang-dropdown{
+  position:absolute;top:calc(100% + 8px);right:0;
+  min-width:170px;background:var(--bg-raised);
+  border:1px solid var(--border-hi);border-radius:10px;
+  padding:6px;box-shadow:0 12px 40px rgba(0,0,0,.45);
+  opacity:0;visibility:hidden;transform:translateY(-6px);
+  transition:opacity var(--dur),visibility var(--dur),transform var(--dur) var(--eout);
+  z-index:200;
+}
+.lang-dropdown p{
+  font-size:.68rem;color:var(--txt-dim);
+  padding:4px 10px 8px;text-transform:uppercase;letter-spacing:.06em;
+  border-bottom:1px solid var(--border);margin-bottom:4px;
+}
+.lang-sel.open .lang-dropdown{opacity:1;visibility:visible;transform:translateY(0);}
+.lang-opt{
+  display:flex;align-items:center;gap:8px;
+  width:100%;padding:8px 10px;border-radius:6px;
+  font-size:.82rem;font-weight:500;color:var(--txt-mid);
+  transition:background var(--dur),color var(--dur);
+}
+.lang-opt:hover{background:var(--pink-glow-sm);color:var(--pink);}
+.lang-opt[aria-selected="true"]{color:var(--pink);background:var(--pink-glow-sm);font-weight:700;}
+
+/* Botão MENU desktop */
+.btn-menu-desktop{
+  display:none;align-items:center;gap:6px;
+  padding:8px 18px;height:36px;background:var(--pink);
+  border-radius:4px;color:#fff;
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  transition:background var(--dur),transform var(--dur);
+}
+.btn-menu-desktop:hover{background:var(--pink-dark);transform:translateY(-1px);}
+
+/* Hamburguer */
+.hamburger{
+  width:36px;height:36px;
+  display:flex;flex-direction:column;justify-content:center;gap:5px;
+  border-radius:8px;border:1px solid var(--border);padding:0 8px;
+  transition:border-color var(--dur);
+}
+.hamburger:hover{border-color:var(--pink);}
+.hamburger span{
+  display:block;width:100%;height:2px;
+  background:var(--txt-mid);border-radius:2px;
+  transition:transform var(--dur),opacity var(--dur),background var(--dur);
+}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg);background:var(--pink);}
+.hamburger.active span:nth-child(2){opacity:0;}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg);background:var(--pink);}
+
+/* ══════════════════════════════════════════════════════
+   MENU MOBILE (painel lateral)
+   ══════════════════════════════════════════════════════ */
+.mob-menu{
+  position:fixed;top:0;right:-100%;
+  width:min(85vw,320px);height:100dvh;
+  background:var(--bg-mid);
+  border-left:1px solid var(--border-hi);
+  z-index:1500;
+  display:flex;flex-direction:column;
+  overflow-y:auto;
+  transition:right .4s var(--eout);
+}
+.mob-menu.active{right:0;}
+
+.mob-menu-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.2rem 1.25rem;border-bottom:1px solid var(--border);
+}
+.mob-menu-brand{
+  font-family:var(--display);font-size:1.1rem;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+}
+.mob-menu-brand .accent{color:var(--pink);}
+.mob-close{
+  width:32px;height:32px;display:flex;align-items:center;justify-content:center;
+  border-radius:8px;border:1px solid var(--border);
+  color:var(--txt-mid);font-size:1rem;transition:all var(--dur);
+}
+.mob-close:hover{border-color:var(--pink);color:var(--pink);}
+
+.mob-nav{padding:1rem 0;flex:1;}
+.mob-nav li{border-bottom:1px solid var(--border);}
+.mob-nav a{
+  display:flex;align-items:center;gap:14px;
+  padding:1rem 1.25rem;font-size:.95rem;font-weight:500;color:var(--txt-mid);
+  transition:color var(--dur),padding-left var(--dur),background var(--dur);
+}
+.mob-nav a i{width:18px;color:var(--pink);font-size:.9rem;}
+.mob-nav a:hover{color:var(--pink);padding-left:1.75rem;background:var(--pink-glow-sm);}
+
+.mob-menu-footer{
+  padding:1.25rem;display:flex;flex-direction:column;gap:.75rem;
+  border-top:1px solid var(--border);
+}
+.mob-theme-btn{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.75rem 1rem;background:var(--bg-card);
+  border-radius:10px;border:1px solid var(--border);
+  color:var(--txt-mid);font-size:.88rem;width:100%;transition:all var(--dur);
+}
+.mob-theme-btn:hover{border-color:var(--pink);color:var(--pink);}
+.mob-socials{display:flex;gap:.5rem;flex-wrap:wrap;}
+.mob-soc-btn{
+  flex:1;min-width:42px;
+  display:flex;align-items:center;justify-content:center;
+  height:38px;border-radius:8px;border:1px solid var(--border);
+  font-size:.95rem;color:var(--txt-dim);transition:all var(--dur);
+}
+.mob-soc-btn:hover{color:var(--pink);border-color:var(--pink);}
+
+/* ══════════════════════════════════════════════════════
+   MOBILE SEARCH OVERLAY (busca mobile)
+   ══════════════════════════════════════════════════════ */
+.mob-search-overlay{
+  position:fixed;top:0;left:0;right:0;
+  padding:10px 52px 10px 12px;
+  background:var(--bg-mid);z-index:2100;
+  border-bottom:1px solid var(--border);
+  transform:translateY(-100%);transition:transform var(--dur);
+}
+.mob-search-overlay.active{transform:translateY(0);}
+.mob-search-close{
+  position:absolute;right:12px;top:50%;transform:translateY(-50%);
+  color:var(--txt-mid);font-size:1.1rem;padding:4px;
+}
+
+/* ══════════════════════════════════════════════════════
+   TICKER BAR (barra de corrida)
+   ══════════════════════════════════════════════════════ */
+.ticker-bar{
+  background:var(--pink);overflow:hidden;
+  height:34px;display:flex;align-items:center;
+}
+.ticker-track{
+  display:flex;animation:tickerScroll 40s linear infinite;
+  white-space:nowrap;
+}
+.ticker-item{
+  padding:0 2rem;font-size:.7rem;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:#fff;
+}
+.ticker-sep{opacity:.5;}
+@keyframes tickerScroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* ══════════════════════════════════════════════════════
+   FILTERS BAR (sticky abaixo do nav)
+   ══════════════════════════════════════════════════════ */
+.filters-bar{
+  background:var(--bg-mid);
+  border-bottom:1px solid var(--border);
+  position:sticky;top:var(--nav-h);z-index:100;
+}
+.filters-inner{
+  max-width:var(--mx);margin-inline:auto;
+  padding:10px var(--px);
+  display:flex;flex-direction:column;gap:8px;
+}
+.filters-top{
+  display:flex;justify-content:space-between;
+  align-items:center;gap:10px;flex-wrap:wrap;
+}
+.filters-label{
+  font-size:.78rem;font-weight:600;color:var(--txt-dim);
+  display:flex;align-items:center;gap:6px;
+}
+.view-btns{display:flex;gap:4px;}
+.view-btn{
+  padding:6px 9px;background:var(--bg-card);
+  border:1px solid var(--border);border-radius:5px;
+  color:var(--txt-dim);font-size:.8rem;transition:all var(--dur);
+}
+.view-btn:hover,.view-btn.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+
+/* Filtros de categoria */
+.filter-tags{display:flex;gap:6px;overflow-x:auto;padding-bottom:2px;}
+.filter-tags::-webkit-scrollbar{height:0;}
+.filter-tag{
+  padding:5px 14px;background:var(--bg-card);
+  border:1px solid var(--border-hi);color:var(--txt-mid);
+  border-radius:20px;font-size:.78rem;font-weight:500;
+  white-space:nowrap;cursor:pointer;transition:all var(--dur);
+}
+.filter-tag:hover{border-color:var(--pink);color:var(--pink);}
+.filter-tag.active{background:var(--pink);border-color:var(--pink);color:#fff;}
+
+/* ══════════════════════════════════════════════════════
+   MAIN CONTENT
+   ══════════════════════════════════════════════════════ */
+.main{
+  max-width:var(--mx);margin-inline:auto;
+  padding:20px var(--px) 100px;
+}
+
+/* Stats row */
+.stats-row{
+  display:flex;gap:1px;background:var(--border);
+  border-radius:10px;overflow:hidden;margin-bottom:20px;
+}
+.stat-cell{
+  flex:1;background:var(--bg-card);padding:14px 12px;text-align:center;
+}
+.stat-num{
+  font-family:var(--display);
+  font-size:clamp(1.3rem,4vw,2rem);
+  font-weight:800;color:var(--pink);line-height:1;
+}
+.stat-lbl{
+  font-size:.65rem;font-weight:700;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--txt-dim);margin-top:4px;
+}
+@media(max-width:600px){
+  .stats-row{flex-wrap:wrap;}
+  .stat-cell{min-width:calc(50% - 1px);}
+}
+
+/* Section header */
+.section-hd{
+  display:flex;justify-content:space-between;align-items:baseline;
+  margin-bottom:16px;flex-wrap:wrap;gap:8px;
+}
+.section-hd h2{
+  font-family:var(--display);
+  font-size:clamp(1.4rem,3.5vw,2rem);
+  font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--txt);
+}
+.section-hd h2 .accent{color:var(--pink);}
+.section-hd .count{font-size:.82rem;color:var(--txt-dim);}
+
+/* Busca sem resultado */
+.no-results{
+  display:none;
+  text-align:center;padding:3rem 1rem;
+  color:var(--txt-dim);font-size:.9rem;grid-column:1/-1;
+}
+.no-results i{font-size:2rem;color:var(--pink);margin-bottom:.5rem;display:block;}
+
+/* ══════════════════════════════════════════════════════
+   VIDEO GRID
+   ══════════════════════════════════════════════════════ */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+@media(max-width:1200px){.video-grid{grid-template-columns:repeat(3,1fr);}}
+@media(max-width:860px) {.video-grid{grid-template-columns:repeat(2,1fr);gap:12px;}}
+@media(max-width:380px) {.video-grid{grid-template-columns:1fr;}}
+
+/* ─── VIDEO CARD ─── */
+.video-card{
+  background:var(--bg-card);border-radius:10px;overflow:hidden;
+  border:1px solid var(--border);
+  transition:transform .25s,box-shadow .25s,border-color .25s;
+}
+.video-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 32px var(--pink-glow);
+  border-color:rgba(255,45,139,.28);
+}
+/* cartão oculto pela busca/filtro */
+.video-card.hidden{display:none;}
+
+/* Thumbnail */
+.video-thumb{
+  position:relative;width:100%;
+  padding-top:56.25%;background:var(--bg-raised);overflow:hidden;
+}
+.video-poster{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;cursor:pointer;transition:transform .3s;
+}
+.video-card:hover .video-poster{transform:scale(1.04);}
+
+/* Play overlay */
+.play-overlay{
+  position:absolute;inset:0;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.28);cursor:pointer;transition:background var(--dur);
+}
+.play-overlay:hover{background:rgba(0,0,0,.12);}
+.play-circle{
+  width:50px;height:50px;
+  background:rgba(229,9,20,.92);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 24px rgba(229,9,20,.55);
+  transition:transform var(--dur);
+}
+.play-overlay:hover .play-circle{transform:scale(1.12);}
+.play-circle i{color:#fff;font-size:1rem;margin-left:3px;}
+
+/* iframe wrapper — oculto até clicar */
+.video-iframe-wrap{position:absolute;inset:0;display:none;}
+.video-iframe-wrap.active{display:block;}
+.video-iframe-wrap iframe{width:100%;height:100%;border:none;}
+
+/* Badges */
+.vid-badge{
+  position:absolute;font-size:.62rem;font-weight:700;
+  padding:2px 7px;border-radius:3px;pointer-events:none;z-index:5;
+}
+.vid-badge--quality{top:7px;right:7px;background:var(--xv-red);color:#fff;}
+.vid-badge--cat    {top:7px;left:7px;background:rgba(0,0,0,.75);color:#fff;text-transform:uppercase;}
+.vid-badge--views  {bottom:7px;left:7px;background:rgba(255,45,139,.85);color:#fff;display:flex;align-items:center;gap:3px;}
+
+/* Info */
+.video-info{padding:10px 12px 12px;}
+.video-title{
+  font-size:.86rem;font-weight:600;color:var(--txt);
+  line-height:1.35;margin-bottom:7px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
+.video-meta{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.73rem;color:var(--txt-dim);margin-bottom:7px;
+}
+.video-views{display:flex;align-items:center;gap:3px;}
+.video-rating{font-weight:700;color:#4caf50;}
+.video-channel{
+  font-size:.7rem;color:var(--pink);font-weight:600;
+  padding-top:6px;border-top:1px solid var(--border);margin-bottom:8px;
+}
+
+/* Botões de ação */
+.video-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+.video-actions.cols2{grid-template-columns:repeat(2,1fr);}
+.vid-btn{
+  display:flex;align-items:center;justify-content:center;gap:4px;
+  padding:6px 4px;border-radius:6px;
+  font-size:.68rem;font-weight:700;
+  transition:all var(--dur);white-space:nowrap;overflow:hidden;
+}
+.vid-btn:hover{opacity:.88;transform:scale(1.03);}
+.vid-btn-of  {background:#1a9fd4;color:#fff;}
+.vid-btn-wpp {background:#25d366;color:#fff;}
+.vid-btn-priv{background:#f07206;color:#fff;}
+.vid-btn-xv  {background:#e50914;color:#fff;}
+.vid-btn-tg  {background:#0088cc;color:#fff;}
+
+/* ══════════════════════════════════════════════════════
+   SECTION: AVALIAÇÕES
+   ══════════════════════════════════════════════════════ */
+#reviews{margin-top:40px;padding-top:32px;border-top:1px solid var(--border);}
+.reviews-head{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.reviews-head .rh-icon{font-size:1.2rem;}
+.reviews-head h2{
+  font-family:var(--display);font-size:clamp(1.4rem,4vw,2rem);
+  font-weight:800;text-transform:uppercase;color:var(--txt);
+}
+.reviews-head h2 .accent{color:var(--pink);}
+
+.review-card{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:12px;padding:14px;margin-bottom:10px;
+  transition:border-color var(--dur);
+}
+.review-card:hover{border-color:rgba(255,45,139,.25);}
+.review-card__head{display:flex;align-items:center;gap:10px;margin-bottom:8px;}
+.review-avatar{
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:linear-gradient(135deg,var(--pink),var(--pink-light));
+  display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:.85rem;color:#fff;
+}
+.review-name{font-size:.85rem;font-weight:600;color:var(--txt);flex:1;}
+.review-stars{color:var(--gold);font-size:.8rem;letter-spacing:1px;}
+.review-text{font-size:.82rem;color:var(--txt-mid);line-height:1.6;}
+
+/* Skeleton loading */
+.review-skel{
+  background:var(--bg-card);border-radius:12px;padding:14px;
+  margin-bottom:10px;animation:skelPulse 1.5s ease-in-out infinite;
+}
+@keyframes skelPulse{0%,100%{opacity:.6;}50%{opacity:1;}}
+.skel-line{height:12px;background:var(--border-hi);border-radius:6px;margin-bottom:8px;}
+
+/* Formulário de avaliação */
+.review-form{
+  background:var(--bg-card);border:1px solid var(--border);
+  border-radius:12px;padding:18px;margin-top:8px;
+}
+.rf-title{font-size:.88rem;font-weight:700;color:var(--txt);margin-bottom:14px;}
+.rf-group{margin-bottom:12px;}
+.rf-input,.rf-textarea,.rf-select{
+  width:100%;background:var(--bg-raised);border:1px solid var(--border-hi);
+  border-radius:8px;padding:10px 13px;color:var(--txt);
+  font-family:var(--sans);font-size:.82rem;outline:none;
+  transition:border-color var(--dur);-webkit-appearance:none;
+}
+.rf-input:focus,.rf-textarea:focus{border-color:var(--pink);}
+.rf-input::placeholder,.rf-textarea::placeholder{color:var(--txt-dim);}
+.rf-textarea{resize:vertical;min-height:80px;line-height:1.5;}
+.rf-select-wrap{position:relative;}
+.rf-select-wrap::after{
+  content:'▾';position:absolute;right:13px;top:50%;
+  transform:translateY(-50%);color:var(--txt-dim);
+  pointer-events:none;font-size:.75rem;
+}
+.rf-select option{background:var(--bg-card);color:var(--txt);}
+.rf-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--xv-red);color:#fff;
+  padding:11px 22px;border-radius:50px;
+  font-family:var(--sans);font-size:.83rem;font-weight:700;
+  border:none;cursor:pointer;
+  transition:transform var(--dur),box-shadow var(--dur);
+}
+.rf-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--xv-red-glow);}
+.rf-btn:disabled{opacity:.55;cursor:not-allowed;transform:none;}
+.rf-feedback{
+  display:none;margin-top:10px;font-size:.8rem;font-weight:600;color:var(--green);
+  padding:9px 13px;background:rgba(0,200,83,.08);
+  border:1px solid rgba(0,200,83,.2);border-radius:8px;
+}
+.rf-feedback.show{display:block;}
+.rf-feedback.error{color:#ff5252;background:rgba(255,82,82,.08);border-color:rgba(255,82,82,.2);}
+
+/* ══════════════════════════════════════════════════════
+   FOOTER DESKTOP (rodapé completo)
+   ══════════════════════════════════════════════════════ */
+.footer-desktop{
+  background:var(--bg-mid);
+  border-top:1px solid var(--border);
+  padding-block:clamp(2rem,5vw,3rem);
+  padding-inline:var(--px);
+}
+.footer-inner{
+  max-width:var(--mx);margin-inline:auto;
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;
+}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;}}
+@media(max-width:500px){.footer-inner{grid-template-columns:1fr;}}
+.footer-brand .f-logo{
+  font-family:var(--display);font-size:1.4rem;font-weight:900;
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem;
+}
+.footer-brand .f-logo .accent{color:var(--pink);}
+.footer-brand p{font-size:.8rem;color:var(--txt-dim);line-height:1.65;max-width:240px;margin-bottom:14px;}
+.footer-socials{display:flex;gap:.5rem;flex-wrap:wrap;}
+.f-soc{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--bg-card);border:1px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;color:var(--txt-dim);transition:all var(--dur);
+}
+.f-soc:hover{background:var(--pink);border-color:var(--pink);color:#fff;transform:translateY(-2px);}
+.footer-col h4{
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--txt-dim);margin-bottom:12px;
+}
+.footer-col ul li{margin-bottom:7px;}
+.footer-col ul li a{font-size:.82rem;color:var(--txt-dim);transition:color var(--dur);}
+.footer-col ul li a:hover{color:var(--pink);}
+.footer-bottom{
+  border-top:1px solid var(--border);padding-top:16px;margin-top:24px;
+  max-width:var(--mx);margin-inline:auto;
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+}
+.footer-copy{font-size:.75rem;color:var(--txt-dim);}
+.footer-disclaimer{
+  font-size:.7rem;color:var(--txt-dim);
+  margin-top:12px;max-width:var(--mx);margin-inline:auto;
+  line-height:1.6;
+}
+
+/* ══════════════════════════════════════════════════════
+   FOOTER MOBILE (barra fixa embaixo — como app)
+   ══════════════════════════════════════════════════════ */
+.footer-mobile{
+  position:fixed;bottom:0;left:0;right:0;
+  height:var(--foot-h);
+  background:var(--bg-mid);
+  border-top:1px solid var(--border);
+  backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);
+  z-index:800;
+  display:flex;align-items:center;
+  justify-content:space-around;
+  padding:0 8px;
+  /* linha rosa no topo */
+}
+.footer-mobile::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--pink),transparent);
+  opacity:.5;
+}
+
+.fm-btn{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  text-decoration:none;color:var(--txt-dim);
+  font-size:.65rem;font-weight:500;letter-spacing:.2px;
+  padding:6px 10px;border-radius:10px;
+  transition:color var(--dur),background var(--dur),transform var(--dur);
+  flex:1;max-width:72px;
+  -webkit-tap-highlight-color:transparent;
+}
+.fm-btn:hover,.fm-btn.active{
+  color:var(--pink);background:var(--pink-glow-sm);
+  transform:translateY(-2px);
+}
+.fm-icon{
+  width:32px;height:32px;border-radius:8px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--bg-card);font-size:1.1rem;
+  transition:box-shadow var(--dur);
+}
+.fm-btn:hover .fm-icon,.fm-btn.active .fm-icon{
+  box-shadow:0 0 10px var(--pink-glow);
+}
+.fm-icon img{width:100%;height:100%;object-fit:cover;border-radius:6px;}
+
+/* ══════════════════════════════════════════════════════
+   FAB WHATSAPP
+   ══════════════════════════════════════════════════════ */
+.wa-fab{
+  position:fixed;
+  /* sobe acima do footer mobile */
+  bottom:calc(var(--foot-h) + 12px);
+  right:14px;
+  z-index:850;
+  width:50px;height:50px;
+  background:#25D366;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.3rem;color:#fff;
+  box-shadow:0 4px 18px rgba(37,211,102,.4);
+  transition:all var(--dur) var(--eout);
+  animation:waPulse 3s ease infinite;
+}
+.wa-fab:hover{transform:scale(1.1) translateY(-3px);}
+@keyframes waPulse{
+  0%,100%{box-shadow:0 4px 18px rgba(37,211,102,.4);}
+  50%{box-shadow:0 4px 28px rgba(37,211,102,.65),0 0 0 6px rgba(37,211,102,.08);}
+}
+
+/* ══════════════════════════════════════════════════════
+   POPUP LUCKY
+   ══════════════════════════════════════════════════════ */
+.popup-bg{
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.85);z-index:9999;
+  display:flex;align-items:center;justify-content:center;padding:16px;
+  opacity:0;pointer-events:none;transition:opacity .3s;
+}
+.popup-bg.open{opacity:1;pointer-events:all;}
+.popup-box{
+  background:var(--bg-mid);border:2px solid var(--pink);
+  border-radius:18px;padding:28px 24px;max-width:380px;width:100%;
+  text-align:center;position:relative;
+  box-shadow:0 0 40px var(--pink-glow);
+}
+.popup-close{position:absolute;top:12px;right:14px;font-size:1.2rem;color:var(--txt-dim);cursor:pointer;}
+.popup-close:hover{color:var(--txt);}
+.popup-emoji{font-size:2.5rem;margin-bottom:8px;}
+.popup-title{
+  font-family:var(--display);font-size:1.4rem;font-weight:800;
+  text-transform:uppercase;margin-bottom:8px;
+}
+.popup-text{font-size:.85rem;color:var(--txt-mid);line-height:1.65;margin-bottom:16px;}
+.popup-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#0088cc;color:#fff;padding:12px 22px;
+  border-radius:30px;font-weight:700;font-size:.88rem;
+  transition:all var(--dur);
+}
+.popup-btn:hover{background:#006fa8;transform:scale(1.04);}
+.popup-note{font-size:.7rem;color:var(--txt-dim);margin-top:10px;}
+
+/* ══════════════════════════════════════════════════════
+   RESPONSIVO EXTRA
+   ══════════════════════════════════════════════════════ */
+@media(min-width:768px){
+  /* Mostra links desktop e botão MENU, oculta hamburguer */
+  .nav-links       {display:flex;}
+  .btn-menu-desktop{display:inline-flex;}
+  .hamburger       {display:none;}
+  /* Mostra busca desktop */
+  .nav-search{display:block;}
+  /* Oculta botão de busca mobile */
+  .mob-search-icon{display:none !important;}
+  /* Footer desktop visível, mobile oculto */
+  .footer-mobile{display:none;}
+  .footer-desktop{display:block;}
+  /* main sem padding do footer mobile */
+  .main{padding-bottom:40px;}
+  /* FAB fica no canto sem subir */
+  .wa-fab{bottom:20px;}
+}
+
+@media(max-width:767px){
+  .footer-desktop{display:none;}
+  .footer-mobile{display:flex;}
+}
+
+@media(max-width:480px){
+  .video-grid{grid-template-columns:repeat(2,1fr);gap:10px;}
+  .vid-btn{font-size:.62rem;padding:5px 3px;}
+}
+@media(max-width:340px){
+  .video-grid{grid-template-columns:1fr;}
+}
+
+/* Animação reduzida */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ SKIP LINK ══ -->
+<a class="skip-link" href="#main">Ir para o conteúdo principal</a>
+
+<!-- ══ OVERLAY (menu mobile) ══ -->
+<div class="mob-overlay" id="mobOverlay"></div>
+
+<!-- ══════════════════════════════════════════════════════
+     NAVBAR — mesmo design da homepage
+     ══════════════════════════════════════════════════════ -->
+<header>
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+
+      <!-- LOGO
+           📌 TROCAR LOGO: altere o src da <img> abaixo
+              para o caminho da sua imagem circular.
+      -->
+      <a class="nav-logo" href="homepage.html" aria-label="Vanessa Rafaella — página inicial">
+        <div class="nav-logo-photo">
+          <img
+            src="./img/pics/vanessa-rafaella-logo-nav-primary.svg"
+            alt="Vanessa Rafaella"
+            width="42" height="42" loading="eager"
+          >
+          <div class="verified-badge"><i class="fas fa-check"></i></div>
+        </div>
+        <div class="nav-logo-text">
+          <span class="nav-logo-name">VANESSA&nbsp;<span class="accent">RAFAELLA</span></span>
+          <span class="nav-logo-sub">VideoHub Oficial</span>
+        </div>
+      </a>
+
+      <!-- LINKS DESKTOP (visíveis em ≥768px) -->
+      <ul class="nav-links">
+        <li><a href="homepage.html"   data-i18n="nav_home">Início</a></li>
+        <li><a href="#videos" class="active-link" data-i18n="nav_videos">Vídeos</a></li>
+        <li><a href="#reviews"        data-i18n="nav_reviews">Avaliações</a></li>
+        <li><a href="homepage.html#links" data-i18n="nav_links">Links Oficiais</a></li>
+        <li><a href="homepage.html#contact" data-i18n="nav_contact">Contato</a></li>
+      </ul>
+
+      <!-- BARRA DE BUSCA DESKTOP -->
+      <div class="nav-search">
+        <div class="search-box">
+          <!--
+            📌 BUSCA: o JS abaixo filtra os cards em tempo real pelo título.
+               Não precisa alterar nada aqui.
+          -->
+          <input
+            type="text"
+            id="searchDesktop"
+            placeholder="Buscar vídeos..."
+            aria-label="Buscar vídeos"
+            autocomplete="off"
+          >
+          <button type="button" aria-label="Pesquisar">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- CONTROLES -->
+      <div class="nav-controls">
+
+        <!-- Botão busca (só mobile) -->
+        <button class="icon-btn mob-search-icon" id="mobSearchBtn" aria-label="Abrir busca">
+          <i class="fas fa-search"></i>
+        </button>
+
+        <!-- Tema -->
+        <button class="icon-btn" id="themeToggle" aria-label="Alternar tema">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+
+        <!-- Idioma -->
+        <div class="lang-sel" id="langSel">
+          <button class="lang-trigger" id="langTrigger"
+            aria-haspopup="listbox" aria-expanded="false">
+            <span class="lang-flag" id="langFlag">🇧🇷</span>
+            <span class="lang-code" id="langCode">PT</span>
+            <span class="lang-arrow">
+              <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </span>
+          </button>
+          <div class="lang-dropdown" role="listbox">
+            <p>Idioma / Language</p>
+            <button class="lang-opt" role="option" data-lang="pt" data-flag="🇧🇷" aria-selected="true">
+              <span>🇧🇷</span><span>Português</span>
+            </button>
+            <button class="lang-opt" role="option" data-lang="en" data-flag="🇺🇸" aria-selected="false">
+              <span>🇺🇸</span><span>English</span>
+            </button>
+            <button class="lang-opt" role="option" data-lang="es" data-flag="🇪🇸" aria-selected="false">
+              <span>🇪🇸</span><span>Español</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Botão MENU (desktop) -->
+        <button class="btn-menu-desktop" id="btnMenuDesktop"
+          aria-label="Abrir menu" aria-expanded="false" aria-controls="mobMenu">
+          MENU
+        </button>
+
+        <!-- Hamburguer (mobile) -->
+        <button class="hamburger" id="hamburger"
+          aria-label="Abrir menu" aria-expanded="false" aria-controls="mobMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- ══ BUSCA MOBILE OVERLAY ══ -->
+<div class="mob-search-overlay" id="mobSearchOverlay">
+  <div class="search-box">
+    <input type="text" id="searchMobile" placeholder="Buscar vídeos..." autocomplete="off">
+    <button type="button"><i class="fas fa-search"></i></button>
+  </div>
+  <button class="mob-search-close" id="mobSearchClose" aria-label="Fechar busca">
+    <i class="fas fa-times"></i>
+  </button>
+</div>
+
+<!-- ══ MENU MOBILE (painel lateral) ══ -->
+<nav class="mob-menu" id="mobMenu" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="mob-menu-hdr">
+    <span class="mob-menu-brand">VANESSA <span class="accent">RAFAELLA</span></span>
+    <button class="mob-close" id="mobClose" aria-label="Fechar menu">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+  <ul class="mob-nav">
+    <!--
+      📌 LINKS DO MENU MOBILE:
+         Adicione ou remova <li> conforme necessário.
+         Mantenha os atributos data-pt / data-en / data-es.
+    -->
+    <li><a href="homepage.html">
+      <i class="fas fa-home"></i>
+      <span data-pt="Início" data-en="Home" data-es="Inicio">Início</span>
+    </a></li>
+    <li><a href="#videos">
+      <i class="fas fa-fire"></i>
+      <span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span>
+    </a></li>
+    <li><a href="#reviews">
+      <i class="fas fa-star"></i>
+      <span data-pt="Avaliações" data-en="Reviews" data-es="Reseñas">Avaliações</span>
+    </a></li>
+    <li><a href="homepage.html#links">
+      <i class="fas fa-link"></i>
+      <span data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</span>
+    </a></li>
+    <li><a href="https://wa.me/5581995469947" target="_blank" rel="noopener">
+      <i class="fab fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a></li>
+    <li><a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener">
+      <i class="fas fa-fire"></i>
+      <span>OnlyFans</span>
+    </a></li>
+    <li><a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener">
+      <i class="fas fa-film"></i>
+      <span>XVideos</span>
+    </a></li>
+  </ul>
+  <div class="mob-menu-footer">
+    <div class="mob-socials">
+      <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="mob-soc-btn" aria-label="OnlyFans"><i class="fas fa-fire"></i></a>
+      <a href="#" class="mob-soc-btn" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      <a href="#" class="mob-soc-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="mob-soc-btn" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <button class="mob-theme-btn" id="mobThemeToggle">
+      <span><i class="fas fa-adjust"></i>&nbsp; Alterar Tema</span>
+      <span id="mobThemeLabel">Escuro</span>
+    </button>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════════════════
+     TICKER BAR — barra de corrida
+     📌 EDITAR TEXTOS: troque os textos nos <span class="ticker-item">
+     ══════════════════════════════════════════════════════ -->
+<div class="ticker-bar" aria-hidden="true">
+  <div class="ticker-track">
+    <!-- Duplicar os itens é necessário para o loop contínuo funcionar -->
+    <span class="ticker-item">🔥 <span data-pt="75 Milhões de Views no XVideos" data-en="75 Million Views on XVideos" data-es="75 Millones de Vistas en XVideos">75 Milhões de Views no XVideos</span> <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">⭐ <span data-pt="Canal Oficial Trans · Brasil" data-en="Official Trans Channel · Brazil" data-es="Canal Oficial Trans · Brasil">Canal Oficial Trans · Brasil</span> <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📍 Recife, PE · Brasil <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">💕 <span data-pt="Conteúdo Exclusivo 24h" data-en="Exclusive Content 24h" data-es="Contenido Exclusivo 24h">Conteúdo Exclusivo 24h</span> <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🏆 <span data-pt="Top 10% Brasil · XVideos" data-en="Top 10% Brazil · XVideos" data-es="Top 10% Brasil · XVideos">Top 10% Brasil · XVideos</span> <span class="ticker-sep">·</span></span>
+    <!-- Duplicados (necessário para loop visual) -->
+    <span class="ticker-item">🔥 <span data-pt="75 Milhões de Views no XVideos" data-en="75 Million Views on XVideos" data-es="75 Millones de Vistas en XVideos">75 Milhões de Views no XVideos</span> <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">⭐ <span data-pt="Canal Oficial Trans · Brasil" data-en="Official Trans Channel · Brazil" data-es="Canal Oficial Trans · Brasil">Canal Oficial Trans · Brasil</span> <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">📍 Recife, PE · Brasil <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">💕 <span data-pt="Conteúdo Exclusivo 24h" data-en="Exclusive Content 24h" data-es="Contenido Exclusivo 24h">Conteúdo Exclusivo 24h</span> <span class="ticker-sep">·</span></span>
+    <span class="ticker-item">🏆 <span data-pt="Top 10% Brasil · XVideos" data-en="Top 10% Brazil · XVideos" data-es="Top 10% Brasil · XVideos">Top 10% Brasil · XVideos</span> <span class="ticker-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     FILTROS — categorias e grade
+     📌 CATEGORIAS: adicione ou remova <button class="filter-tag">
+        O atributo data-filter deve bater com data-category no card do vídeo
+     ══════════════════════════════════════════════════════ -->
+<div class="filters-bar">
+  <div class="filters-inner">
+    <div class="filters-top">
+      <div class="filters-label"><i class="fas fa-filter"></i>&nbsp;
+        <span data-pt="Filtrar por categoria" data-en="Filter by category" data-es="Filtrar por categoría">Filtrar por categoria</span>
+      </div>
+      <div class="view-btns" aria-label="Modo de exibição">
+        <button class="view-btn active" data-cols="4" title="4 colunas"><i class="fas fa-th"></i></button>
+        <button class="view-btn" data-cols="2" title="2 colunas"><i class="fas fa-th-large"></i></button>
+        <button class="view-btn" data-cols="1" title="1 coluna"><i class="fas fa-bars"></i></button>
+      </div>
+    </div>
+    <div class="filter-tags" role="list">
+      <button class="filter-tag active" role="listitem" data-filter="all"
+        data-pt="Todos" data-en="All" data-es="Todos">Todos</button>
+      <button class="filter-tag" role="listitem" data-filter="bottom"
+        data-pt="Bottom" data-en="Bottom" data-es="Bottom">Bottom</button>
+      <button class="filter-tag" role="listitem" data-filter="couple"
+        data-pt="Casais" data-en="Couples" data-es="Parejas">Casais</button>
+      <button class="filter-tag" role="listitem" data-filter="topandbottom"
+        data-pt="Versátil" data-en="Versatile" data-es="Versátil">Versátil</button>
+      <button class="filter-tag" role="listitem" data-filter="solo"
+        data-pt="Solo" data-en="Solo" data-es="Solo">Solo</button>
+      <button class="filter-tag" role="listitem" data-filter="new"
+        data-pt="Novo" data-en="New" data-es="Nuevo">Novo</button>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     MAIN
+     ══════════════════════════════════════════════════════ -->
+<main class="main" id="main">
+
+  <!-- STATS ROW
+       📌 EDITAR NÚMEROS: altere o atributo data-target no <div class="stat-num">
+          O JS vai animar do zero até esse valor na entrada da seção.
+  -->
+  <div class="stats-row" id="statsRow" aria-label="Estatísticas do canal">
+    <div class="stat-cell">
+      <div class="stat-num" data-target="75700000">0</div>
+      <div class="stat-lbl" data-pt="Views XVideos" data-en="XVideos Views" data-es="Vistas XVideos">Views XVideos</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" data-target="19">0</div>
+      <div class="stat-lbl" data-pt="Vídeos Publicados" data-en="Published Videos" data-es="Videos Publicados">Vídeos Publicados</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num" data-target="86800">0</div>
+      <div class="stat-lbl" data-pt="Seguidores XVideos" data-en="XVideos Followers" data-es="Seguidores XVideos">Seguidores XVideos</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-num">100%</div>
+      <div class="stat-lbl" data-pt="Aprovação" data-en="Approval Rate" data-es="Aprobación">Aprovação</div>
+    </div>
+  </div>
+
+  <!-- SEÇÃO DE VÍDEOS -->
+  <section id="videos">
+    <div class="section-hd">
+      <h2>🔥 <span class="accent" data-pt="Trending" data-en="Trending" data-es="Tendencia">Trending</span> Videos</h2>
+      <span class="count" id="videoCount">19 vídeos</span>
+    </div>
+
+    <p style="font-size:.82rem;color:var(--txt-dim);margin-bottom:16px;"
+       data-pt="Clique em ▶ para assistir. Use os botões abaixo para acessar conteúdo completo exclusivo."
+       data-en="Click ▶ to watch. Use the buttons below to access full exclusive content."
+       data-es="Haz clic en ▶ para ver. Usa los botones para acceder al contenido completo exclusivo.">
+      Clique em ▶ para assistir. Use os botões abaixo para acessar conteúdo completo exclusivo.
+    </p>
+
+    <!-- ══════════════════════════════════════════════════════
+         VIDEO GRID
+         ══════════════════════════════════════════════════════
+
+    📌 COMO ADICIONAR UM VÍDEO:
+    ───────────────────────────
+    1. Copie um bloco <!-- VIDEO XX --> abaixo.
+    2. Cole logo antes do comentário <!-- /video-grid -->.
+    3. Altere:
+       ▸ data-category → categoria do filtro (bottom/couple/topandbottom/solo/new)
+       ▸ src da <img>  → poster/thumbnail do vídeo
+                          (ou deixe o placehold.co enquanto não tiver a imagem)
+       ▸ data-src      → URL do embed do XVideos:
+                          https://www.xvideos.com/embedframe/CODIGO_DO_VIDEO
+                          (o código aparece na URL ao abrir o player em nova aba)
+       ▸ id="vf-XX"    → incremente o número (vf-00, vf-01, vf-02...)
+       ▸ Título, views, rating dentro do .video-info
+       ▸ Links dos botões (OnlyFans, WhatsApp, etc.)
+
+    📌 COMO TROCAR O THUMBNAIL:
+       Adicione src="./img/thumb-nome-do-video.jpg" na <img class="video-poster">
+       Tamanho ideal: 480×270px (proporção 16:9)
+
+    📌 COMO REMOVER UM VÍDEO:
+       Apague todo o bloco desde <!-- VIDEO XX --> até o </div> de fechamento.
+
+    ══════════════════════════════════════════════════════ -->
+
+    <div class="video-grid" id="videoGrid">
+
+      <!-- VIDEO 01 -->
+      <article class="video-card" data-category="couple"
+               data-title="festinha 3 britânicos versátil">
+        <div class="video-thumb">
+          <!-- 📌 THUMB: troque o src pela imagem real do vídeo -->
+          <img class="video-poster"
+            src="./img/pics/video-thumb-1.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+01'"
+            alt="FESTINHA a 3 com 2 Britânicos" loading="eager">
+          <!-- 📌 EMBED: troque o data-src pelo link embedframe do XVideos -->
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/updlkim2fe3" data-idx="vf-01">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-01"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Versátil</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 6,1M</span>
+        </div>
+        <div class="video-info">
+          <!-- 📌 TÍTULO: altere o texto abaixo -->
+          <h3 class="video-title">FESTINHA a 3 com 2 Britânicos</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;6,1M views</span>
+            <span class="video-rating">99% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <!-- 📌 BOTÕES: troque os href pelos seus links reais -->
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-xv"><i class="fas fa-film"></i> XVideos</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 02 -->
+      <article class="video-card" data-category="couple"
+               data-title="primeira vez mulher casais">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-2.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+02'"
+            alt="Primeira Vez Com Uma Mulher" loading="lazy">
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/uuflauufd79" data-idx="vf-02">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-02"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Casais</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 4,8M</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Primeira Vez Com Uma Mulher</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;4,8M views</span>
+            <span class="video-rating">99% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-xv"><i class="fas fa-film"></i> XVideos</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 03 -->
+      <article class="video-card" data-category="couple"
+               data-title="gozou dentro fora casais">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-3.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+03'"
+            alt="Gozou dentro e fora" loading="lazy">
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/updlakb3dfl" data-idx="vf-03">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-03"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Casais</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 3,6M</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Gozou dentro e fora</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;3,6M views</span>
+            <span class="video-rating">98% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-xv"><i class="fas fa-film"></i> XVideos</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 04 -->
+      <article class="video-card" data-category="bottom"
+               data-title="sentando pelo gozando bottom">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-4.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+04'"
+            alt="Sentando no Pelo" loading="lazy">
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/uepcuhvaa9b" data-idx="vf-04">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-04"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Bottom</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 1,2M</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Sentando no Pelo e Gozando Muito</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;1,2M views</span>
+            <span class="video-rating">97% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://privacy.com.br/profile/VanessaRafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-priv"><i class="fas fa-lock"></i> Privacy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 05 -->
+      <article class="video-card" data-category="bottom"
+               data-title="homem aranha arrombou bottom">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-5.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+05'"
+            alt="O Homem Aranha Me Arrombou" loading="lazy">
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/otempamddfa" data-idx="vf-05">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-05"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Bottom</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 890K</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">O Homem Aranha Me Arrombou</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;890K views</span>
+            <span class="video-rating">94% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://privacy.com.br/profile/VanessaRafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-priv"><i class="fas fa-lock"></i> Privacy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 06 -->
+      <article class="video-card" data-category="bottom"
+               data-title="trans bunda grande fodida bottom">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-6.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+06'"
+            alt="Trans de bunda grande sendo fodida" loading="lazy">
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/otcmubk8177" data-idx="vf-06">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-06"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Bottom</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 2,1M</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Trans de bunda grande sendo fodida</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;2,1M views</span>
+            <span class="video-rating">97% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://privacy.com.br/profile/VanessaRafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-priv"><i class="fas fa-lock"></i> Privacy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 07 -->
+      <article class="video-card" data-category="solo"
+               data-title="trans parque aquático solo">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-7.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+07'"
+            alt="Trans em parque aquático" loading="lazy">
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/otcmubo6218" data-idx="vf-07">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-07"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Solo</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 1,5M</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">Trans em parque aquático</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;1,5M views</span>
+            <span class="video-rating">92% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://privacy.com.br/profile/VanessaRafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-priv"><i class="fas fa-lock"></i> Privacy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- VIDEO 08
+           📌 EXEMPLO de como adicionar um vídeo novo:
+              Copie este bloco, cole abaixo e troque os dados. -->
+      <article class="video-card" data-category="new"
+               data-title="novo vídeo exclusivo">
+        <div class="video-thumb">
+          <img class="video-poster"
+            src="./img/pics/video-thumb-8.jpg"
+            onerror="this.src='https://placehold.co/480x270/111/FF2D8B?text=▶+Vídeo+08'"
+            alt="Título do Vídeo 08" loading="lazy">
+          <!-- 📌 Troque o data-src pelo código embed do seu vídeo no XVideos -->
+          <div class="play-overlay" data-src="https://www.xvideos.com/embedframe/CODIGO_AQUI" data-idx="vf-08">
+            <div class="play-circle"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-iframe-wrap" id="vf-08"></div>
+          <span class="vid-badge vid-badge--quality">HD</span>
+          <span class="vid-badge vid-badge--cat">Novo</span>
+          <span class="vid-badge vid-badge--views"><i class="fas fa-eye"></i> 750K</span>
+        </div>
+        <div class="video-info">
+          <!-- 📌 Altere o título aqui -->
+          <h3 class="video-title">Título do Vídeo 08</h3>
+          <div class="video-meta">
+            <span class="video-views"><i class="fas fa-eye"></i>&nbsp;750K views</span>
+            <span class="video-rating">96% ✓</span>
+          </div>
+          <div class="video-channel">Vanessa Rafaella · XVideos</div>
+          <div class="video-actions">
+            <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="vid-btn vid-btn-of"><i class="fas fa-crown"></i> OnlyFans</a>
+            <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="vid-btn vid-btn-wpp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://privacy.com.br/profile/VanessaRafaella" target="_blank" rel="noopener" class="vid-btn vid-btn-priv"><i class="fas fa-lock"></i> Privacy</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- MENSAGEM SEM RESULTADO DA BUSCA -->
+      <div class="no-results" id="noResults">
+        <i class="fas fa-search"></i>
+        <strong data-pt="Nenhum vídeo encontrado" data-en="No videos found" data-es="No se encontraron videos">Nenhum vídeo encontrado</strong><br>
+        <span data-pt="Tente outro termo de busca ou remova o filtro." data-en="Try another search term or remove the filter." data-es="Prueba otro término o elimina el filtro.">Tente outro termo de busca ou remova o filtro.</span>
+      </div>
+
+    </div><!-- /video-grid -->
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════
+       AVALIAÇÕES DOS FÃS
+       ══════════════════════════════════════════════════════ -->
+  <section id="reviews">
+    <div class="reviews-head">
+      <span class="rh-icon">⭐</span>
+      <h2><span class="accent" data-pt="Avaliações" data-en="Reviews" data-es="Reseñas">Avaliações</span> dos Fãs</h2>
+    </div>
+
+    <!-- Lista de reviews (skeleton → JS substitui) -->
+    <div id="reviewsList">
+      <div class="review-skel"><div class="skel-line" style="width:40%;margin-bottom:10px;"></div><div class="skel-line" style="width:88%;"></div><div class="skel-line" style="width:70%;"></div></div>
+      <div class="review-skel"><div class="skel-line" style="width:35%;margin-bottom:10px;"></div><div class="skel-line" style="width:80%;"></div><div class="skel-line" style="width:65%;"></div></div>
+      <div class="review-skel"><div class="skel-line" style="width:44%;margin-bottom:10px;"></div><div class="skel-line" style="width:92%;"></div><div class="skel-line" style="width:74%;"></div></div>
+    </div>
+
+    <!-- Formulário -->
+    <div class="review-form">
+      <p class="rf-title">💬 <span data-pt="Deixe sua avaliação" data-en="Leave your review" data-es="Deja tu reseña">Deixe sua avaliação</span></p>
+      <form id="reviewForm" novalidate>
+        <div class="rf-group">
+          <input type="text" id="rfName" class="rf-input"
+            placeholder="Seu apelido / nickname" maxlength="60" required autocomplete="off">
+        </div>
+        <div class="rf-group rf-select-wrap">
+          <select id="rfStars" class="rf-select rf-input">
+            <option value="5">★★★★★ — Excelente</option>
+            <option value="4">★★★★☆ — Muito bom</option>
+            <option value="3">★★★☆☆ — Bom</option>
+            <option value="2">★★☆☆☆ — Regular</option>
+            <option value="1">★☆☆☆☆ — Ruim</option>
+          </select>
+        </div>
+        <div class="rf-group">
+          <textarea id="rfMsg" class="rf-textarea"
+            placeholder="Seu comentário..." maxlength="400" required></textarea>
+        </div>
+        <button type="submit" class="rf-btn" id="rfBtn">Enviar avaliação</button>
+        <div class="rf-feedback" id="rfFeedback"></div>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER DESKTOP (visível em ≥768px)
+     📌 EDITAR: troque os href e textos dos links abaixo
+     ══════════════════════════════════════════════════════ -->
+<footer class="footer-desktop" id="contact">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="f-logo">VANESSA <span class="accent">RAFAELLA</span></div>
+      <p data-pt="Trans brasileira. 75M+ views no XVideos. Conteúdo premium no OnlyFans, Privacy e Telegram. Recife, PE."
+         data-en="Brazilian trans. 75M+ views on XVideos. Premium content on OnlyFans, Privacy and Telegram. Recife, PE."
+         data-es="Trans brasileña. 75M+ vistas en XVideos. Contenido premium en OnlyFans, Privacy y Telegram. Recife, PE.">
+        Trans brasileira. 75M+ views no XVideos. Conteúdo premium no OnlyFans, Privacy e Telegram. Recife, PE.
+      </p>
+      <div class="footer-socials">
+        <a href="#" class="f-soc" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+        <a href="#" class="f-soc" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://t.me/vanessarafaella" target="_blank" rel="noopener" class="f-soc" title="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="f-soc" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="f-soc" title="OnlyFans"><i class="fas fa-fire"></i></a>
+        <a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener" class="f-soc" title="XVideos"><i class="fas fa-film"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-pt="Conteúdo" data-en="Content" data-es="Contenido">Conteúdo</h4>
+      <ul>
+        <li><a href="homepage.html" data-pt="Página Inicial" data-en="Home" data-es="Inicio">🏠 Página Inicial</a></li>
+        <li><a href="#videos" data-pt="Vídeos" data-en="Videos" data-es="Videos">🔥 Vídeos</a></li>
+        <li><a href="homepage.html#gallery" data-pt="Fotos" data-en="Photos" data-es="Fotos">📸 Fotos</a></li>
+        <li><a href="#reviews" data-pt="Avaliações" data-en="Reviews" data-es="Reseñas">⭐ Avaliações</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4 data-pt="Plataformas" data-en="Platforms" data-es="Plataformas">Plataformas</h4>
+      <ul>
+        <li><a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener">OnlyFans</a></li>
+        <li><a href="https://privacy.com.br/profile/VanessaRafaella" target="_blank" rel="noopener">Privacy</a></li>
+        <li><a href="https://www.xvideos.com/channels/ts_vanessa_rafaella" target="_blank" rel="noopener">XVideos</a></li>
+        <li><a href="https://t.me/vanessarafaella" target="_blank" rel="noopener">Telegram VIP</a></li>
+        <li><a href="https://wa.me/5581995469947" target="_blank" rel="noopener">WhatsApp</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="legal/terms-of-service.html" data-pt="Termos de Uso" data-en="Terms of Use" data-es="Términos">Termos de Uso</a></li>
+        <li><a href="#" data-pt="Privacidade" data-en="Privacy Policy" data-es="Privacidad">Privacidade</a></li>
+        <li><a href="#">DMCA</a></li>
+        <li><a href="#">2257</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom" style="max-width:var(--mx);margin-inline:auto;padding-inline:var(--px);">
+    <span class="footer-copy">© 2025 Vanessa Rafaella · Recife, PE</span>
+    <div style="display:flex;gap:4px;">
+      <button onclick="setLang('pt')" style="padding:4px 8px;font-size:.7rem;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;color:var(--txt-dim);cursor:pointer;">🇧🇷 PT</button>
+      <button onclick="setLang('en')" style="padding:4px 8px;font-size:.7rem;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;color:var(--txt-dim);cursor:pointer;">🇺🇸 EN</button>
+      <button onclick="setLang('es')" style="padding:4px 8px;font-size:.7rem;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;color:var(--txt-dim);cursor:pointer;">🇪🇸 ES</button>
+    </div>
+  </div>
+
+  <p class="footer-disclaimer" style="padding:12px var(--px) 0;max-width:var(--mx);margin-inline:auto;"
+     data-pt="Este site é destinado exclusivamente a adultos maiores de 18 anos. Todo o conteúdo é publicado de forma voluntária. Os modelos confirmaram ter 18+ anos no momento das gravações."
+     data-en="This website is intended exclusively for adults 18+. All content is published voluntarily. Models confirmed being 18+ at the time of recording."
+     data-es="Este sitio está destinado exclusivamente a adultos mayores de 18 años. Todo el contenido se publica voluntariamente.">
+    Este site é destinado exclusivamente a adultos maiores de 18 anos. Todo o conteúdo é publicado de forma voluntária.
+  </p>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER MOBILE (visível em <768px)
+     Barra de navegação fixa no rodapé — estilo app
+     📌 EDITAR: troque os href e ícones dos botões abaixo
+     ══════════════════════════════════════════════════════ -->
+<nav class="footer-mobile" aria-label="Navegação inferior">
+
+  <!-- Botão 1: Início -->
+  <a href="homepage.html" class="fm-btn" aria-label="Início">
+    <div class="fm-icon"><i class="fas fa-home"></i></div>
+    <span data-pt="Início" data-en="Home" data-es="Inicio">Início</span>
+  </a>
+
+  <!-- Botão 2: Vídeos (ativo nesta página) -->
+  <a href="#videos" class="fm-btn active" aria-label="Vídeos">
+    <div class="fm-icon"><i class="fas fa-play-circle" style="color:var(--pink);"></i></div>
+    <span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span>
+  </a>
+
+  <!-- Botão 3: Fotos -->
+  <a href="homepage.html#gallery" class="fm-btn" aria-label="Fotos">
+    <div class="fm-icon"><i class="fas fa-images"></i></div>
+    <span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span>
+  </a>
+
+  <!-- Botão 4: OnlyFans
+       📌 TROCAR LINK: altere o href para o seu link do OnlyFans
+  -->
+  <a href="https://onlyfans.com/vanessarafaellavip" target="_blank" rel="noopener" class="fm-btn" aria-label="OnlyFans">
+    <div class="fm-icon"><i class="fas fa-fire" style="color:#1a9fd4;"></i></div>
+    <span>OnlyFans</span>
+  </a>
+
+  <!-- Botão 5: WhatsApp
+       📌 TROCAR NÚMERO: altere o href (wa.me/SEUNUMERO)
+  -->
+  <a href="https://wa.me/5581995469947" target="_blank" rel="noopener" class="fm-btn" aria-label="WhatsApp">
+    <div class="fm-icon"><i class="fab fa-whatsapp" style="color:#25d366;"></i></div>
+    <span>WhatsApp</span>
+  </a>
+
+</nav>
+
+<!-- FAB WhatsApp (flutuante)
+     📌 TROCAR NÚMERO: altere o href abaixo
+-->
+<a href="https://wa.me/5581995469947" target="_blank" rel="noopener"
+   class="wa-fab" aria-label="WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ══ POPUP LUCKY ══ -->
+<div class="popup-bg" id="luckyPopup" role="dialog" aria-modal="true" aria-label="Oferta especial" hidden>
+  <div class="popup-box">
+    <button class="popup-close" id="popupClose" aria-label="Fechar"><i class="fas fa-times"></i></button>
+    <div class="popup-emoji">🎉</div>
+    <h2 class="popup-title" data-pt="Visitante sortudo!" data-en="Lucky visitor!" data-es="¡Visitante afortunado!">Visitante sortudo!</h2>
+    <p class="popup-text" data-pt="A cada 100 acessos, um visitante ganha acesso gratuito ao grupo VIP do Telegram!" data-en="Every 100 visits, one visitor gets free access to the Telegram VIP group!" data-es="¡Cada 100 visitas, un visitante gana acceso gratuito al grupo VIP de Telegram!">A cada 100 acessos, um visitante ganha acesso gratuito ao grupo VIP do Telegram!</p>
+    <!--
+      📌 TROCAR LINK: altere o href abaixo pelo link do seu Telegram/grupo
+    -->
+    <a href="https://t.me/vanessarafaella" target="_blank" rel="noopener" class="popup-btn">
+      <i class="fab fa-telegram"></i>
+      <span data-pt="Entrar no grupo VIP!" data-en="Join the VIP group!" data-es="¡Unirse al grupo VIP!">Entrar no grupo VIP!</span>
+    </a>
+    <p class="popup-note" data-pt="Oferta por tempo limitado!" data-en="Limited time offer!" data-es="¡Oferta por tiempo limitado!">Oferta por tempo limitado!</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════════════════ -->
+<script>
+'use strict';
+
+/* ─────────────────────────────────────────────────
+   📌 CONFIGURAÇÃO — EDITE AQUI
+   ───────────────────────────────────────────────── */
+const WA_NUMBER = '5581995469947'; // Seu número sem + e sem espaços
+
+const WA_MSG = {
+  pt: 'Olá Vanessa! Vi seu site e gostaria de saber mais.',
+  en: 'Hello Vanessa! I saw your website and would like to know more.',
+  es: '¡Hola Vanessa! Vi tu sitio web y me gustaría saber más.'
+};
+/* ─────────────────────────────────────────────────
+   FIM DA CONFIGURAÇÃO
+   ───────────────────────────────────────────────── */
+
+const html = document.documentElement;
+let currentLang = localStorage.getItem('vr-lang') || 'pt';
+let currentTheme = localStorage.getItem('vr-theme') || 'dark';
+
+/* ══════════════════════════════════════════════════
+   TEMA CLARO / ESCURO
+   ══════════════════════════════════════════════════ */
+function applyTheme(t) {
+  currentTheme = t;
+  html.setAttribute('data-theme', t);
+  localStorage.setItem('vr-theme', t);
+  const isDark = t === 'dark';
+  const icon = document.getElementById('themeIcon');
+  if (icon) icon.className = isDark ? 'fas fa-moon' : 'fas fa-sun';
+  const lbl = document.getElementById('mobThemeLabel');
+  if (lbl) lbl.textContent = isDark
+    ? { pt:'Escuro', en:'Dark', es:'Oscuro' }[currentLang]
+    : { pt:'Claro',  en:'Light',es:'Claro'  }[currentLang];
+}
+
+document.getElementById('themeToggle')?.addEventListener('click',
+  () => applyTheme(currentTheme === 'dark' ? 'light' : 'dark'));
+document.getElementById('mobThemeToggle')?.addEventListener('click',
+  () => applyTheme(currentTheme === 'dark' ? 'light' : 'dark'));
+
+/* ══════════════════════════════════════════════════
+   IDIOMA
+   ══════════════════════════════════════════════════ */
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('vr-lang', lang);
+  html.lang = lang === 'en' ? 'en' : lang === 'es' ? 'es' : 'pt-BR';
+
+  document.querySelectorAll('[data-pt],[data-en],[data-es]').forEach(el => {
+    const txt = el.getAttribute('data-' + lang) || el.getAttribute('data-pt');
+    if (!txt) return;
+    if (txt.includes('<')) el.innerHTML = txt;
+    else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = txt;
+    else el.textContent = txt;
+  });
+
+  // Atualiza ícone do dropdown
+  const langMap = { pt:'🇧🇷', en:'🇺🇸', es:'🇪🇸' };
+  const codeEl = document.getElementById('langCode');
+  const flagEl = document.getElementById('langFlag');
+  if (codeEl) codeEl.textContent = lang.toUpperCase();
+  if (flagEl) flagEl.textContent = langMap[lang] || '🇧🇷';
+
+  // Atualiza aria-selected nas opções
+  document.querySelectorAll('.lang-opt').forEach(o =>
+    o.setAttribute('aria-selected', o.dataset.lang === lang ? 'true' : 'false')
+  );
+
+  // Atualiza links WhatsApp
+  updateWALinks();
+  // Re-aplica tema para atualizar label
+  applyTheme(currentTheme);
+}
+
+function updateWALinks() {
+  const msg = encodeURIComponent(WA_MSG[currentLang] || WA_MSG.pt);
+  const url = `https://wa.me/${WA_NUMBER}?text=${msg}`;
+  document.querySelectorAll('[href*="wa.me"]').forEach(a => {
+    // só atualiza links que já têm o número configurado
+    if (a.href.includes(WA_NUMBER) || a.href.includes('5581995469947')) {
+      a.href = url;
+    }
+  });
+}
+
+/* ── Dropdown de idioma ── */
+const langSel = document.getElementById('langSel');
+const langTrigger = document.getElementById('langTrigger');
+
+langTrigger?.addEventListener('click', e => {
+  e.stopPropagation();
+  const isOpen = langSel.classList.toggle('open');
+  langTrigger.setAttribute('aria-expanded', String(isOpen));
+});
+document.querySelectorAll('.lang-opt').forEach(opt => {
+  opt.addEventListener('click', () => {
+    setLang(opt.dataset.lang);
+    langSel.classList.remove('open');
+    langTrigger.setAttribute('aria-expanded', 'false');
+  });
+});
+document.addEventListener('click', () => {
+  langSel?.classList.remove('open');
+  langTrigger?.setAttribute('aria-expanded', 'false');
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    langSel?.classList.remove('open');
+    closeMobMenu();
+  }
+});
+
+/* ══════════════════════════════════════════════════
+   MENU MOBILE
+   ══════════════════════════════════════════════════ */
+const hamburger = document.getElementById('hamburger');
+const btnMenuDesktop = document.getElementById('btnMenuDesktop');
+const mobMenu = document.getElementById('mobMenu');
+const mobOverlay = document.getElementById('mobOverlay');
+const mobClose = document.getElementById('mobClose');
+
+function openMobMenu() {
+  [hamburger, btnMenuDesktop].forEach(b => {
+    b?.classList.add('active');
+    b?.setAttribute('aria-expanded', 'true');
+  });
+  mobMenu.removeAttribute('hidden');
+  requestAnimationFrame(() => {
+    mobMenu.classList.add('active');
+    mobOverlay.classList.add('active');
+  });
+  document.body.style.overflow = 'hidden';
+  mobClose?.focus();
+}
+function closeMobMenu() {
+  [hamburger, btnMenuDesktop].forEach(b => {
+    b?.classList.remove('active');
+    b?.setAttribute('aria-expanded', 'false');
+  });
+  mobMenu.classList.remove('active');
+  mobOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+  mobMenu.addEventListener('transitionend', () => {
+    if (!mobMenu.classList.contains('active')) mobMenu.setAttribute('hidden', '');
+  }, { once: true });
+  hamburger?.focus();
+}
+
+hamburger?.addEventListener('click', openMobMenu);
+btnMenuDesktop?.addEventListener('click', openMobMenu);
+mobClose?.addEventListener('click', closeMobMenu);
+mobOverlay?.addEventListener('click', closeMobMenu);
+mobMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobMenu));
+
+/* ══════════════════════════════════════════════════
+   BUSCA MOBILE OVERLAY
+   ══════════════════════════════════════════════════ */
+const mobSearchOverlay = document.getElementById('mobSearchOverlay');
+document.getElementById('mobSearchBtn')?.addEventListener('click', () => {
+  mobSearchOverlay.classList.add('active');
+  document.getElementById('searchMobile')?.focus();
+});
+document.getElementById('mobSearchClose')?.addEventListener('click', () => {
+  mobSearchOverlay.classList.remove('active');
+});
+
+/* ══════════════════════════════════════════════════
+   NAVBAR — SOMBRA AO ROLAR
+   ══════════════════════════════════════════════════ */
+const mainNav = document.getElementById('mainNav');
+const firstSection = document.querySelector('.ticker-bar');
+if (firstSection) {
+  new IntersectionObserver(([e]) =>
+    mainNav?.classList.toggle('scrolled', !e.isIntersecting),
+    { threshold: 0 }
+  ).observe(firstSection);
+}
+
+/* ══════════════════════════════════════════════════
+   BUSCA — FILTRO EM TEMPO REAL
+   Funciona tanto no desktop quanto no mobile.
+   Filtra por título (data-title) E categoria ativa.
+   ══════════════════════════════════════════════════ */
+function runSearch(query) {
+  const q = query.toLowerCase().trim();
+  const activeFilter = document.querySelector('.filter-tag.active')?.dataset.filter || 'all';
+  let visible = 0;
+
+  document.querySelectorAll('.video-card').forEach(card => {
+    const title = (card.dataset.title || card.querySelector('.video-title')?.textContent || '').toLowerCase();
+    const cat   = card.dataset.category || '';
+    const matchSearch = !q || title.includes(q);
+    const matchFilter = activeFilter === 'all' || cat === activeFilter;
+    const show = matchSearch && matchFilter;
+    card.classList.toggle('hidden', !show);
+    if (show) visible++;
+  });
+
+  document.getElementById('videoCount').textContent = visible + ' vídeos';
+  const noR = document.getElementById('noResults');
+  if (noR) noR.style.display = visible === 0 ? 'block' : 'none';
+}
+
+/* Vincula ambos os inputs à mesma função */
+document.getElementById('searchDesktop')?.addEventListener('input', e => {
+  const v = e.target.value;
+  const mob = document.getElementById('searchMobile');
+  if (mob) mob.value = v; // sincroniza
+  runSearch(v);
+});
+document.getElementById('searchMobile')?.addEventListener('input', e => {
+  const v = e.target.value;
+  const desk = document.getElementById('searchDesktop');
+  if (desk) desk.value = v;
+  runSearch(v);
+});
+
+/* ══════════════════════════════════════════════════
+   FILTROS DE CATEGORIA
+   ══════════════════════════════════════════════════ */
+document.querySelectorAll('.filter-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    document.querySelectorAll('.filter-tag').forEach(t => t.classList.remove('active'));
+    tag.classList.add('active');
+    // re-roda busca com novo filtro
+    const q = document.getElementById('searchDesktop')?.value || '';
+    runSearch(q);
+  });
+});
+
+/* ══════════════════════════════════════════════════
+   BOTÕES DE GRADE (view toggle)
+   ══════════════════════════════════════════════════ */
+document.querySelectorAll('.view-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const grid = document.getElementById('videoGrid');
+    const cols = btn.dataset.cols;
+    if (cols === '1') grid.style.gridTemplateColumns = '1fr';
+    else if (cols === '2') grid.style.gridTemplateColumns = 'repeat(2,1fr)';
+    else grid.style.gridTemplateColumns = ''; // volta ao CSS
+  });
+});
+
+/* ══════════════════════════════════════════════════
+   PLAYER DE VÍDEO — click to embed
+   Ao clicar no play, carrega o iframe do XVideos.
+   ══════════════════════════════════════════════════ */
+document.querySelectorAll('.play-overlay').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const src = btn.dataset.src;
+    const idx = btn.dataset.idx;
+    // Não carrega se for placeholder
+    if (!src || src.includes('CODIGO_AQUI')) {
+      alert('📌 Coloque o link embed do XVideos no atributo data-src deste vídeo.');
+      return;
+    }
+    const wrap = document.getElementById(idx);
+    if (!wrap) return;
+    const poster = btn.closest('.video-thumb')?.querySelector('.video-poster');
+    if (poster) poster.style.display = 'none';
+    btn.style.display = 'none';
+    wrap.innerHTML = `<iframe src="${src}?autoplay=1" allowfullscreen allow="autoplay;fullscreen" loading="lazy"></iframe>`;
+    wrap.classList.add('active');
+  });
+});
+
+/* ══════════════════════════════════════════════════
+   CONTADORES ANIMADOS (stats row)
+   ══════════════════════════════════════════════════ */
+function formatNum(n) {
+  if (n >= 1e6) return (n / 1e6).toFixed(1).replace('.0', '') + 'M';
+  if (n >= 1e3) return (n / 1e3).toFixed(0) + 'K';
+  return n.toString();
+}
+function animCounter(el) {
+  const target = parseInt(el.dataset.target) || 0;
+  const dur = 1800;
+  const t0 = performance.now();
+  (function step(now) {
+    const p = Math.min((now - t0) / dur, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = formatNum(Math.floor(ease * target));
+    if (p < 1) requestAnimationFrame(step);
+  })(performance.now());
+}
+const statsObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('.stat-num[data-target]').forEach(animCounter);
+      statsObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.3 });
+const sr = document.getElementById('statsRow');
+if (sr) statsObs.observe(sr);
+
+/* ══════════════════════════════════════════════════
+   AVALIAÇÕES — carrega do PHP + fallback
+   ══════════════════════════════════════════════════ */
+function esc(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function loadReviews() {
+  const list = document.getElementById('reviewsList');
+  if (!list) return;
+  try {
+    const res = await fetch('php/buscar_comentarios.php');
+    if (!res.ok) throw new Error();
+    const data = await res.json();
+    if (!data.length) throw new Error();
+    list.innerHTML = data.map(c => `
+      <div class="review-card">
+        <div class="review-card__head">
+          <div class="review-avatar">${esc(c.nome)[0]?.toUpperCase() || '?'}</div>
+          <span class="review-name">${esc(c.nome)}</span>
+          <span class="review-stars">${'★'.repeat(parseInt(c.stars) || 5)}</span>
+        </div>
+        <p class="review-text">${esc(c.mensagem)}</p>
+      </div>`).join('');
+  } catch {
+    // Fallback com exemplos estáticos
+    const ex = [
+      { nome:'M. Santos',   stars:5, msg:'Melhor conteúdo que já assinei. Vale cada centavo! 💖' },
+      { nome:'J. Williams', stars:5, msg:'The video call was incredible. Very professional and beautiful. 10/10!' },
+      { nome:'R. Oliveira', stars:5, msg:'75M de views não é à toa. Conteúdo de outro nível. Bot do Telegram fácil!' },
+    ];
+    list.innerHTML = ex.map(c => `
+      <div class="review-card">
+        <div class="review-card__head">
+          <div class="review-avatar">${c.nome[0]}</div>
+          <span class="review-name">${esc(c.nome)}</span>
+          <span class="review-stars">${'★'.repeat(c.stars)}</span>
+        </div>
+        <p class="review-text">${esc(c.msg)}</p>
+      </div>`).join('');
+  }
+}
+
+/* Formulário de avaliação */
+document.getElementById('reviewForm')?.addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = document.getElementById('rfBtn');
+  const fb  = document.getElementById('rfFeedback');
+  const nome = document.getElementById('rfName')?.value.trim();
+  const msg  = document.getElementById('rfMsg')?.value.trim();
+  fb.className = 'rf-feedback';
+  if (!nome || nome.length < 2 || !msg || msg.length < 5) {
+    fb.textContent = '⚠️ Preencha seu apelido e comentário.';
+    fb.classList.add('show', 'error');
+    return;
+  }
+  btn.disabled = true; btn.textContent = 'Enviando…';
+  try {
+    const body = new FormData(this);
+    body.append('nome', nome); body.append('mensagem', msg);
+    body.append('stars', document.getElementById('rfStars')?.value || '5');
+    const res  = await fetch('php/salvar_comentario.php', { method:'POST', body });
+    const json = await res.json();
+    fb.textContent = json.msg || '✅ Comentário enviado! Aguardando aprovação.';
+    fb.classList.add('show');
+    if (json.ok) this.reset();
+  } catch {
+    fb.textContent = '✅ Comentário enviado! Aguardando aprovação.';
+    fb.classList.add('show');
+    this.reset();
+  }
+  btn.disabled = false; btn.textContent = 'Enviar avaliação';
+  setTimeout(() => fb.classList.remove('show','error'), 6000);
+});
+
+/* ══════════════════════════════════════════════════
+   POPUP LUCKY
+   ══════════════════════════════════════════════════ */
+(function() {
+  const popup = document.getElementById('luckyPopup');
+  if (!popup) return;
+  const shown = sessionStorage.getItem('vr_popup');
+  if (shown) return;
+  // Mostra com 1/8 de chance após 8s
+  setTimeout(() => {
+    if (Math.floor(Math.random() * 8) !== 0) return;
+    popup.removeAttribute('hidden');
+    requestAnimationFrame(() => popup.classList.add('open'));
+    sessionStorage.setItem('vr_popup', '1');
+  }, 8000);
+  document.getElementById('popupClose')?.addEventListener('click', () => popup.classList.remove('open'));
+  popup.addEventListener('click', e => { if (e.target === popup) popup.classList.remove('open'); });
+  // Exit intent
+  document.addEventListener('mouseout', e => {
+    if (!e.relatedTarget && e.clientY < 40) {
+      popup.removeAttribute('hidden');
+      requestAnimationFrame(() => popup.classList.add('open'));
+    }
+  }, { once: true });
+})();
+
+/* ══════════════════════════════════════════════════
+   INICIALIZAÇÃO
+   ══════════════════════════════════════════════════ */
+// Aplica tema sem flash
+html.style.transition = 'none';
+applyTheme(currentTheme);
+requestAnimationFrame(() => { html.style.transition = ''; });
+
+setLang(currentLang);
+loadReviews();
+
+console.log('✨ Vanessa Rafaella VideoHub — carregado!');
+</script>
+</body>
+</html>
