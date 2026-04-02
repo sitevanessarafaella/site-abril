@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<!--
+  ╔══════════════════════════════════════════════════════════════╗
+
+  ║             ♥  🆅🅰🅽🅴🆂🆂🅰 🆁🅰🅵🅰🅴🅻🅻🅰   ♥                ║
+  ║          ║  - Official Website · homepage.html -   ║         ║
+  ║                       ══════════════                         ║
+  ║        Estratégia: Mobile‑First → Tablet → Desktop           ║
+
+  ╚══════════════════════════════════════════════════════════════╝
+-->
+
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  
+  <!-- viewport: obrigatório para funcionar em celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 🆂🅴🅾 -->
+  <meta name="description" content="Vanessa Rafaella — Official Website. Conteúdo exclusivo, plataformas e links oficiais.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080808">
+
+  <!-- NOINDEX — o Google não deve indexar esta página -->
+  <meta name="robots" content="noindex, nofollow"/>
+  <meta name="theme-color" content="#080808"/>
+  
+<!-- TITLE PAGE -->
+  <title>Vanessa Rafaella · Official Website</title>
+
+  <!-- ── FONTES DO GOOGLE ──────────────────────────────────
+       Barlow Condensed: display grande e bold (título hero)
+       Inter: leitura geral
+  ──────────────────────────────────────────────────────── -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,700;0,800;0,900;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- ── ÍCONES Font Awesome ──────────────────────────────── -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+   <!-- ═══ CSS ═══ -->
+    <link rel="stylesheet" href="./css/style.css" media="print" onload="this.media = 'all'"/>
+  </head>
+
+<body>
+    
+ <!-- =======================================================
+  Skip-link: usuários de teclado pulam direto para o conteúdo
+  =========================================================-->
+  <a class="skip-link" href="#main-content">Ir para o conteúdo principal</a>
+
+  <!-- ═══════════════════════════════════════════════════
+              HEADER / NAVBAR - MOBILE FIRST 
+  ═══════════════════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" id="mainNav" role="navigation" aria-label="Navegação principal">
+      <div class="nav-inner">
+  
+  <!-- ================
+      ☻☻☻ LOGO ☻☻☻
+   ================ -->
+
+  <a class="nav-logo" href="#" aria-label="Vanessa Rafaella — página inicial">
+ <div class="nav-logo-photo" aria-hidden="true">
+ <img src="./img//pics/vanessa-rafaella-logo-nav-primary.svg"
+ alt="Foto de perfil de Vanessa Rafaella"
+ width="42" height="42"
+ loading="eager">
+
+ <!-- Selo de verificado azul -->
+            <div class="verified-badge">
+             <i class="fas fa-check"></i>
+             </div>
+          </div>
+          <div class="nav-logo-text" aria-hidden="true">
+            <span class="nav-logo-name">VANESSA&nbsp;<span class="accent">RAFAELLA</span></span>
+            <span class="nav-logo-sub" data-pt="Site Oficial" data-en="Website Official" data-es="SITE SPANISH">Site Oficial</span>
+          </div>
+        </a>
+
+<!-- ════════════════════════════ 
+           LINKS DESKTOP 
+    ════════════════════════════  -->
+        <ul class="nav-links" aria-label="Links do menu principal">
+          <li><a href="links-oficiais.html" data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</a></li>
+          <li><a href="video-hub-pink.html" data-pt="Sobre Mim"      data-en="About Me"       data-es="Sobre Mí">Sobre Mim</a></li>
+          <li><a href="galleria.html" data-pt="Fotos"        data-en="Photos"         data-es="Fotos">Fotos</a></li>
+          <li><a href=".html" data-pt="Contato"      data-en="Contact"        data-es="Contacto">Contato</a></li>
+        </ul>
+
+        
+<!-- ════════════════════════════════ 
+       CONTROLES: TEMA E IDIOMA
+══════════════════════════════════════  -->
+
+<!-- CONTROL - TEMA DARK AND LIGHT -->
+      <div class="nav-controls">
+        <button class="icon-btn" id="themeToggle" aria-label="Alternar tema">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+
+<!-- CONTROL -  LANGUAGE-->
+        <div class="lang-sel" id="langSel">
+          <button class="lang-btn" id="langTrigger" aria-haspopup="listbox" aria-expanded="false" aria-label="Idioma">
+            <span id="langFlag">🇧🇷</span>
+            <span id="langCode">PT</span>
+            <span class="lang-arrow"><svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"/></svg></span>
+          </button>
+
+          <div class="lang-drop" id="langDrop" role="listbox">
+            <p>Idioma</p>
+            <button class="lang-opt" data-lang="pt" data-flag="🇧🇷" aria-selected="true"><span>🇧🇷</span><span>Português</span></button>
+            <button class="lang-opt" data-lang="en" data-flag="🇺🇸" aria-selected="false"><span>🇺🇸</span><span>English</span></button>
+            <button class="lang-opt" data-lang="es" data-flag="🇪🇸" aria-selected="false"><span>🇪🇸</span><span>Español</span></button>
+          </div>
+        </div>
+
+          <!-- Botão MENU (desktop) -->
+          <button
+            class="btn-menu-desktop"
+            id="btnMenuDesktop"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="mobMenu"
+          >
+            MENU
+          </button>
+
+          <!-- Hamburguer (mobile) -->
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="mobMenu"
+          >
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Overlay do menu mobile -->
+  <div class="mob-overlay" id="mobOverlay" aria-hidden="true"></div>
+
+<!-- ════════════════════════════════════════
+       Menu Mobile (painel lateral)
+ ════════════════════════════════════════ -->
+  <nav
+    class="mob-menu"
+    id="mobMenu"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Menu de navegação"
+    hidden
+  >
+
+    <!-- CABEÇALHO DO MENU MOBILE -->
+    <div class="mob-menu-hdr">
+      <span class="mob-menu-brand" aria-hidden="true">VANESSA <span class="accent">RAFAELLA</span></span>
+      <button class="mob-close" id="mobClose" aria-label="Fechar menu">
+        <i class="fas fa-times" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <!-- 🔗 LINKS DE NAVEGAÇÃO MOBILE -->
+    <nav class="mob-nav" aria-label="Links de navegação mobile">
+      <a href="#links">
+        <i class="fas fa-link" aria-hidden="true"></i>
+        <span data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</span>
+      </a>
+      <a href="#about">
+        <i class="fas fa-user" aria-hidden="true"></i>
+        <span data-pt="Sobre Mim" data-en="About Me" data-es="Sobre Mí">Sobre Mim</span>
+      </a>
+      <a href="#gallery">
+        <i class="fas fa-images" aria-hidden="true"></i>
+        <span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span>
+      </a>
+      <a href="#contact">
+        <i class="fas fa-envelope" aria-hidden="true"></i>
+        <span data-pt="Contato" data-en="Contact" data-es="Contacto">Contato</span>
+      </a>
+      <div class="mob-divider"></div>
+    </nav>
+
+    <!-- 📲 PLATAFORMAS COM ÍCONES -->
+     
+    <div class="mob-label" data-pt="Plataformas" data-en="Platforms" data-es="Plataformas">Plataformas</div>
+    <div class="mob-plats">
+      <a href="#" class="mob-plat" aria-label="Privacy" target="_blank" rel="noopener">
+        <div class="mob-plat-icon">
+          <img src="./assets/images/privacy-full-icon.png" alt="Privacy" onerror="this.parentNode.innerHTML='🔒'">
+        </div>
+        <span>Privacy</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="OnlyFans" target="_blank" rel="noopener">
+        <div class="mob-plat-icon">
+          <img src="./assets/images/of-blue-icon.png" alt="OnlyFans" onerror="this.parentNode.innerHTML='🔥'">
+        </div>
+        <span>OnlyFans</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="Fotos" target="_blank" rel="noopener">
+        <div class="mob-plat-icon">
+          <img src="./assets/images/fotos-icon.png" alt="Fotos" onerror="this.parentNode.innerHTML='📸'">
+        </div>
+        <span data-pt="Fotos" data-en="Photos" data-es="Fotos">Fotos</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="Vídeos" target="_blank" rel="noopener">
+        <div class="mob-plat-icon">
+          <img src="./assets/images/video-icon.png" alt="Vídeos" onerror="this.parentNode.innerHTML='🎬'">
+        </div>
+        <span data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</span>
+      </a>
+      <a href="#" class="mob-plat" aria-label="WhatsApp" target="_blank" rel="noopener">
+        <div class="mob-plat-icon">
+          <img src="./assets/images/new-wpp-icon.png" alt="WhatsApp" onerror="this.parentNode.innerHTML='💬'">
+        </div>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+
+    <!-- Rodapé do menu mobile -->
+    <div class="mob-menu-footer">
+      <!-- Redes sociais no mobile -->
+      <div class="mob-socials" aria-label="Redes sociais">
+        <a href="#" class="mob-soc-btn onlyfans" aria-label="OnlyFans">
+          <i class="fas fa-fire" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="mob-soc-btn twitter" aria-label="Twitter / X">
+          <i class="fab fa-x-twitter" aria-hidden="true"></i>
+        </a>
+        <a href="#" class="mob-soc-btn instagram" aria-label="Instagram">
+          <i class="fab fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/5581995469947" class="mob-soc-btn whatsapp" aria-label="WhatsApp" id="mobWa">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <!-- Botão de tema no mobile -->
+      <button class="mob-theme-btn" id="mobThemeBtn" aria-label="Alternar tema escuro e claro">
+        <span>
+          <i class="fas fa-adjust" aria-hidden="true"></i>&nbsp;
+          <span data-pt="Alterar Tema" data-en="Toggle Theme" data-es="Cambiar Tema">Alterar Tema</span>
+        </span>
+        <span id="mobThemeLbl" aria-live="polite">Escuro</span>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ═══════════════════════════════════════════════════
+              🅼🅰🅸🅽 Conteúdo principal
+  ═══════════════════════════════════════════════════════ -->
+  <main id="main-content">
+
+<!-- ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘
+       HERO SECTION 
+     ◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘◘ -->
+    <section class="hero" aria-labelledby="heroTitle">
+
+      <!-- Emojis decorativos flutuantes (aria-hidden: são decorativos) -->
+      <span class="hero-emoji e6" aria-hidden="true"><img src="./img/icons/pic.png" alt="icone de foto"></span>
+      <span class="hero-emoji e3" aria-hidden="true"><img src="./img/icons/of-icon.svg" alt="icone do onlyfans"></span><span class="hero-emoji e2" aria-hidden="true"><img src="./img/icons/18-adult-icon.svg" alt="icone de foto"></span>
+      <span class="hero-emoji e2" aria-hidden="true"><img src="./img/icons/pic-xota-icon.svg" alt="icone de fogo"></span>
+      <span class="hero-emoji e4" aria-hidden="true"><img src="./img/icons/video-icon.svg" alt="icone de terra"></span>
+      <span class="hero-emoji e5" aria-hidden="true"><img src="./img/icons/3.svg" alt="icone de fogo"></span>
+      <span class="hero-emoji e1" aria-hidden="true"><img src="./img/icons/privacy.svg" alt="icone de terra"></span>
+      <span class="hero-emoji e7" aria-hidden="true"><img src="./img/icons/seta-baixo.svg" alt="icone de terra"></span>
+
+
+
+      <!-- Conteúdo textual do hero -->
+      <div class="hero-content">
+        <!-- Tag / badge topo -->
+        <span class="hero-eyebrow" data-pt="Conteúdo Exclusivo" data-en="Exclusive Content" data-es="Contenido Exclusivo">
+          Conteúdo Exclusivo
+        </span>
+
+        <!-- Título principal: grande, bold, display -->
+        <h1 class="hero-title" id="heroTitle">
+          <span data-pt="DESCUBRA A MELHOR" data-en="DISCOVER THE BEST" data-es="DESCUBRE LA MEJOR">
+            DESCUBRA A MELHOR
+          </span><br>
+          <span data-pt="FORMA DE ACESSAR" data-en="WAY TO ACCESS" data-es="FORMA DE ACCEDER">
+            FORMA DE ACESSAR
+          </span><br>
+          <span data-pt="MEU CONTEÚDO" data-en="MY CONTENT" data-es="MI CONTENIDO">
+            MEU CONTEÚDO
+          </span><br>
+          <span class="pink" data-pt="EXCLUSIVO" data-en="EXCLUSIVELY" data-es="EXCLUSIVO">
+            EXCLUSIVO
+          </span>
+        </h1>
+
+        <!-- Subtítulo -->
+        <p class="hero-sub"
+           data-pt="Acesse todas as minhas plataformas e conteúdos em um único lugar."
+           data-en="Access all my platforms and content in one place."
+           data-es="Accede a todas mis plataformas y contenidos en un solo lugar.">
+          Acesse todas as minhas plataformas e conteúdos em um único lugar.
+        </p>
+
+        <!-- Botões de ação -->
+        <div class="hero-btns">
+          <a
+            href="galleria.html"
+            class="btn-primary"
+            aria-label="Ver galeria de fotos"
+          >
+            <i class="fas fa-play" aria-hidden="true"></i>
+            <span data-pt="Explore a Galeria" data-en="Explore Gallery" data-es="Ver Galería">Explore a Galeria</span>
+          </a>
+          <a
+            href="links-oficiais.html"
+            class="btn-outline"
+            aria-label="Ver links oficiais"
+          >
+            <span data-pt="Links Oficiais" data-en="Official Links" data-es="Links Oficiales">Links Oficiais</span>
+            <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <!-- Indicador de scroll -->
+        <div class="scroll-hint" aria-hidden="true">
+          <span data-pt="Role para baixo" data-en="Scroll down" data-es="Desliza hacia abajo">Role para baixo</span>
+        </div>
+      </div>
+    </section>
+
+
+<section id="about" aria-labelledby="aboutTitle">
+  <div class="container section-wrap">
+
+    <!-- CABEÇALHO DA SECTION -->
+    <div class="section-header">
+      <span class="section-tag"
+            data-pt="👤 Quem Sou Eu"
+            data-en="👤 Who I Am"
+            data-es="👤 Quién Soy">
+        👤 Quem Sou Eu
+      </span>
+      <h2 class="section-title" id="aboutTitle" data-reveal>
+        SOBRE <span class="accent">MIM</span>
+      </h2>
+      <p class="section-sub" data-reveal>Criadora de conteúdo · Recife, PE</p>
+    </div>
+
+    <!-- GRID: FOTO + TEXTO -->
+    <div class="about-grid" data-reveal>
+
+      <!-- FOTO -->
+      <div class="about-photo-wrap">
+        <img
+          class="about-photo"
+          src="./img/pics/vanessa-rafaella-logo-nav-primary.svg"
+          alt="Vanessa Rafaella"
+          width="300" height="300"
+          loading="lazy"
+          onerror="this.src='https://placehold.co/300x300/141419/FF2D8B?text=VR'"
+        >
+      </div>
+
+      <!-- TEXTO + STATS -->
+      <div class="about-text">
+        <p data-pt="Olá! Sou a Vanessa Rafaella, criadora de conteúdo digital de Recife, PE. Aqui você encontra os meus links oficiais e tem acesso a todo o meu conteúdo exclusivo."
+           data-en="Hi! I'm Vanessa Rafaella, a digital content creator from Recife, PE. Here you'll find my official links and all my exclusive content."
+           data-es="¡Hola! Soy Vanessa Rafaella, creadora de contenido digital de Recife, PE. Aquí encontrarás mis links oficiales y todo mi contenido exclusivo.">
+          Olá! Sou a Vanessa Rafaella, criadora de conteúdo digital de Recife, PE.
+          Aqui você encontra os meus links oficiais e tem acesso a todo o meu conteúdo exclusivo.
+        </p>
+
+        <div class="stats-row" role="list">
+          <div class="stat" role="listitem">
+            <div class="stat-n">75M+</div>
+            <div class="stat-l" data-pt="Views Xvideos" data-en="Xvideos Views" data-es="Views Xvideos">Views Xvideos</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-n">86K+</div>
+            <div class="stat-l" data-pt="Seguidores" data-en="Followers" data-es="Seguidores">Seguidores</div>
+          </div>
+          <div class="stat" role="listitem">
+            <div class="stat-n">155+</div>
+            <div class="stat-l" data-pt="Vídeos" data-en="Videos" data-es="Videos">Vídeos</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <section id="acesso-rapido">
+  <div class="container section-wrap">
+
+    <div class="section-header">
+      <span class="section-tag">⚡ Acesso Rápido</span>
+      <h2 class="section-title">TUDO <span class="accent">AQUI</span></h2>
+    </div>
+
+    <div class="qa-grid">
+
+      <a href="https://maps.google.com/?q=Recife,PE" class="qa-card qa-card--pink" target="_blank" rel="noopener">
+        <div class="qa-icon">📍</div>
+        <div class="qa-label">Localização</div>
+        <div class="qa-sub">Recife, PE</div>
+      </a>
+
+      <a href="https://wa.me/5581995469947" class="qa-card qa-card--green" target="_blank" rel="noopener" id="qaWa">
+        <div class="qa-icon">💬</div>
+        <div class="qa-label">WhatsApp</div>
+        <div class="qa-sub">Fale comigo</div>
+      </a>
+
+      <a href="https://onlyfans.com/vanessarafaella" class="qa-card qa-card--blue" target="_blank" rel="noopener">
+        <div class="qa-icon">🔥</div>
+        <div class="qa-label">OnlyFans</div>
+        <div class="qa-sub">Conteúdo exclusivo</div>
+      </a>
+
+      <a href="https://t.me/+WQ-rTW3zKWc1N2U0" class="qa-card qa-card--teal" target="_blank" rel="noopener">
+        <div class="qa-icon">✈️</div>
+        <div class="qa-label">Telegram</div>
+        <div class="qa-sub">Grupo VIP</div>
+      </a>
+
+      <a href="https://privacy.com.br/checkout/vanessarafaella" class="qa-card qa-card--orange" target="_blank" rel="noopener">
+        <div class="qa-icon">🔒</div>
+        <div class="qa-label">Privacy</div>
+        <div class="qa-sub">Conteúdo premium</div>
+      </a>
+
+      <a href="https://x.com/vvanessarafaella" class="qa-card qa-card--purple" target="_blank" rel="noopener">
+        <div class="qa-icon">📸</div>
+        <div class="qa-label">Twitter</div>
+        <div class="qa-sub">Fotos e stories</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section id="onlyfans" class="onlyfans">
+  <div class="container section-wrap">
+
+    <div class="section-header">
+      <span class="section-tag">🔥 OnlyFans</span>
+      <h2 class="section-title">CONTEÚDO <span class="accent">EXCLUSIVO</span></h2>
+      <p class="section-sub">Fotos premium que você só vê aqui</p>
+    </div>
+
+    <!-- CARROSSEL OTIMIZADO PARA FOTOS GRANDES -->
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        <!-- Coloque suas fotos aqui (recomendo 5 a 8 fotos) -->
+        <img src="./img/pics/bg-only.png" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto2.jpg" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto3.jpg" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto4.jpg" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto5.jpg" alt="Vanessa Rafaella">
+
+        <!-- Segunda cópia para loop infinito -->
+        <img src="./img/pics/bg-only.png" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto2.jpg" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto3.jpg" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto4.jpg" alt="Vanessa Rafaella">
+        <img src="./img/pics/foto5.jpg" alt="Vanessa Rafaella">
+      </div>
+    </div>
+
+    <!-- Promo por cima -->
+    <div class="onlyfans-promo">
+      <h2>OnlyFans</h2>
+      <p>Conteúdo 100% exclusivo • Fotos • Vídeos • Lives</p>
+      <a href="https://onlyfans.com/vanessarafaella" class="btn-primary" target="_blank" rel="noopener">
+        <i class="fas fa-fire"></i>
+        <span>Acessar meu OnlyFans</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+  <script src="./js/script.js" defer></script>
+</body>
+</html>
